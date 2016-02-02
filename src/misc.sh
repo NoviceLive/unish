@@ -45,6 +45,12 @@ Display proxy settings, i.e. 'http_proxy' and 'https_proxy'.
     stdout "https_proxy: ${https_proxy}"
 }
 
+
+hpi() {
+    sudo privoxy /etc/privoxy/config
+}
+
+
 hp() {
     : "
 Usage: hp

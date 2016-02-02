@@ -25,9 +25,9 @@ Installation
 ------------
 
 Backup your original ~/.zshrc or ~/.bashrc if necessary,
-and then use the included makefile to prepare symbolic links.
+and then use the included ``makefile`` to prepare symbolic links.
 
-You are done.
+And you are done.
 
 
 Contribution
