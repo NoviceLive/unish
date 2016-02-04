@@ -142,7 +142,7 @@ done
 info 'Started Unish Base.'
 
 
-export PATH=$PATH:$HOME/bin:$HOME/bin/lnk
+export PATH=$PATH:$HOME/bin:$HOME/bin/lnk:$HOME/.local/bin
 
 
 export VISUAL='emacs -nw'
