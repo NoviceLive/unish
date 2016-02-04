@@ -28,22 +28,21 @@ Check Bash script using shellcheck.
 
 
 _hg_status_checker() {
-    local filename="${1}"
-    (cd "${filename}" && if [[ -d '.hg' ]]; then
-            if [[ -n $(hg status) ]]; then
-                pwd && hg status
-            fi
-        fi)
+    if [[ -d '.hg' ]]; then
+        if [[ -n $(hg status) ]]; then
+            pwd && hg status
+        fi
+        if [[ -n $(hg summary | grep '^phases') ]]; then
+            pwd && hg summary
+        fi
+    fi
 }
 
 
 _git_status_checker() {
-    local filename="${1}"
-    (cd "${filename}" && if [[ -d '.git' ]]; then
-            if [[ -n $(git status --porcelain) ]]; then
-                pwd && git status
-            fi
-        fi)
+    if [[ -d '.git' && -n $(git status --porcelain) ]]; then
+        pwd && git status
+    fi
 }
 
 
@@ -67,7 +66,8 @@ See Also: ${see_also}
     local dir
     dir=\"\${1:-\$PWD}\"
     find \"\${dir}\" -maxdepth 1 -type d | while read filename; do
-        _${one}_status_checker \"\${filename}\"
+        debug \"\${filename}\"
+        (cd \"\${filename}\" &&_${one}_status_checker)
     done
 }
 "
