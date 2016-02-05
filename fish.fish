@@ -17,20 +17,17 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-default:
-	make fish
-	make zsh
-	make bash
+echo 'Fish Is Not A POSIX Shell'
+set CURRENT_SHELL 'fish'
 
 
-fish:
-	mkdir -p ~/.config/fish/
-	ln -srf fish.fish ~/.config/fish/config.fish
+function make_function
+    eval "
+function $argv[1]
+    $argv[2]
+end
+"
+end
 
 
-zsh:
-	ln -srf entry.sh ~/.zshrc
-
-
-bash:
-	ln -srf entry.sh ~/.bashrc
+make_function rl "exec /usr/bin/env $CURRENT_SHELL"
