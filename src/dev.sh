@@ -40,8 +40,13 @@ _hg_status_checker() {
 
 
 _git_status_checker() {
-    if [[ -d '.git' && -n $(git status --porcelain) ]]; then
-        pwd && git status
+    if [[ -d '.git' ]]; then
+        if [[ -n $(git status --porcelain) ]]; then
+            pwd && git status
+        fi
+        if [[ -n $(git log --branches --not --remotes) ]]; then
+            pwd && git log --branches --not --remotes
+        fi
     fi
 }
 
