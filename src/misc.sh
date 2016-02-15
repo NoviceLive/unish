@@ -97,7 +97,14 @@ mkcd() {
 }
 
 
-cdls() { cd "$1" && ls; }
+cdls() {
+    cd "$1" && ls;
+}
+
+
+lsc() {
+    ls | wc -l
+}
 
 
 thosts() {

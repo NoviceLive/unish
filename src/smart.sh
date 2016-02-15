@@ -24,6 +24,27 @@ _command_not_found_handler() {
 }
 
 
+unalias_if_exists cd
+
+cd() {
+    if [[ $# -eq 1 && -f "${1}" ]]; then
+        local correction="$(realpath "$(dirname "${1}")")"
+        info "Correcting to ${correction}"
+        builtin cd "${correction}"
+    else
+        builtin cd "${@}"
+    fi
+
+    if [[ -d .git ]]; then
+        git status
+    elif [[ -d .hg ]]; then
+        hg status
+    elif [[ $(ls | wc -l) -lt 50 ]]; then
+        command ls -al --color=auto
+    fi
+}
+
+
 unalias_if_exists a
 
 a() {
@@ -146,5 +167,6 @@ Open an existing file using Emacs or create a new one using t.
         emacs "${name}" &
     else
         warning 'tt Unavailable'
+        emacs "${name}" &
     fi
 }
