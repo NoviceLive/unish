@@ -46,10 +46,10 @@ Source the file if it exists.
 "
     local name="${1}"
     if [[ -f "${name}" ]]; then
-        debug "Sourcing ${name}"
+        info "Sourcing ${name}"
         source "${name}"
     else
-        debug "No such file: ${name}"
+        warning "No such file: ${name}"
         return 1
     fi
 }

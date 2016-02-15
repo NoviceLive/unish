@@ -20,9 +20,7 @@
 # TODO: The plugin system.
 
 
-_plugins_dir="/usr/share/zsh/plugins"
-
-
+_plugins_dir="${UNISH}/bundle"
 _plugin_name=zsh-syntax-highlighting
 _plugin_entry="$_plugins_dir/$_plugin_name/$_plugin_name.zsh"
 source_if_exists "$_plugin_entry"

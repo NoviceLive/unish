@@ -135,7 +135,7 @@ for one in math str media file shellcoding; do
 done
 
 
-for one in dev multi langdist misc; do
+for one in dev multi misc; do
     source_if_exists "$UNISH"/src/$one.sh
 done
 

@@ -24,18 +24,20 @@ Features
 Installation
 ------------
 
-Backup your original ~/.zshrc or ~/.bashrc if necessary,
+Clone this repository recursively,
+backup your original ~/.zshrc or ~/.bashrc if necessary,
 and then use the included ``makefile`` to prepare symbolic links.
 
 And you are done.
 
 
-Contribution
-------------
+Bundled Packages
+----------------
 
-Feature requests (e.g. Shell functions to get your work done)
-and integration of your own useful shell functions
-are welcome.
+- zsh
+
+  - `zsh-users/zsh-syntax-highlighting <https://github.com/zsh-users/zsh-syntax-highlighting>`_
+  - `zsh-users/zsh-history-substring-search <https://github.com/zsh-users/zsh-history-substring-search>`_
 
 
 Author & License
