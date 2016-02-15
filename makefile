@@ -17,10 +17,15 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+ETC = etc
+BIN = bin
+
 default:
 	make fish
 	make zsh
 	make bash
+	make misc
+	make xconf
 
 
 fish:
@@ -34,3 +39,20 @@ zsh:
 
 bash:
 	ln -srf entry.sh ~/.bashrc
+
+
+misc:
+	ln -srf ${ETC}/tmux.conf ~/.tmux.conf
+
+	ln -srf ${ETC}/hgrc.conf ~/.hgrc
+
+	mkdir -p ~/.stack
+	ln -srf ${ETC}/config.yaml ~/.stack/config.yaml
+
+	mkdir -p ~/.ghc
+	ln -srf ${ETC}/ghci.conf ~/.ghc/ghci.conf
+
+
+xconf:
+	${BIN}/git.sh
+	${BIN}/ruby.sh

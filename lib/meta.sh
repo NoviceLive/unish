@@ -34,7 +34,7 @@ Usage: exists <command>
 
 Determine whether the command is available or not.
 "
-    /usr/bin/env which "$1" > /dev/null 2>&1
+    command env which "$1" > /dev/null 2>&1
 }
 
 

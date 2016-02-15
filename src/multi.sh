@@ -141,8 +141,10 @@ Open an existing file using Emacs or create a new one using t.
     if [[ -f "${name}" ]]
     then
         emacs "${name}" &
-    else
-        t "${@}" || warning "The File '${name}' is not Templated"
+    elif exists tt; then
+        tt "${@}" || warning "The File '${name}' is not Templated"
         emacs "${name}" &
+    else
+        warning 'tt Unavailable'
     fi
 }
