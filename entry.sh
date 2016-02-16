@@ -154,6 +154,7 @@ ulimit -c unlimited
 
 info 'Starting Plugins...'
 
+source "${UNISH}/plugins/common.sh"
 source "${UNISH}/plugins/${CURRENT_SHELL}.${CURRENT_SHELL}"
 
 info 'Started Plugins.'
