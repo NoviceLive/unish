@@ -274,9 +274,6 @@ done
 alias pypy2='pypy'
 
 
-alias prm='sudo rm -rf build dist *.egg-info'
-
-
 alias Syu='sudo pacman -Syu'
 alias Syy='sudo pacman -Syy'
 alias Syyu='sudo pacman -Syyu'
