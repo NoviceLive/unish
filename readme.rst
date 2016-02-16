@@ -34,6 +34,10 @@ And you are done.
 Bundled Packages
 ----------------
 
+- zsh & bash
+
+  - `virtualenvwrapper / virtualenvwrapper <https://bitbucket.org/virtualenvwrapper/virtualenvwrapper>`_
+
 - zsh
 
   - `zsh-users/zsh-syntax-highlighting <https://github.com/zsh-users/zsh-syntax-highlighting>`_
