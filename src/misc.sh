@@ -90,15 +90,10 @@ Remove proxies.
 mkcd() {
     local name="${1}"
     if mkdir -p "${name}"; then
-        cd "${name}" || return 1
+        builtin cd "${name}" || return 1
     else
         return 1
     fi
-}
-
-
-cdls() {
-    cd "$1" && ls;
 }
 
 

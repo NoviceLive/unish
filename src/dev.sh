@@ -72,7 +72,7 @@ See Also: ${see_also}
     dir=\"\${1:-\$PWD}\"
     find \"\${dir}\" -maxdepth 1 -type d | while read filename; do
         debug \"\${filename}\"
-        (cd \"\${filename}\" &&_${one}_status_checker)
+        (builtin cd \"\${filename}\" &&_${one}_status_checker)
     done
 }
 "
@@ -116,7 +116,7 @@ _up_repo_generic() {
     fi
     for one in "${repos[@]}"; do
         printf '[%s] Updating %s\n' "${1}" "${one}"
-        (cd "${one}" && _"${1}"_repo_updater)
+        (builtin cd "${one}" && _"${1}"_repo_updater)
     done
 }
 
