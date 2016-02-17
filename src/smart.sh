@@ -166,14 +166,16 @@ Usage: e <name> <options>
 Open an existing file using Emacs or create a new one using t.
 "
     local name="${1}"
+    local templator=ttouch
     if [[ -f "${name}" ]]
     then
         emacs "${name}" &
-    elif exists tt; then
-        tt "${@}" || warning "The File '${name}' is not Templated"
+    elif exists ${templator}; then
+        ${templator} "${@}" \
+            || warning "The File '${name}' is not Templated"
         emacs "${name}" &
     else
-        warning 'tt Unavailable'
+        warning "${templator} Unavailable"
         emacs "${name}" &
     fi
 }

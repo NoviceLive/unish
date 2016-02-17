@@ -18,6 +18,10 @@ Features
   Created by a previous Bash user
   who missed that handy ``help`` builtin.
 
+- Documentation generator (Ongoing)
+
+  Will be built by someone who denounced documentation with no code.
+
 - Plugin Layer (Planned)
 
 
