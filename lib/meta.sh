@@ -125,9 +125,10 @@ Show the documentation on the specified function.
         debug "${one}"
         if is_builtin "${one}"; then
             debug "${one} is builtin"
-            bash -c "help ${one} 2>/dev/null \
-                || printf 'Not found in Bash: %s\n' ${one}" \
-                | less -FX
+            run-help "${one}"
+            # bash -c "help ${one} 2>/dev/null \
+            #     || printf 'Not found in Bash: %s\n' ${one}" \
+            #     | less -FX
         elif is_func "${one}"; then
             printf '>>> Help on function: %s <<<\n' "${one}"
             printf '%s\n\n' "$(_get_docs "$(_func_decl "${one}")")"
