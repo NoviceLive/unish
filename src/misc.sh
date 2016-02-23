@@ -17,6 +17,17 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+aurpkg() {
+    local base='https://aur.archlinux.org/cgit/aur.git/snapshot'
+    local name
+    for name in "${@}"; do
+        local url="${base}/${name}.tar.gz"
+        info "Downloading ${url}..."
+        wget ${url} && tar -xzf "${name}.tar.gz" && \
+            cd "${name}" && makepkg -si
+    done
+}
+
 
 # TODO: Hardcode.
 
@@ -176,14 +187,10 @@ alias 114='ping -c 4 114.114.114.114'
 alias baidu='ping -c 4 baidu.com'
 
 
-rmtmp() {
-    sudo du -sh /tmp
-    sudo rm -rf /tmp
-}
-
-
 archisbest() {
-    rfkill unblock wifi
+    if exists rfkill; then
+        rfkill unblock wifi
+    fi
     sudo -b create_ap wlp3s0 enp4s0f2 ARCHISBEST ARCHISBEST
 }
 
