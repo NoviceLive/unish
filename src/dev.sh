@@ -172,6 +172,7 @@ dog.py() {
 SSH_AGENT="$HOME/.ssh/ssh_agent"
 
 _start_ssh_agent() {
+    mkdir -p ~/.ssh
     ssh-agent > "$SSH_AGENT" && chmod 600 "$SSH_AGENT"
     source "$SSH_AGENT" > /dev/null
 }
@@ -184,7 +185,11 @@ if pgrep ssh-agent > /dev/null 2>&1; then
         done
     fi
 else
-    _start_ssh_agent
+    if exists ssh-agent; then
+        _start_ssh_agent
+    else
+        error 'ssh-agent Unavailable!'
+    fi
 fi
 
 addkey() {
@@ -196,7 +201,11 @@ addkey() {
     if pgrep ssh-agent > /dev/null 2>&1; then
         source "$SSH_AGENT" > /dev/null 2>&1
         for one in "${keys[@]}"; do
-            ssh-add "$one"
+            if [[ -f ${one} ]]; then
+                ssh-add "$one"
+            else
+                error "No such file: ${one}"
+            fi
         done
         ssh-add -l
     fi

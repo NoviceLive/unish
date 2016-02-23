@@ -49,7 +49,7 @@ Source the file if it exists.
         info "Sourcing ${name}"
         source "${name}"
     else
-        warning "No such file: ${name}"
+        error "No such file: ${name}"
         return 1
     fi
 }
