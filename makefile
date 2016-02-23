@@ -42,6 +42,11 @@ bash:
 
 
 misc:
+	mkdir -p ~/.ssh
+	cat ${ETC}/ssh.conf \
+		../../private/2015.hg/private.ssh > ~/.ssh/config && \
+		chmod 0600 ~/.ssh/config
+
 	ln -srf ${ETC}/tmux.conf ~/.tmux.conf
 
 	ln -srf ${ETC}/hgrc.conf ~/.hgrc
