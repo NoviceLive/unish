@@ -11,7 +11,12 @@ Current State: Primitive Features.
 Features
 --------
 
-- Smart Commands
+- Smart Commands (Growing)
+
+  Commands with knowledge of their invocation environment and behaves
+  accordingly.
+
+  See the dedicated section below.
 
 - Logging Layer
 
@@ -51,6 +56,28 @@ Installation
 - Happy Tweaking!
 
 
+Smart Commands
+--------------
+
+Take ``cd`` for instance, we think it ``smart`` when it:
+
+- ``cd`` into the directory containing the given file
+
+  if it's invoked with a single argument which is a file.
+  For example, ``cd /etc/fstab`` behaves as ``cd /etc``.
+
+- runs ``git status`` or ``hg status`` after ``cd``
+
+  if it knows that the directory are Git or Mercurial repositories.
+
+- displays files up to a default count in the given directory
+
+  when it finds nothing special about that direcotry.
+
+As matter of fact, we are able to add smartness further,
+for instance, integrating autoenv_ or smartcd_.
+
+
 Bundled Packages
 ----------------
 
@@ -74,3 +101,7 @@ it under the terms of the GNU General Public License
 as published by the Free Software Foundation,
 either version 3 of the License,
 or (at your option) any later version.
+
+
+.. _smartcd: https://github.com/cxreg/smartcd
+.. _autoenv: https://github.com/kennethreitz/autoenv
