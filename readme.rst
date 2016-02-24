@@ -5,7 +5,7 @@ Unish - One Configuration To Rule Them All
 Hopefully it will come true in ten years. :)
 
 
-Current State: Primitive Features.
+Current State: Primitive.
 
 
 Features
@@ -13,14 +13,14 @@ Features
 
 - Smart Commands (Growing)
 
-  Commands with knowledge of their invocation environment and behaves
+  Commands with knowledge of their invocation environment and behave
   accordingly.
 
   See the dedicated section below.
 
-- Logging Layer
+- Logging Layer (Primitive)
 
-- Builtin Help Layer
+- Builtin Help Layer (Primitive)
 
   Created by a previous Bash user
   who missed that handy ``help`` builtin
@@ -41,6 +41,7 @@ Installation
 - Clone this repository
 
   ``git clone https://github.com/NoviceLive/unish.git`` or
+
   ``git clone --recursive https://github.com/NoviceLive/unish.git``
 
   Clone recursively if you want the bundle packages as listed below.
@@ -76,6 +77,28 @@ Take ``cd`` for instance, we think it ``smart`` when it:
 
 As matter of fact, we are able to add smartness further,
 for instance, integrating autoenv_ or smartcd_.
+
+
+Documentation
+=============
+
+Some might not be related with Unish,
+but with Linux or in general with POSIX or UNIX.
+
+
+- How to
+
+  - `install Arch Linux with full-disk encryption <doc/arch-install.sh>`_
+
+    Boot Loader or Manager: GRUB
+
+    Partition Scheme: UEFI/GPT
+
+    Encryption Scheme: LVM on LUKS using dm-crypt
+
+    Encrypted: ``/``, where there are ``/home`` and swap, and ``/boot``.
+
+    Unencrypted: ``/boot/efi``
 
 
 Bundled Packages
