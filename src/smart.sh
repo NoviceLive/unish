@@ -34,7 +34,7 @@ _command_not_found_handler() {
 unalias_if_exists cd
 
 cd() {
-    local LS_COUNT=35
+    local LS_COUNT=50
     if [[ $# -eq 1 && -f "${1}" ]]; then
         local correction="$(realpath "$(dirname "${1}")")"
         info "Correcting to ${correction}"
@@ -48,9 +48,11 @@ cd() {
     elif [[ -d .hg ]]; then
         hg status
     else
-        command ls -al --color=always | head -${LS_COUNT}
         local total=$(ls -a | wc -l)
-        info "Displayed first ${LS_COUNT} items of ${total} total"
+        info "Total ${total} items."
+        if [[ ${total} -lt ${LS_COUNT} ]]; then
+            command ls -a --color=always
+        fi
     fi
 }
 

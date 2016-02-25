@@ -92,6 +92,7 @@ log_simple "Exported UNISH to ${UNISH}."
 log_simple 'Starting Logging System...'
 
 source "$UNISH"/lib/unish/before_logging."${CURRENT_SHELL}"
+source "${UNISH}"/lib/color.sh
 source "$UNISH"/lib/logging.sh
 
 info 'Started Logging System.'

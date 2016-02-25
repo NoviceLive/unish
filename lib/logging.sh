@@ -107,11 +107,18 @@ done
 
 
 _log_real() {
+    local parent="${1}"
+    local message="${2}"
+    printf "to ${BYel}STDERR${RCol} from ${BBlu}%s${RCol}: %s\n" \
+           "${parent}" "${message}" 1>&2
+}
+
+_colorize_level_name() {
     local name="${1}"
-    local parent="${2}"
-    local message="${3}"
-    printf "%s to STDERR from %s: %s\n" \
-           "${name}" "${parent}" "${message}" 1>&2
+    local priv="${2}"
+    local index=$((priv + 1))
+    local schemes=(${BYel} ${BGre} ${BPur} ${BRed} ${BRed})
+    printf "${schemes[${index}]}%s${RCol} " "${name}" 1>&2
 }
 
 _log_generic() {
@@ -124,7 +131,8 @@ _log_generic() {
         if [[ -z "${parent}" ]]; then
             parent='interactive'
         fi
-        _log_real "${name}" "${parent}" "${message}"
+        _colorize_level_name "${name}" "${priv}"
+        _log_real "${parent}" "${message}"
     fi
 }
 
@@ -167,7 +175,8 @@ See Also: debug, warning, error, critical
         /usr/bin/env info "${@}"
         return 0
     fi
-    if [[ $LOG_LEVEL -le $INFO ]]; then
-        _log_real INFO "${parent}" "${*}"
+    if [[ $LOG_LEVEL -le ${INFO} ]]; then
+        _colorize_level_name "INFO" ${INFO}
+        _log_real "${parent}" "${*}"
     fi
 }
