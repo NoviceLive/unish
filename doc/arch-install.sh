@@ -1,3 +1,24 @@
+# Suggestion:
+# Read through and ensure that you feel nothing wrong,
+# i.e., you have no question on them.
+# before starting installation.
+
+# Related useful materials when in doubt.
+#
+# 1. ArchWiki
+#
+# dm-crypt/Encrypting an entire system
+# https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system
+#
+# 2. ArchLinux Installation Guide on Encrypted SSD
+#
+# http://danynativel.com/blog/2013/02/10/archlinux-installation-guide-on-encrypted-ssd/
+#
+# 3. Minimal instructions for installing arch linux on an UEFI system with full system encryption using dm-crypt and luks
+#
+# https://gist.github.com/mattiaslundberg/8620837
+
+
 # Now that we have booted the installation medium,
 # we are given a root shell.
 
@@ -56,6 +77,8 @@ parted /dev/sdb
 # (parted) mktable gpt
 # (parted) p
 # (parted) mkpart esp fat32 1mib 101mib
+# (parted) p
+# (parted) set boot 1 on
 # (parted) p
 # (parted) mkpart primary ext4 101mib 201mib
 # (parted) p
@@ -234,6 +257,9 @@ systemctl enable dhcpcd@enp4s0f2.service
 # I like `localhost' or `bogon',
 # which leak no information about myself.
 nano /etc/hostname
+
+# You may want to add your customized hostname in `/etc/hosts`.
+nano /etc/hosts
 
 
 # Set root password.
