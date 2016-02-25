@@ -86,6 +86,32 @@ parted /dev/sdb
 
 # Setup encryption using LVM on LUKS.
 # Setup LUKS.
+
+# Benchmarking helps you decide which algorithms
+# and key sizes to use.
+cryptsetup benchmark
+# Results from my notebook (not so bad).
+# # Tests are approximate using memory only (no storage IO).
+# PBKDF2-sha1       439838 iterations per second for 256-bit key
+# PBKDF2-sha256     571742 iterations per second for 256-bit key
+# PBKDF2-sha512     385505 iterations per second for 256-bit key
+# PBKDF2-ripemd160  263726 iterations per second for 256-bit key
+# PBKDF2-whirlpool  177845 iterations per second for 256-bit key
+# #  Algorithm | Key |  Encryption |  Decryption
+#      aes-cbc   128b   342.3 MiB/s  1650.5 MiB/s
+#  serpent-cbc   128b    56.6 MiB/s   225.1 MiB/s
+#  twofish-cbc   128b   139.1 MiB/s   266.4 MiB/s
+#      aes-cbc   256b   336.1 MiB/s  1237.0 MiB/s
+#  serpent-cbc   256b    65.1 MiB/s   225.8 MiB/s
+#  twofish-cbc   256b   140.7 MiB/s   266.3 MiB/s
+#      aes-xts   256b  1356.6 MiB/s  1360.4 MiB/s
+#  serpent-xts   256b   225.0 MiB/s   221.4 MiB/s
+#  twofish-xts   256b   258.8 MiB/s   261.8 MiB/s
+#      aes-xts   512b  1056.4 MiB/s  1066.3 MiB/s
+#  serpent-xts   512b   232.8 MiB/s   221.4 MiB/s
+#  twofish-xts   512b   260.0 MiB/s   261.6 MiB/s
+# cryptsetup benchmark  4.57s user 23.63s system 98% cpu 28.571 total
+
 cryptsetup --cipher aes-xts-plain64 --key-size 512 --hash sha512 \
            --iter-time 5000 --use-random luksFormat /dev/sda1
 cryptsetup open /dev/sda1 lvm
