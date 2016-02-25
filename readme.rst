@@ -103,7 +103,9 @@ but with Linux or in general with POSIX or UNIX.
 
     Encryption Scheme: LVM on LUKS using dm-crypt
 
-    Encrypted: ``/``, where there are ``/home`` and swap, and ``/boot``.
+    Encrypted: ``/``, where there are ``/home`` and swap.
+
+    Boot Partition: Encrypted on a removable disk.
 
     Unencrypted: ``/boot/efi``
 
