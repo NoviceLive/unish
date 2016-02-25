@@ -27,129 +27,6 @@ Check Bash script using shellcheck.
 }
 
 
-_hg_status_checker() {
-    if [[ -d '.hg' ]]; then
-        if [[ -n $(hg status) ]]; then
-            pwd && hg status
-        fi
-        if [[ -n $(hg summary | grep '^phases') ]]; then
-            pwd && hg summary
-        fi
-    fi
-}
-
-
-_git_status_checker() {
-    if [[ -d '.git' ]]; then
-        if [[ -n $(git status --porcelain) ]]; then
-            pwd && git status
-        fi
-        if [[ -n $(git log --branches --not --remotes) ]]; then
-            pwd && git log --branches --not --remotes
-        fi
-    fi
-}
-
-
-_make_ls_repo_name() { stdout "ls${1}"; }
-
-_repo_types=(hg git)
-
-for one in "${_repo_types[@]}"; do
-    debug "Creating function ls${one}..."
-    see_also=$(make_see_also "${one}" _make_ls_repo_name \
-            "${_repo_types[@]}")
-    eval "
-ls${one}() {
-    : \"
-Usage: ls${one} <dir>
-
-Check the status of ${one} repositories in the specified directory.
-
-See Also: ${see_also}
-\"
-    local dir
-    dir=\"\${1:-\$PWD}\"
-    find \"\${dir}\" -maxdepth 1 -type d | while read filename; do
-        debug \"\${filename}\"
-        (builtin cd \"\${filename}\" &&_${one}_status_checker)
-    done
-}
-"
-done
-
-
-alias lg='lsgit'
-alias lh='lshg'
-alias lr='lshg; lsgit'
-
-
-_git_repo_updater() {
-    git pull --recurse-submodules
-    if [[ -f .gitmodules ]]; then
-        git submodule init && git submodule update
-    fi
-}
-
-
-_hg_repo_updater() {
-    hg pull && hg update
-}
-
-
-_svn_repo_updater() {
-    svn update
-}
-
-
-_bzr_repo_updater() {
-    bzr pull
-}
-
-
-_up_repo_generic() {
-    local repos
-    if [[ $# -gt 1 ]]; then
-        repos=(${@:2})
-    else
-        repos=(*.$1)
-    fi
-    for one in "${repos[@]}"; do
-        printf '[%s] Updating %s\n' "${1}" "${one}"
-        (builtin cd "${one}" && _"${1}"_repo_updater)
-    done
-}
-
-
-_repo_types=(hg git svn bzr)
-
-_make_up_repo_name() { stdout "up${1}"; }
-
-for one in "${_repo_types[@]}"; do
-    debug "Creating function sum${one}..."
-    see_also=$(make_see_also "${one}" _make_up_repo_name \
-            "${_repo_types[@]}")
-    eval "
-up${one}() {
-    : \"
-Usage: up${one} <${one}-repo> <${one}-repo> ...
-
-Update the specified ${one} repositories.
-
-When used without parameters, it will update those
-found at the current working directory.
-
-See Also: ${see_also}
-\"
-    _up_repo_generic ${one} \"\$@\"
-}
-"
-done
-
-
-alias uprepo='upgit; uphg; upsvn; upbzr;'
-
-
 dog() {
     if [[ $# -ne 1 ]]; then
         printf '[x] %s\n' 'One argument for the file name to view!'
@@ -193,6 +70,16 @@ else
 fi
 
 addkey() {
+    : "
+Usage: addkey <key> ...
+
+Add keys to ssh-agent.
+Without an argument, it will try the following.
+
+~/.ssh/id_rsa-bitbucket
+~/.ssh/id_rsa-github
+~/.ssh/id_rsa-bandwagon
+"
     if [[ $# -ne 0 ]]; then
         keys=("$@")
     else
@@ -202,9 +89,8 @@ addkey() {
         source "$SSH_AGENT" > /dev/null 2>&1
         for one in "${keys[@]}"; do
             if [[ -f ${one} ]]; then
+                info "Adding key to ssh-agent: ${one}"
                 ssh-add "$one"
-            else
-                error "No such file: ${one}"
             fi
         done
         ssh-add -l
@@ -212,4 +98,9 @@ addkey() {
 }
 
 
-alias lskey='ssh-add -l'
+lskey() {
+    : "
+List keys managed by ssh-agent.
+"
+    ssh-add -l
+}

@@ -34,6 +34,9 @@ _command_not_found_handler() {
 unalias_if_exists cd
 
 cd() {
+    : "
+Smart cd.
+"
     local LS_COUNT=50
     if [[ $# -eq 1 && -f "${1}" ]]; then
         local correction="$(realpath "$(dirname "${1}")")"

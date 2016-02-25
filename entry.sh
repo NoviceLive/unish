@@ -17,9 +17,13 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-typeset -xr VERSION_STRING='Unish-0.0.1'
+source "${UNISH}"/lib/color.sh
 
-printf '%s\n\n' "This is ${VERSION_STRING}."
+
+typeset -xr VERSION_STRING="${BICya}Unish-0.0.1${RCol}"
+
+
+printf "This is ${VERSION_STRING}\n\n"
 
 
 log_simple() {
@@ -28,7 +32,7 @@ Usage: log_simple <message>
 
 Write a simple LOGGING message to STDERR.
 "
-    printf "LOGGING to STDERR: %s\n" "${*}" 1>&2
+    >&2 printf "${Cya}LOGGING${RCol} to ${BYel}STDERR${RCol}: ${*}\n"
 }
 
 
@@ -92,7 +96,6 @@ log_simple "Exported UNISH to ${UNISH}."
 log_simple 'Starting Logging System...'
 
 source "$UNISH"/lib/unish/before_logging."${CURRENT_SHELL}"
-source "${UNISH}"/lib/color.sh
 source "$UNISH"/lib/logging.sh
 
 info 'Started Logging System.'
@@ -136,14 +139,18 @@ for one in math str media file shellcoding; do
 done
 
 
-for one in dev smart misc; do
+for one in repo smart file dev misc; do
     source_if_exists "$UNISH"/src/$one.sh
 done
 
 info 'Started Unish Base.'
 
 
-export PATH=$PATH:$HOME/bin:$HOME/bin/lnk:$HOME/.local/bin
+# I often place binaries and symbolic links here.
+export PATH=$PATH:$HOME/bin:$HOME/bin/lnk
+
+# Stack installs binaries here.
+export PATH=$PATH:$HOME/.local/bin
 
 
 export VISUAL='emacs -nw'

@@ -20,7 +20,14 @@ Features
 
 - Logging Layer (Primitive)
 
-- Builtin Help Layer (Primitive)
+  I'm addicted to logs, and dream of writting fantastic ones,
+  which give me a feeling that my code is more of myself,
+  a human being,
+  rather than some strange pieces run inside a cold machine.
+
+  Because it's me that wrote it!
+
+- Built-in Help Layer (Primitive)
 
   Created by a previous Bash user
   who missed that handy ``help`` builtin
@@ -101,6 +108,56 @@ but with Linux or in general with POSIX or UNIX.
     Unencrypted: ``/boot/efi``
 
 
+Integrated Utilities
+--------------------
+
+Unish provides integration (wrapping)
+of some useful daily utilities,
+for example, ``ssh-agent`` and tmux_.
+
+- ``ssh-agent``
+
+  ``ssh-agent`` will be started if available when Unish is ready.
+
+  You can use ``addkey`` function to add keys.
+
+- tmux_
+
+  If Unish finds tmux_,
+  it will be started with the default session named ``main``.
+
+  ``a`` function can be used to attach to the most recent session,
+  or create a new session ``main`` if there is none.
+
+
+Major Functions Currently Available
+-----------------------------------
+
+- ``lsgit`` and ``upgit``
+
+  And variants, ``lshg``, ``uphg``, etc.
+  See ``help lsgit`` and ``help upgit``.
+
+- ``lsmd5`` and ``rmmd5``
+
+  And its siblings, ``lssha1``, ``lssha224``, ``lssha256``,
+  ``lssha383``, ``lssha512`` and the corresponding ``rm`` versions.
+
+  See ``help lsmd5`` for more.
+
+- ``catmp3``
+
+  And its brothers, ``catflv``, ``catmp4``, etc. See ``help catmp3``.
+
+  It requires ffmpeg_.
+
+- ``summp3``
+
+  And its brothers, ``sumflv``, ``summp4``, etc. See ``help summp3``.
+
+  It requires ffmpeg_.
+
+
 Bundled Packages
 ----------------
 
@@ -128,3 +185,5 @@ or (at your option) any later version.
 
 .. _smartcd: https://github.com/cxreg/smartcd
 .. _autoenv: https://github.com/kennethreitz/autoenv
+.. _tmux: https://tmux.github.io/
+.. _ffmpeg: https://www.ffmpeg.org/
