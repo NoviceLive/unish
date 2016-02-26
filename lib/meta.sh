@@ -131,14 +131,17 @@ $ help pwd
     for one in "$@"; do
         if is_builtin "${one}"; then
             debug "${one} is builtin"
-            if [[ CURRENT_SHELL == "zsh" ]]; then
+            if [[ ${CURRENT_SHELL} == "zsh" ]]; then
+                debug "Running 'run-help' for Zsh"
                 run-help "${one}"
-            elif [[ CURRENT_SHELL == "fish" ]]; then
+            elif [[ ${CURRENT_SHELL} == "bash" ]]; then
+                debug "Running 'builtin help' for Bash"
                 builtin help "${one}"
             fi
         elif is_func "${one}"; then
             info ">>> Help on function: ${one} <<<"
-            printf '%s\n\n' "$(_get_docs "$(_func_decl "${one}")")"
+            printf '%s\n\n' "$(_get_docs "$(_func_decl "${one}")")" \
+                   | less -FXR
         else
             error "${one} is not a function"
         fi
