@@ -144,12 +144,17 @@ Smart Updater.
         return 0
     fi
 
-    if exists pacman; then
+    local name
+    name=$(get_distro)
+    if [[ ${name} == "Arch" ]]; then
         info "Performing system upgrade for Arch Linux"
         sudo pacman --sync --refresh --sysupgrade
-    elif exists apt-get; then
-        info "Performing system upgrade Debian Linux"
+    elif [[ ${name} == "Debian" ]]; then
+        info "Performing system upgrade for Debian Linux"
         sudo apt-get update && sudo apt-get upgrade
+    elif exists dnf; then
+        info "Performing system upgrade for Fedora Linux"
+        sudo dnf upgrade
     fi
 }
 

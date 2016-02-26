@@ -17,6 +17,23 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+exists() {
+    : "
+Usage: exists <command>
+
+Determine whether the command is available or not.
+
+Examples:
+
+$ exists exists
+$ exists which
+$ exists pygmentize
+
+"
+    command which "$1" > /dev/null 2>&1
+}
+
+
 stdout() {
     : "
 Usage: stdout <message>
@@ -28,13 +45,28 @@ Write a message to STDOUT appending a newline.
 }
 
 
-exists() {
+get_distro() {
     : "
-Usage: exists <command>
+Get the name of the distribution as returned by 'lsb_release -si'.
 
-Determine whether the command is available or not.
+Examples:
+
+$ get_distro
+Arch
 "
-    command env which "$1" > /dev/null 2>&1
+    local name
+    if exists lsb_release; then
+        debug "Using lsb_release"
+        printf "$(lsb_release --short --id)"
+    else
+        debug "Using special files"
+        if [[ -f /etc/arch-release ]]; then
+            name="Arch"
+        elif [[ -f /etc/debian_version ]]; then
+            name="Debian"
+        fi
+    fi
+    stdout "${name}"
 }
 
 

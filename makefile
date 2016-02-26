@@ -45,7 +45,7 @@ bash:
 ssh:
 	mkdir -p ~/.ssh
 	cat ${ETC}/ssh.conf \
-		../../private/2015.hg/private.ssh > ~/.ssh/config && \
+		../../private/2016.hg/private.ssh > ~/.ssh/config && \
 		chmod 0600 ~/.ssh/config
 
 
