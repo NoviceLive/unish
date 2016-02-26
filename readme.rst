@@ -2,10 +2,10 @@ Unish - One Configuration To Rule Them All
 ==========================================
 
 
-Hopefully it will come true in ten years. :)
+Hopefully it will eventually come true in ten years. :)
 
 
-Current State: Primitive.
+Current State: Primitive and Under Heavy Development.
 
 
 Features
@@ -135,12 +135,25 @@ for example, ``ssh-agent`` and tmux_.
 Major Functions Currently Available
 -----------------------------------
 
+- ``dog``
+
+  Colorized ``cat`` (Actually ``less``) if applicable.
+
+  This requires highlight_ or pygmentize_.
+
 - ``lsgit`` and ``upgit``
+
+  Check the status of git repositories in the specified directory.
 
   And variants, ``lshg``, ``uphg``, etc.
   See ``help lsgit`` and ``help upgit``.
 
 - ``lsmd5`` and ``rmmd5``
+
+  List the md5sum of files (but without filenames)
+  in the specified directory.
+
+  Remove the files with the specified md5sum.
 
   And its siblings, ``lssha1``, ``lssha224``, ``lssha256``,
   ``lssha383``, ``lssha512`` and the corresponding ``rm`` versions.
@@ -149,11 +162,15 @@ Major Functions Currently Available
 
 - ``catmp3``
 
+  Concatenate mp3 files in the specified directory.
+
   And its brothers, ``catflv``, ``catmp4``, etc. See ``help catmp3``.
 
   It requires ffmpeg_.
 
 - ``summp3``
+
+  Calculate total duration of mp3 files in the specified paths.
 
   And its brothers, ``sumflv``, ``summp4``, etc. See ``help summp3``.
 
@@ -189,3 +206,5 @@ or (at your option) any later version.
 .. _autoenv: https://github.com/kennethreitz/autoenv
 .. _tmux: https://tmux.github.io/
 .. _ffmpeg: https://www.ffmpeg.org/
+.. _highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
+.. _pygmentize: http://pygments.org/

@@ -19,30 +19,40 @@
 
 bashcheck() {
     : "
-Usage: bashcheck <options>
+Usage: bashcheck <options> <arguments>
 
 Check Bash script using shellcheck.
+
+With the following excluded.
+
+SC1090: Can't follow non-constant source. Use a directive to specify location.
 "
     shellcheck "${@}" --shell=bash --exclude=SC1090
 }
 
 
 dog() {
+    : "
+Colorized cat.
+
+Usage: dog <file>
+"
     if [[ $# -ne 1 ]]; then
-        printf '[x] %s\n' 'One argument for the file name to view!'
+        error "One argument for the file name to view!"
         return 1
     fi
-    highlight -O xterm256 --style breeze --line-numbers "$1" \
-        | less -FXR
-}
-
-
-dog.py() {
-    if [[ $# -ne 1 ]]; then
-        printf '[x] %s\n' 'One argument for the file name to view!'
+    if exists highlight; then
+        debug "Using highlight"
+        highlight -O xterm256 --style breeze --line-numbers "$1" \
+            | less -FXR
+    elif exists pygmentize; then
+        debug "Using pygmentize"
+        pygmentize -g -O style=colorful,linenos=1 "$1" | less -FXR
+    else
+        error "No highlighter available"
+        info "Try installing 'highlight' or 'pygmentize'"
         return 1
     fi
-    pygmentize -g -O style=colorful,linenos=1 "$1" | less -FXR
 }
 
 
@@ -71,7 +81,7 @@ fi
 
 addkey() {
     : "
-Usage: addkey <key> ...
+Usage: addkey [<key> <key> ...]
 
 Add keys to ssh-agent.
 Without an argument, it will try the following.
@@ -83,6 +93,7 @@ Without an argument, it will try the following.
     if [[ $# -ne 0 ]]; then
         keys=("$@")
     else
+        # TODO: Hardcoded defaults.
         keys=($HOME/.ssh/id_rsa-{bitbucket,github,bandwagon})
     fi
     if pgrep ssh-agent > /dev/null 2>&1; then
@@ -101,6 +112,8 @@ Without an argument, it will try the following.
 lskey() {
     : "
 List keys managed by ssh-agent.
+
+Usage: lskey
 "
     ssh-add -l
 }
