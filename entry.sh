@@ -196,12 +196,14 @@ export EDITOR="$VISUAL"
 ulimit -c unlimited
 
 
-info 'Starting Plugins...'
-
-source "${UNISH}/plugins/common.sh"
-source "${UNISH}/plugins/${CURRENT_SHELL}.${CURRENT_SHELL}"
-
-info 'Started Plugins.'
+if [[ DISABLE_UNISH_PLUGINS -eq 1 ]]; then
+    info 'Plugins disabled'
+else
+    info 'Starting Plugins...'
+    source "${UNISH}/plugins/common.sh"
+    source "${UNISH}/plugins/${CURRENT_SHELL}.${CURRENT_SHELL}"
+    info 'Started Plugins.'
+fi
 
 
 source "${UNISH}"/final.sh

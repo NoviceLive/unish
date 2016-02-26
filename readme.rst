@@ -61,6 +61,13 @@ Installation
 
   Backup your original ~/.zshrc or ~/.bashrc if necessary.
 
+- Alternatively, you can just ``source`` the ``entry.sh`` of Unish.
+
+  Both Zsh_ and Bash_ are supported.
+
+  Suggestion: use ``export DISABLE_UNISH_PLUGINS=1``
+  before you source to avoid unintentional side effects.
+
 - Happy Tweaking!
 
 
@@ -76,7 +83,7 @@ Take ``cd`` for instance, we think it ``smart`` when it:
 
 - runs ``git status`` or ``hg status`` after ``cd``
 
-  if it knows that the directory are Git or Mercurial repositories.
+  if it knows that the directory is a Git or Mercurial repository.
 
 - displays files up to a default count in the given directory
 
@@ -97,7 +104,9 @@ but with Linux or in general with POSIX or UNIX.
 
   - `install Arch Linux with full-disk encryption <doc/arch-install.sh>`_
 
-    Boot Loader or Manager: GRUB
+    Boot Loader or Manager: GRUB_
+
+    Partition Editor: Parted_
 
     Partition Scheme: UEFI/GPT
 
@@ -143,17 +152,20 @@ Major Functions Currently Available
 
 - ``lsgit`` and ``upgit``
 
-  Check the status of git repositories in the specified directory.
+  lsgit: Check the status of git repositories
+  in the specified directory.
+
+  upgit: Update the specified git repositories.
 
   And variants, ``lshg``, ``uphg``, etc.
   See ``help lsgit`` and ``help upgit``.
 
 - ``lsmd5`` and ``rmmd5``
 
-  List the md5sum of files (but without filenames)
+  lsmd5: List the md5sum of files (but without filenames)
   in the specified directory.
 
-  Remove the files with the specified md5sum.
+  rmmd5: Remove the files with the specified md5sum.
 
   And its siblings, ``lssha1``, ``lssha224``, ``lssha256``,
   ``lssha383``, ``lssha512`` and the corresponding ``rm`` versions.
@@ -208,3 +220,7 @@ or (at your option) any later version.
 .. _ffmpeg: https://www.ffmpeg.org/
 .. _highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
 .. _pygmentize: http://pygments.org/
+.. _GRUB: http://www.gnu.org/software/grub/
+.. _Parted: http://www.gnu.org/software/parted/
+.. _Zsh: http://www.zsh.org/
+.. _Bash: http://www.gnu.org/software/bash/
