@@ -120,21 +120,27 @@ help() {
 Usage: help <function_name>
 
 Show the documentation on the specified function.
+
+Examples:
+
+$ help help
+$ help cd
+$ help pwd
 "
     local one
     for one in "$@"; do
-        debug "${one}"
         if is_builtin "${one}"; then
             debug "${one} is builtin"
-            run-help "${one}"
-            # bash -c "help ${one} 2>/dev/null \
-            #     || printf 'Not found in Bash: %s\n' ${one}" \
-            #     | less -FX
+            if [[ CURRENT_SHELL == "zsh" ]]; then
+                run-help "${one}"
+            elif [[ CURRENT_SHELL == "fish" ]]; then
+                builtin help "${one}"
+            fi
         elif is_func "${one}"; then
-            printf '>>> Help on function: %s <<<\n' "${one}"
+            info ">>> Help on function: ${one} <<<"
             printf '%s\n\n' "$(_get_docs "$(_func_decl "${one}")")"
         else
-            printf '%s is not a function\n' "${one}"
+            error "${one} is not a function"
         fi
     done
 }
