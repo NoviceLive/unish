@@ -150,7 +150,7 @@ mount /dev/mapper/vg0-home /mnt/home
 swapon /dev/mappter/vg0-swap
 
 mkdir /mnt/boot
-mount /dev/mappter/boot /mnt/boot
+mount /dev/mapper/boot /mnt/boot
 mkdir /mnt/boot/efi
 mount /dev/sdb1 /mnt/boot/efi
 
