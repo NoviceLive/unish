@@ -39,7 +39,8 @@ Smart cd.
 "
     local LS_COUNT=50
     if [[ $# -eq 1 && -f "${1}" ]]; then
-        local correction="$(realpath "$(dirname "${1}")")"
+        local correction
+        correction="$(realpath "$(dirname "${1}")")"
         info "Correcting to ${correction}"
         builtin cd "${correction}"
     else
@@ -51,11 +52,29 @@ Smart cd.
     elif [[ -d .hg ]]; then
         hg status
     else
-        local total=$(ls -a | wc -l)
+        local total
+        total=$(ls -a | wc -l)
         info "Total ${total} items."
         if [[ ${total} -lt ${LS_COUNT} ]]; then
             command ls -a --color=always
         fi
+    fi
+}
+
+
+unalias_if_exists ls
+
+ls() {
+    : "
+Usage: ls <options> <arguments>
+
+Pass control to 'less' if there is only one argument which is a file,
+and otherwise pass control to the real 'command ls'.
+"
+    if [[ $# -eq 1 && -f "${1}" ]]; then
+        less -FX "${1}"
+    else
+        command ls --color=auto "${@}"
     fi
 }
 
@@ -98,19 +117,36 @@ fi
 unalias_if_exists u
 
 u() {
-    local one
+    : "
+Smart Updater.
+"
+    local one flag
+    flag=0
+    # TODO: We may not like three loops.
     for one in ./*.git; do
+        flag=1
+        info "Updating repository: ${one}"
         upgit "${one}"
     done
     for one in ./*.hg; do
+        flag=1
+        info "Updating repository: ${one}"
         uphg "${one}"
     done
     for one in ./*.svn; do
+        flag=1
+        info "Updating repository: ${one}"
         upsvn "${one}"
     done
-    return 0
 
-    sudo pacman --sync --refresh --refresh --sysupgrade
+    if [[ -n ${flag} ]]; then
+        return 0
+    fi
+
+    if exists pacman; then
+        info "Performing Arch Linux system upgrade"
+        sudo pacman --sync --refresh --sysupgrade
+    fi
 }
 
 
@@ -143,24 +179,6 @@ _repo_handler() {
         git "$@"
     else
         return 233
-    fi
-}
-
-
-unalias_if_exists ls
-
-ls() {
-    : "
-Usage: ls <name> <options>
-
-Pass control to 'less' if the first argument is a file,
-and otherwise pass control to the real 'ls'.
-"
-    local name="${1}"
-    if [[ -f "${name}" ]]; then
-        less -FX "${name}"
-    else
-        /usr/bin/env ls --color=auto "${@}"
     fi
 }
 

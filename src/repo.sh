@@ -71,7 +71,12 @@ done
 
 alias lg='lsgit'
 alias lh='lshg'
-alias lr='lshg; lsgit'
+
+
+lsrepo() {
+    lshg "${1}"
+    lsgit "${1}"
+}
 
 
 _git_repo_updater() {
@@ -105,7 +110,7 @@ _up_repo_generic() {
         repos=(*.$1)
     fi
     for one in "${repos[@]}"; do
-        printf '[%s] Updating %s\n' "${1}" "${one}"
+        info "[${1}] Updating ${one}"
         (builtin cd "${one}" && _"${1}"_repo_updater)
     done
 }
