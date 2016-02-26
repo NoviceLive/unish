@@ -139,13 +139,17 @@ Smart Updater.
         upsvn "${one}"
     done
 
-    if [[ -n ${flag} ]]; then
+    if [[ ${flag} -eq 1 ]]; then
+        info "Updated some repositories"
         return 0
     fi
 
     if exists pacman; then
-        info "Performing Arch Linux system upgrade"
+        info "Performing system upgrade for Arch Linux"
         sudo pacman --sync --refresh --sysupgrade
+    elif exists apt-get; then
+        info "Performing system upgrade Debian Linux"
+        sudo apt-get update && sudo apt-get upgrade
     fi
 }
 
