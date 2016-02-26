@@ -17,9 +17,14 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-# alias prm='sudo rm -rf build dist *.egg-info'
+rmtmp() {
+    : "
+Delete some temporary files.
 
-prm() {
+Usage: rmtmp
+
+Included files: *.pyc, __pycache__.
+"
     find -name '*.pyc' -delete && find -name '__pycache__' -delete
 }
 
@@ -37,7 +42,7 @@ cd() {
     : "
 Smart cd.
 "
-    local LS_COUNT=50
+    local LS_COUNT=150
     if [[ $# -eq 1 && -f "${1}" ]]; then
         local correction
         correction="$(realpath "$(dirname "${1}")")"
@@ -54,7 +59,7 @@ Smart cd.
     else
         local total
         total=$(ls -a | wc -l)
-        info "Total ${total} items."
+        info "${total} items in total."
         if [[ ${total} -lt ${LS_COUNT} ]]; then
             command ls -a --color=always
         fi
@@ -166,7 +171,7 @@ g() {
         git "$@"
         return 0
     fi
-    _repo_handler "$@" || lsgit
+    _repo_handler "$@"
 }
 
 
@@ -177,7 +182,7 @@ h() {
         hg "$@"
         return 0
     fi
-    _repo_handler "$@" || lshg
+    _repo_handler "$@"
 }
 
 
@@ -201,7 +206,7 @@ Usage: e <name> <options>
 Open an existing file using Emacs or create a new one using t.
 "
     local name="${1}"
-    local templator=ttouch
+    local templator=tm
     if [[ -f "${name}" ]]
     then
         emacs "${name}" &
