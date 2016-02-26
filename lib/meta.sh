@@ -62,7 +62,8 @@ Usage: unalias_if_exists <name>
 Remove the alias if it exists.
 "
     local name="${1}"
-    { unalias "${name}" 2>&1; } > /dev/null
+    { unalias "${name}" 2>&1; } > /dev/null && \
+        warning "Unaliased: ${name}"
 }
 
 

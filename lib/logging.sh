@@ -142,7 +142,6 @@ for one in "${_log_levels[@]}"; do
                              "${_log_levels[@]}")
     if [[ $one != "INFO" ]]; then
         name=$(lower "${one}")
-        log_simple "Creating function ${name}..."
         eval "
 $name() {
     : \"
