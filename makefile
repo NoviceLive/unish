@@ -42,6 +42,10 @@ bash:
 # # # # # # # # # # Static # # # # # # # # # #
 
 
+git:
+	ln -srf ${ETC}/git.conf ~/.gitconfig
+
+
 ssh:
 	mkdir -p ~/.ssh
 	cat ${ETC}/ssh.conf \
@@ -70,11 +74,6 @@ ghci:
 # # # # # # # # # # Dynamic # # # # # # # # # #
 
 
-# Warning: You do have to customize some variables.
-git:
-	${BIN}/git.sh
-
-
 ruby:
 	${BIN}/ruby.sh
 
@@ -95,6 +94,7 @@ shell:
 
 
 conf:
+	make git
 	make ssh
 	make tmux
 	make hg
@@ -103,6 +103,5 @@ conf:
 
 
 xconf:
-	make git
 	make ruby
 	make gnome
