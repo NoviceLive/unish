@@ -1,8 +1,10 @@
 #!/bin/false
 
 
-# Do not execute!
-exit 233
+# Do not execute this line and this non-script!
+# It's used to prevent unintentional execution of this non-script,
+# which confusingly ends in `*.sh'.
+exit 1
 
 
 # Suggestion:
