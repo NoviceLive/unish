@@ -21,11 +21,9 @@ ETC = etc
 BIN = bin
 
 default:
-	make fish
-	make zsh
-	make bash
-	make misc
-	make xconf
+	# Choose what you want and do not simply `make',
+	# since it may break your existing configuration.
+	# And because this Makefile isn't well-written :(.
 
 
 fish:
@@ -41,23 +39,70 @@ bash:
 	ln -srf entry.sh ~/.bashrc
 
 
-misc:
+# # # # # # # # # # Static # # # # # # # # # #
+
+
+ssh:
 	mkdir -p ~/.ssh
 	cat ${ETC}/ssh.conf \
 		../../private/2015.hg/private.ssh > ~/.ssh/config && \
 		chmod 0600 ~/.ssh/config
 
+
+tmux:
 	ln -srf ${ETC}/tmux.conf ~/.tmux.conf
 
+
+hg:
 	ln -srf ${ETC}/hgrc.conf ~/.hgrc
 
+
+stack:
 	mkdir -p ~/.stack
 	ln -srf ${ETC}/config.yaml ~/.stack/config.yaml
 
+
+ghci:
 	mkdir -p ~/.ghc
 	ln -srf ${ETC}/ghci.conf ~/.ghc/ghci.conf
 
 
-xconf:
+# # # # # # # # # # Dynamic # # # # # # # # # #
+
+
+# Warning: You do have to customize some variables.
+git:
 	${BIN}/git.sh
+
+
+ruby:
 	${BIN}/ruby.sh
+
+
+gnome:
+	${BIN}/gnome.sh
+
+
+# # # # # # # # # # Shortcuts # # # # # # # # # #
+# Warning:
+# Don't use them unless you really want to get messed up with me.
+
+
+shell:
+	make fish
+	make zsh
+	make bash
+
+
+conf:
+	make ssh
+	make tmux
+	make hg
+	make stack
+	make ghci
+
+
+xconf:
+	make git
+	make ruby
+	make gnome
