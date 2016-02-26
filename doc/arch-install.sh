@@ -1,6 +1,10 @@
 #!/bin/false
 
 
+# Do not execute!
+exit 233
+
+
 # Suggestion:
 # Read through and ensure that you feel nothing wrong,
 # i.e., you have no question on them.
