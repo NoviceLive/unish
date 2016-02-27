@@ -17,6 +17,20 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+mkinc() {
+    local dir="${1:-$PWD}"
+    debug "Searching for headers in: ${dir}"
+    find "${dir}" -type f -name '*.h' | while read -r filename; do
+        stdout "# include <$(relative_to "${filename}" "${dir}")>"
+    done
+}
+
+
+cuddle() {
+    perl -i -pe "s/(?<=\(\))\n/ /g" "${@}"
+}
+
+
 bashcheck() {
     : "
 Usage: bashcheck <options> <arguments>

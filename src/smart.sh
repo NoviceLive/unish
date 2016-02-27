@@ -58,7 +58,7 @@ Smart cd.
         hg status
     else
         local total
-        total=$(ls -a | wc -l)
+        total=$(count_items)
         info "${total} items in total."
         if [[ ${total} -lt ${LS_COUNT} ]]; then
             command ls -a --color=always
@@ -167,7 +167,11 @@ Smart Updater.
 unalias_if_exists g
 
 g() {
+    : "
+Smart Git.
+"
     if [[ "$1" == "cl" || "$1" == "i" || "$1" == "h" ]]; then
+        debug "Special handling of Git: cl, i, h"
         git "$@"
         return 0
     fi
@@ -178,7 +182,11 @@ g() {
 unalias_if_exists h
 
 h() {
+    : "
+Smart Mercurial.
+"
     if [[ "$1" == "cl" || "$1" == "i" || "$1" == "h" ]]; then
+        debug "Special handling of Mercurial: cl, i, h"
         hg "$@"
         return 0
     fi
@@ -188,11 +196,14 @@ h() {
 
 _repo_handler() {
     if hg status > /dev/null 2>&1; then
+        info "Transferring control to Mercurial"
         hg "$@"
     elif git status > /dev/null 2>&1; then
+        info "Transferring control to Git"
         git "$@"
     else
-        return 233
+        error "Not a Mercurial nor Git repository"
+        return 1
     fi
 }
 
@@ -201,9 +212,11 @@ unalias_if_exists e
 
 e() {
     : "
+Smart Emacs.
+
 Usage: e <name> <options>
 
-Open an existing file using Emacs or create a new one using t.
+Open an existing file using Emacs or create a new one using tm.
 "
     local name="${1}"
     local templator=tm

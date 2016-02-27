@@ -17,6 +17,19 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+count_items() {
+    : "
+Display item count in the given or current working directory.
+
+Usage: lsc [<direcotry>]
+"
+    local directory=${1:-${PWD}}
+    local count
+    count=$(find "${directory}" -maxdepth 1 | wc -l)
+    stdout "$((count + 1))" # Add one for `..' to emulate `ls -a'.
+}
+
+
 exists() {
     : "
 Usage: exists <command>
@@ -57,7 +70,7 @@ Arch
     local name
     if exists lsb_release; then
         debug "Using lsb_release"
-        printf "$(lsb_release --short --id)"
+        stdout "$(lsb_release --short --id)"
     else
         debug "Using special files"
         if [[ -f /etc/arch-release ]]; then

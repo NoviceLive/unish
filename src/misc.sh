@@ -18,12 +18,22 @@
 
 
 aurpkg() {
+    : "
+Download PKGBUILD from AUR and build them.
+
+Usage: aurpkg <package> <package> ...
+
+Examples:
+
+$ aurpkg package-query
+$ aurpkg yaourt
+"
     local base='https://aur.archlinux.org/cgit/aur.git/snapshot'
     local name
     for name in "${@}"; do
         local url="${base}/${name}.tar.gz"
         info "Downloading ${url}..."
-        wget ${url} && tar -xzf "${name}.tar.gz" && \
+        wget "${url}" && tar -xzf "${name}.tar.gz" && \
             cd "${name}" && makepkg -si
     done
 }
@@ -108,11 +118,6 @@ mkcd() {
 }
 
 
-lsc() {
-    ls | wc -l
-}
-
-
 thosts() {
     if [[ -f /etc/hosts-on-proxy ]]; then
         sudo mv /etc/hosts /etc/hosts-no-proxy \
@@ -139,21 +144,9 @@ utf8all() {
 }
 
 
-mkinc() {
-    local dir="${1:-$PWD}"
-    debug "${dir}"
-    find "${dir}" -type f -name '*.sh' | while read -r filename; do
-        printf '# include <%s>\n' \
-               "$(relative_to "${filename}" "${dir}")"
-    done
-}
-
-
-alias cuddle='perl -i -pe "s/(?<=\(\))\n/ /g"'
-
-
 alias lt='tmux list-sessions'
 alias ks='tmux kill-server'
+alias lsc='count_items'
 
 alias sudo='sudo '
 alias ee='echo $?'

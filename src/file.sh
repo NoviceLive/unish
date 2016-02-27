@@ -65,7 +65,7 @@ done
 
 _ls_hash_generic() {
     local alg="${1}"
-    local dir="${2:-$PWD}"
+    local dir=${2:-${PWD}}
     find "${dir}" -maxdepth 1 -type f -exec \
          sh -c '"${2}" "${1}" | cut -d" " -f1' _ {} "${alg}" \; \
         | sort | tr '\n' ' '
