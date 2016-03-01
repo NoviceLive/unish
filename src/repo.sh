@@ -82,7 +82,7 @@ lsrepo() {
 _git_repo_updater() {
     git pull --recurse-submodules
     if [[ -f .gitmodules ]]; then
-        git submodule init && git submodule update
+        git submodule update
     fi
 }
 

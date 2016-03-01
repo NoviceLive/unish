@@ -27,7 +27,32 @@ mkinc() {
 
 
 cuddle() {
+    : "
+Cuddle brackets.
+
+Usage: cuddle <file> <file> ...
+"
     perl -i -pe "s/(?<=\(\))\n/ /g" "${@}"
+}
+
+
+mdlink() {
+    : "
+List Markdown links in files.
+
+Usage: mdlink <file> <file> ...
+"
+    grep -oP '\*\s\[.+?\]\(.+?\)' "${@}"
+}
+
+
+lssc() {
+    : "
+List syscall definitions in files.
+
+Usage: lssc <file> <file> ...
+"
+    grep -zoP '(?s)SYSCALL_DEFINE\d\(.+?(?=[#{])' "${@}"
 }
 
 
