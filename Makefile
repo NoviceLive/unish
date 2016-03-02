@@ -71,6 +71,10 @@ ghci:
 	ln -srf ${ETC}/ghci.conf ~/.ghc/ghci.conf
 
 
+gdb:
+	ln -srf ${ETC}/gdb.conf ~/.gdbinit
+
+
 # # # # # # # # # # Dynamic # # # # # # # # # #
 
 
@@ -100,6 +104,7 @@ conf:
 	make hg
 	make stack
 	make ghci
+	make gdb
 
 
 xconf:

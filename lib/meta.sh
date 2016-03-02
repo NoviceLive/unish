@@ -87,14 +87,14 @@ source_if_exists() {
     : "
 Usage: source_if_exists <name>
 
-Source the file if it exists.
+Source the file if it exists, used for optional files.
 "
     local name="${1}"
     if [[ -f "${name}" ]]; then
-        info "Sourcing ${name}"
+        debug "Sourcing ${name}"
         source "${name}"
     else
-        error "No such file: ${name}"
+        debug "No such file: ${name}"
         return 1
     fi
 }
