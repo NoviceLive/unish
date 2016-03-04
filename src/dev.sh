@@ -95,7 +95,7 @@ Usage: dog <file>
 }
 
 
-SSH_AGENT="$HOME/.ssh/ssh_agent"
+SSH_AGENT="$HOME/.ssh/agent"
 
 _start_ssh_agent() {
     mkdir -p ~/.ssh

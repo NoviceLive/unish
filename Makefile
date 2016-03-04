@@ -48,9 +48,10 @@ git:
 
 ssh:
 	mkdir -p ~/.ssh
-	cat ${ETC}/ssh.conf \
-		../../private/2016.hg/private.ssh > ~/.ssh/config && \
-		chmod 0600 ~/.ssh/config
+	cp ${ETC}/ssh.conf ~/.ssh/config
+	# cat ${ETC}/ssh.conf \
+	# 	../../private/2016.hg/private.ssh > ~/.ssh/config && \
+	# 	chmod 0600 ~/.ssh/config
 
 
 tmux:
@@ -84,6 +85,10 @@ ruby:
 
 gnome:
 	${BIN}/gnome.sh
+
+
+github:
+	${BIN}/github.sh
 
 
 # # # # # # # # # # Shortcuts # # # # # # # # # #

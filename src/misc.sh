@@ -34,7 +34,7 @@ $ aurpkg yaourt
         local url="${base}/${name}.tar.gz"
         info "Downloading ${url}..."
         wget "${url}" && tar -xzf "${name}.tar.gz" && \
-            cd "${name}" && makepkg -si
+            (builtin cd "${name}" && makepkg -si)
     done
 }
 
