@@ -76,6 +76,11 @@ gdb:
 	ln -srf ${ETC}/gdb.conf ~/.gdbinit
 
 
+gtk:
+	mkdir -p ~/.config/gtk-3.0
+	ln -srf ${ETC}/gtk.conf ~/.config/gtk-3.0/settings.ini
+
+
 # # # # # # # # # # Dynamic # # # # # # # # # #
 
 
