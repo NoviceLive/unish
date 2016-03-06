@@ -19,6 +19,8 @@ repos=(
     man2pdf.git
     simple-typing-game.git
     grade-management-system.git
+    lost-sdk.git
+    paper-translation.git
 )
 
 

@@ -95,6 +95,9 @@ gnome:
 github:
 	${BIN}/github.sh
 
+arch:
+	sudo ${BIN}/arch.sh ${ETC}/pkgs.txt
+
 
 # # # # # # # # # # Shortcuts # # # # # # # # # #
 # Warning:

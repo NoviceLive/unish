@@ -1,0 +1,15 @@
+wqy-microhei ibus-libpinyin
+firefox flashplugin
+shadowsocks privoxy openssh
+git mercurial subversion
+emacs vim
+tmux python-virtualenvwrapper xclip wget
+virtualbox virtualbox-guest-iso virtualbox-host-dkms
+dkms linux-headers
+qemu qemu-arch-extra
+vlc avidemux-cli avidemux-gtk audacity
+htop iotop lsof strace gdb rlwrap fish
+gimp texlive-core libreoffice-fresh
+ghc stack shellcheck pandoc
+python-pip python2-pip scala clojure racket
+python-click python2-click python-markdown python2-markdown python-beautifulsoup4 python2-beautifulsoup4
