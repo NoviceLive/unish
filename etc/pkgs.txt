@@ -1,15 +1,13 @@
 wqy-microhei ibus-libpinyin
-firefox flashplugin
-shadowsocks privoxy openssh
-git mercurial subversion
-emacs vim
+firefox flashplugin shadowsocks privoxy openssh
+emacs vim git mercurial subversion
 tmux python-virtualenvwrapper xclip wget
-virtualbox virtualbox-guest-iso virtualbox-host-dkms
-dkms linux-headers
-qemu qemu-arch-extra
+virtualbox virtualbox-guest-iso virtualbox-host-dkms dkms linux-headers qemu qemu-arch-extra
 vlc avidemux-cli avidemux-gtk audacity
 htop iotop lsof strace gdb rlwrap fish
 gimp texlive-core libreoffice-fresh
-ghc stack shellcheck pandoc
-python-pip python2-pip scala clojure racket
+ghc stack shellcheck pandoc python-pip python2-pip scala clojure racket
 python-click python2-click python-markdown python2-markdown python-beautifulsoup4 python2-beautifulsoup4
+python-colorama python2-colorama python-ply python2-ply python-pyperclip python2-pyperclip
+python-tox python2-tox python-nose python2-nose
+scons cmake

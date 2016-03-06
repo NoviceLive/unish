@@ -8,6 +8,32 @@ Hopefully it will eventually come true in ten years. :)
 Current State: Primitive and Under Heavy Development.
 
 
+Documentation
+=============
+
+Some might not be related with Unish,
+but with Linux or in general with POSIX or UNIX.
+
+
+- How to
+
+  - `install Arch Linux with full-disk encryption <doc/arch-install.sh>`_
+
+    Boot Loader or Manager: GRUB_
+
+    Partition Editor: Parted_
+
+    Partition Scheme: UEFI/GPT
+
+    Encryption Scheme: LVM on LUKS using dm-crypt
+
+    Encrypted: ``/``, where there are ``/home`` and swap.
+
+    Boot Partition: Encrypted on a removable disk.
+
+    Unencrypted: ``/boot/efi``
+
+
 Features
 --------
 
@@ -91,32 +117,6 @@ Take ``cd`` for instance, we think it ``smart`` when it:
 
 As matter of fact, we are able to add smartness further,
 for instance, integrating autoenv_ or smartcd_.
-
-
-Documentation
-=============
-
-Some might not be related with Unish,
-but with Linux or in general with POSIX or UNIX.
-
-
-- How to
-
-  - `install Arch Linux with full-disk encryption <doc/arch-install.sh>`_
-
-    Boot Loader or Manager: GRUB_
-
-    Partition Editor: Parted_
-
-    Partition Scheme: UEFI/GPT
-
-    Encryption Scheme: LVM on LUKS using dm-crypt
-
-    Encrypted: ``/``, where there are ``/home`` and swap.
-
-    Boot Partition: Encrypted on a removable disk.
-
-    Unencrypted: ``/boot/efi``
 
 
 Integrated Utilities

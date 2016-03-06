@@ -23,18 +23,18 @@
 source_if_exists /usr/share/bash-completion/bash_completion
 
 
-export BASH_IT="$HOME/refsrc/bash-it.git"
-export BASH_IT_THEME='powerline'
-source_if_exists "$BASH_IT"/bash_it.sh
+# export BASH_IT="$HOME/refsrc/bash-it.git"
+# export BASH_IT_THEME='powerline'
+# source_if_exists "$BASH_IT"/bash_it.sh
 
-for one in bash-it defaults git pip; do
-    full="$BASH_IT"/completion/available/$one.completion.bash
-    source_if_exists "$full"
-done
-for one in general stub; do
-    full="$BASH_IT"/aliases/available/$one.aliases.bash
-    source_if_exists "$full"
-done
+# for one in bash-it defaults git pip; do
+#     full="$BASH_IT"/completion/available/$one.completion.bash
+#     source_if_exists "$full"
+# done
+# for one in general stub; do
+#     full="$BASH_IT"/aliases/available/$one.aliases.bash
+#     source_if_exists "$full"
+# done
 
 
 shopt -s autocd

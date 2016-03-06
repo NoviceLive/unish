@@ -39,8 +39,8 @@ source_if_exists "$_plugin_entry" \
 # source_if_exists "$_plugin_entry" && zle -N zle-line-init
 
 
-export ZSH="/usr/share/oh-my-zsh"
-export ZSH_THEME=terminalparty
-export DISABLE_AUTO_UPDATE=true
-export plugins=(mercurial git)
-source_if_exists "$ZSH/oh-my-zsh.sh"
+# export ZSH="/usr/share/oh-my-zsh"
+# export ZSH_THEME=terminalparty
+# export DISABLE_AUTO_UPDATE=true
+# export plugins=(mercurial git)
+# source_if_exists "$ZSH/oh-my-zsh.sh"
