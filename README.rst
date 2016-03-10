@@ -17,21 +17,25 @@ but with Linux or in general with POSIX or UNIX.
 
 - How to
 
-  - `install Arch Linux with full-disk encryption <doc/arch-install.sh>`_
+  - `install Arch Linux with full-disk encryption <doc/arch-install.sh>`_ `Version 2 <doc/arch-install.rst>`_
 
-    Boot Loader or Manager: GRUB_
-
-    Partition Editor: Parted_
-
-    Partition Scheme: UEFI/GPT
-
-    Encryption Scheme: LVM on LUKS using dm-crypt
-
-    Encrypted: ``/``, where there are ``/home`` and swap.
-
-    Boot Partition: Encrypted on a removable disk.
-
-    Unencrypted: ``/boot/efi``
+    +-------------------+------------------------+-------------------------------------------+
+    |      Item         |     `Version 1`_       |   `Version 2`_                            |
+    +===================+========================+===========================================+
+    | Encryption Scheme | `LVM on LUKS`_         | `LVM on LUKS`_ (`using a remote header`_) |
+    +-------------------+------------------------+-------------------------------------------+
+    | Boot Partition    | `Simple Partition Layout with LUKS`_ (`on a pendrive`_)            |
+    +-------------------+------------------------+-------------------------------------------+
+    | Unencrypted       | EFI System Partition (/boot/efi)                                   |
+    +-------------------+------------------------+-------------------------------------------+
+    | Partition Editor  | Parted (Not Required)                                              |
+    +-------------------+------------------------+-------------------------------------------+
+    | Partition Scheme  | UEFI/GPT                                                           |
+    +-------------------+------------------------+-------------------------------------------+
+    | Boot Manager      | GRUB (Required)                                                    |
+    +-------------------+------------------------+-------------------------------------------+
+    | Init Manager      | Systemd (Not Required) | Systemd (Required)                        |
+    +-------------------+------------------------+-------------------------------------------+
 
 
 Features

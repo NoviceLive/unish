@@ -43,7 +43,7 @@ lsblk
 
 # Securely erase the disks.
 # Check twice before you enter!
-# This might consumes many hours.
+# This might consume many hours.
 time shred -z /dev/sda
 time shred -z /dev/sdb
 
