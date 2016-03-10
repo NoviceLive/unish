@@ -13,3 +13,4 @@ python-colorama python2-colorama python-ply python2-ply python-pyperclip python2
 python-tox python2-tox python-nose python2-nose python-sqlalchemy python2-sqlalchemy
 python-jinja python2-jinja python-mako python2-mako python-parse python2-parse
 python-pyelftools
+python2-cmd2 python-cmd2

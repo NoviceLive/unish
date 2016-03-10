@@ -17,7 +17,7 @@ but with Linux or in general with POSIX or UNIX.
 
 - How to
 
-  - `install Arch Linux with full-disk encryption <doc/arch-install.sh>`_ `Version 2 <doc/arch-install.rst>`_
+  - install Arch Linux with full-disk encryption `Version 1`_  `Version 2`_
 
     +-------------------+------------------------+-------------------------------------------+
     |      Item         |     `Version 1`_       |   `Version 2`_                            |

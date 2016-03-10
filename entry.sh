@@ -192,6 +192,8 @@ export PATH=$PATH:$HOME/.local/bin
 export VISUAL='emacs -nw'
 export EDITOR="$VISUAL"
 
+export LESS='FXR'
+
 
 ulimit -c unlimited
 
