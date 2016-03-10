@@ -89,7 +89,7 @@ Choose algorithms
 
 Running benckmarks may help you choose the algorithms.
 
-Also, see ``Encryption options for LUKS mode`` for more information.
+Also, see `Encryption options for LUKS mode`_ for more information.
 
 
 I take ``serpent-xts-plain64`` and ``whirlpool`` for example.
@@ -320,8 +320,8 @@ Install And Configure GRUB
    grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck --removable
 
 
-Perform Some Post Installation Tasks
-++++++++++++++++++++++++++++++++++++
+Perform Some Most Boring Post Installation Tasks
+++++++++++++++++++++++++++++++++++++++++++++++++
 
 Configure users
 ***************
