@@ -228,3 +228,12 @@ or (at your option) any later version.
 .. _Parted: http://www.gnu.org/software/parted/
 .. _Zsh: http://www.zsh.org/
 .. _Bash: http://www.gnu.org/software/bash/
+
+.. _Version 1: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.sh
+.. _Version 2: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.rst
+
+
+.. _Simple Partition Layout with LUKS: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS
+.. _LVM on LUKS: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS
+.. _on a pendrive: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29
+.. _using a remote header: https://wiki.archlinux.org/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header
