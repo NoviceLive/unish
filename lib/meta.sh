@@ -17,16 +17,24 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+lines_from_file() {
+    local file="${1}"
+    while read -r line; do
+        printf '%s\n' "${line}"
+    done < "${file}"
+}
+
+
 count_items() {
     : "
 Display item count in the given or current working directory.
 
-Usage: lsc [<direcotry>]
+Usage: count_items [<direcotry>]
 "
-    local directory=${1:-${PWD}}
+    local directory="${1:-${PWD}}"
     local count
     count=$(find "${directory}" -maxdepth 1 | wc -l)
-    stdout "$((count + 1))" # Add one for `..' to emulate `ls -a'.
+    stdout "$((count - 1))"
 }
 
 
