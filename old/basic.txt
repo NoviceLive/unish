@@ -1,0 +1,5 @@
+mercurial git subversion
+emacs vim
+xorg-server
+nvidia
+gnome gnome-extra

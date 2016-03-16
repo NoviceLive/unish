@@ -19,6 +19,8 @@
 
 ETC = etc
 BIN = bin
+SBIN = sbin
+
 
 default:
 	# Choose what you want and do not simply `make',
@@ -42,24 +44,8 @@ bash:
 # # # # # # # # # # Static # # # # # # # # # #
 
 
-git:
-	ln -srf ${ETC}/git.conf ~/.gitconfig
-
-
-ssh:
-	mkdir -p ~/.ssh
-	cp ${ETC}/ssh.conf ~/.ssh/config
-	# cat ${ETC}/ssh.conf \
-	# 	../../private/2016.hg/private.ssh > ~/.ssh/config && \
-	# 	chmod 0600 ~/.ssh/config
-
-
 tmux:
 	ln -srf ${ETC}/tmux.conf ~/.tmux.conf
-
-
-hg:
-	ln -srf ${ETC}/hgrc.conf ~/.hgrc
 
 
 stack:
@@ -84,6 +70,10 @@ gtk:
 # # # # # # # # # # Dynamic # # # # # # # # # #
 
 
+scm:
+	${BIN}/scm.sh
+
+
 ruby:
 	${BIN}/ruby.sh
 
@@ -95,8 +85,9 @@ gnome:
 github:
 	${BIN}/github.sh
 
+
 arch:
-	sudo ${BIN}/arch.sh ${ETC}/pkgs.txt
+	sudo ${SBIN}/arch.sh ${ETC}/pkgs.txt
 
 
 # # # # # # # # # # Shortcuts # # # # # # # # # #
@@ -111,10 +102,7 @@ shell:
 
 
 conf:
-	make git
-	make ssh
 	make tmux
-	make hg
 	make stack
 	make ghci
 	make gdb
