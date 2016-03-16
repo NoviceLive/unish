@@ -23,7 +23,6 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-source "${UNISH}/lib/meta.sh"
 source "${UNISH}/lib/repo.sh"
 
 

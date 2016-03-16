@@ -17,6 +17,14 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+lines_from_file() {
+    local file="${1}"
+    while read -r line; do
+        printf '%s\n' "${line}"
+    done < "${file}"
+}
+
+
 clone_many() {
     if [[ $# -lt 3 ]]; then
         return 1
@@ -34,7 +42,7 @@ clone_many() {
             remote="${base}${name}"
             >&2 printf 'Cloning %s\n' "${remote}"
             >&2 printf 'Dest: %s\n' "${dest}"
-            echo git clone --recursive "${remote}" "${dest}"
+            git clone --recursive "${remote}" "${dest}"
         fi
     done
 }

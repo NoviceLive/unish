@@ -154,11 +154,8 @@ log_simple "Exported UNISH to ${UNISH}."
 
 
 log_simple 'Starting Logging System...'
-
-source "$UNISH"/lib/unish/before_logging."${CURRENT_SHELL}"
-source "$UNISH"/lib/logging.sh
-
-info 'Started Logging System.'
+source "$UNISH"/lib/logging.sh && \
+    info 'Started Logging System.'
 
 
 reexec() {
@@ -185,8 +182,8 @@ Reload the shell and Unish.
 done
 
 
-source "$UNISH"/lib/unish/"${CURRENT_SHELL}"."${CURRENT_SHELL}"
-info 'Reached Target Unish Environment.'
+source "$UNISH"/lib/unish/"${CURRENT_SHELL}"."${CURRENT_SHELL}" &&
+    info 'Reached Target Unish Environment.'
 
 
 info 'Starting Unish Base...'

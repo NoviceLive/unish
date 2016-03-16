@@ -17,6 +17,9 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+source "$UNISH"/lib/unish/before_logging."${CURRENT_SHELL}"
+
+
 enum() {
     : "
 Usage: enum <name> <name> ...

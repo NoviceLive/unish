@@ -1,5 +1,7 @@
 NoviceLive/emacs.d.git
+NoviceLive/intellicoder.git
 NoviceLive/pat.git
+NoviceLive/runbin.git
 NoviceLive/shellcoding.git
 NoviceLive/unish.git
 NoviceLive/urlmark.git
