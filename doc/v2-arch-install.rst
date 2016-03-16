@@ -47,7 +47,8 @@ See ``shred --help`` for more details.
 ::
 
    lsblk
-   time shred /dev/sdX /dev/sdY
+   time shred /dev/sdX &
+   time shred /dev/sdY
 
 
 Perform Some Boring Routines
@@ -209,7 +210,7 @@ Perform System Installation
 
    nano /etc/pacman.d/mirrorlist
 
-   pacstrap -i /mnt base base-devel
+   pacstrap -i /mnt base base-devel zsh grml-zsh-config
 
    genfstab -U /mnt >> /mnt/etc/fstab
    nano /mnt/etc/fstab
@@ -246,6 +247,8 @@ Configure Some Boring Stuff For The Freshly Installed System
    hwclock --systohc --utc
 
    # network configuraion skipped
+   # ping -c4 github.com
+
    nano /etc/hostname
    nano /etc/hosts
 
@@ -296,7 +299,9 @@ Install And Configure GRUB
 
 - Install GRUB and efibootmgr.
 
-- Edit the GRUB ``default`` file, add necessary kernel parameters.
+- Edit the GRUB ``default`` file, add the line,
+  ``GRUB_ENABLE_CRYPTODISK=y``,
+  and add necessary kernel parameters.
 
   In this example, it looks like.
 
@@ -334,7 +339,6 @@ Configure users
 
    passwd
 
-   pacman -S zsh grml-zsh-config
    useradd -m -G wheel -s /bin/zsh toor
    passwd toor
    nano /etc/sudoers
@@ -350,13 +354,14 @@ Exit chroot, do some cleanup and reboot.
    exit
 
    umount -R /mnt
+   swapoff /dev/vga/swap
    vgchange -an vga
    cryptsetup close root
    cryptsetup close boot
 
 
 .. _Version 1: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.sh
-.. _Version 2: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.rst
+.. _Version 2: https://github.com/NoviceLive/unish/blob/master/doc/v2-arch-install.rst
 
 .. _Simple Partition Layout with LUKS: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS
 .. _LVM on LUKS: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS

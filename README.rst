@@ -230,7 +230,7 @@ or (at your option) any later version.
 .. _Bash: http://www.gnu.org/software/bash/
 
 .. _Version 1: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.sh
-.. _Version 2: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.rst
+.. _Version 2: https://github.com/NoviceLive/unish/blob/master/doc/v2-arch-install.rst
 
 
 .. _Simple Partition Layout with LUKS: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Simple_partition_layout_with_LUKS
