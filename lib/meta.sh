@@ -122,26 +122,27 @@ _is_generic() {
 }
 
 
-is_func() {
-    : "
-Usage: is_func <name>
+_type_names=('function' 'builtin' 'reserved')
 
-Determine whether the name is a shell function or not.
-"
-    local name="${1}"
-    _is_generic 'function' "${name}"
+_make_is_type_name () { stdout "is_${1}"; }
+
+for one in "${_type_names[@]}"; do
+    see_also=$(make_see_also "${one}" _make_is_type_name \
+                             "${_type_names[@]}")
+    eval "
+is_$one() {
+    : \"
+Usage: is_${one} <message> <message> ...
+
+Write $one messages to standard error stream.
+
+See Also: ${see_also}
+\"
+    _is_generic '$one' \"\$*\"
 }
-
-
-is_builtin() {
-    : "
-Usage: is_builtin <name>
-
-Determine whether the name is a shell builtin or not.
 "
-    local name="${1}"
-    _is_generic 'builtin' "${name}"
-}
+done
+
 
 
 _get_docs() {
@@ -164,18 +165,19 @@ help() {
     : "
 Usage: help <function_name>
 
-Show the documentation on the specified function.
+Show the documentation of the specified shell functions,
+shell builtins or reserved words.
 
 Examples:
 
 $ help help
 $ help cd
-$ help pwd
+$ help export
 "
     local one
     for one in "$@"; do
-        if is_builtin "${one}"; then
-            debug "${one} is builtin"
+        if is_builtin "${one}" || is_reserved "${one}"; then
+            debug "${one} is builtin or reserved"
             if [[ ${CURRENT_SHELL} == "zsh" ]]; then
                 debug "Running 'run-help' for Zsh"
                 run-help "${one}"
@@ -183,7 +185,7 @@ $ help pwd
                 debug "Running 'builtin help' for Bash"
                 builtin help "${one}"
             fi
-        elif is_func "${one}"; then
+        elif is_function "${one}"; then
             info ">>> Help on function: ${one} <<<"
             printf '%s\n\n' "$(_get_docs "$(_func_decl "${one}")")" \
                    | less -FXR

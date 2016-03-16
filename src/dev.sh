@@ -107,7 +107,7 @@ if pgrep ssh-agent > /dev/null 2>&1; then
     source "$SSH_AGENT" > /dev/null 2>&1 || _start_ssh_agent
     if ssh-add -l > /dev/null; then
         for one in $(ssh-add -l | cut -d' ' -f3); do
-            info "Found ssh-agent managed key ${one}."
+            info "Managed SSH Key: ${one}."
         done
     fi
 else
@@ -127,13 +127,12 @@ Without an argument, it will try the following.
 
 ~/.ssh/id_rsa-bitbucket
 ~/.ssh/id_rsa-github
-~/.ssh/id_rsa-bandwagon
 "
     if [[ $# -ne 0 ]]; then
         keys=("$@")
     else
         # TODO: Hardcoded defaults.
-        keys=($HOME/.ssh/id_rsa-{bitbucket,github,bandwagon})
+        keys=($HOME/.ssh/id_rsa-{bitbucket,github})
     fi
     if pgrep ssh-agent > /dev/null 2>&1; then
         source "$SSH_AGENT" > /dev/null 2>&1

@@ -1,4 +1,6 @@
 ibus-libpinyin noto-fonts noto-fonts-cjk noto-fonts-emoji
 firefox flashplugin shadowsocks privoxy openssh
-tmux xclip wget htop iotop lsof strace gdb rlwrap mlocate pkgfile fish cloc sloccount mlocate checksec
+tmux xclip wget htop iotop lsof strace rlwrap mlocate pkgfile fish
+gdb checksec
 python-virtualenvwrapper
+shellcheck python-pylint python2-pylint splint cloc sloccount
