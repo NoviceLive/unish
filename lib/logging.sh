@@ -175,7 +175,7 @@ See Also: debug, warning, error, critical
         return 0
     fi
     if [[ $LOG_LEVEL -le ${INFO} ]]; then
-        _colorize_level_name "INFO" ${INFO}
+        _colorize_level_name "INFO" "${INFO}"
         _log_real "${parent}" "${*}"
     fi
 }

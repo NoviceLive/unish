@@ -1,0 +1,6 @@
+NoviceLive/grade-management-system.git
+NoviceLive/lsext.git
+NoviceLive/man2pdf.git
+NoviceLive/pdfextract.git
+NoviceLive/pdfmark.git
+NoviceLive/simple-typing-game.git

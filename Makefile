@@ -20,6 +20,7 @@
 ETC = etc
 BIN = bin
 SBIN = sbin
+DAT = dat
 
 
 default:
@@ -87,7 +88,7 @@ github:
 
 
 arch:
-	sudo ${SBIN}/arch.sh ${ETC}/pkgs.txt
+	sudo ${SBIN}/arch.sh ${DAT}/pkgs.txt
 
 
 # # # # # # # # # # Shortcuts # # # # # # # # # #

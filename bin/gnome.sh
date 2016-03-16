@@ -24,15 +24,18 @@ set_one() {
     local path=${1}
     local item=${2}
     local args=${3}
-    printf '[...] Setting %s %s to %s\n' ${path} ${item} ${args}
-    printf '[.] Original Value: %s\n' $(gsettings get ${path} ${item})
-    gsettings set ${path} ${item} ${args}
-    printf '[.] Current Value: %s\n' $(gsettings get ${path} ${item})
-    printf '[.] %s\n' 'Done'
+    >&2 printf 'Setting %s %s to %s\n' "${path}" "${item}" "${args}"
+    >&2 printf 'Original Value: %s\n' \
+        "$(gsettings get "${path}" "${item}")"
+    gsettings set "${path}" "${item}" "${args}"
+    >&2 printf 'Current Value: %s\n' \
+        "$(gsettings get "${path}" "${item}")"
+    >&2 printf '%s\n' 'Done'
 }
 
 
 # I prefer the default of Dolphin, the KDE file manager.
 set_one org.gnome.nautilus.preferences click-policy 'single'
+
 
 set_one org.gnome.desktop.media-handling automount false

@@ -23,54 +23,15 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-repo_home="${1:-"${HOME}/repo"}"
+source "${UNISH}/lib/meta.sh"
+source "${UNISH}/lib/repo.sh"
+
+
+repo_home="${1:-${HOME}/repo}"
 inactive_home="${repo_home}/inactive"
 
-
-repos=(
-    NoviceLive/emacs.d.git # Will always be cloned manually
-    NoviceLive/pat.git
-    NoviceLive/shellcoding.git
-    NoviceLive/unish.git # Will always be cloned manually
-    NoviceLive/urlmark.git
-
-    LibreCrops/about.git
-    LibreCrops/bookmarks.git
-    LibreCrops/lost-sdk.git
-    LibreCrops/translation.git
-
-    kbridge/cdef.git
-)
-
-
-inactive=(
-    NoviceLive/grade-management-system.git
-    NoviceLive/lsext.git
-    NoviceLive/man2pdf.git
-    NoviceLive/pdfextract.git
-    NoviceLive/pdfmark.git
-    NoviceLive/simple-typing-game.git
-)
-
-
-clone_many() {
-    local base="${1}"
-    local home="${2}"
-    local many=("${@:3}")
-    local name dest remote
-    mkdir -p "${home}"
-    for name in "${many[@]}"; do
-        dest="${home}/$(basename "${name}")"
-        if [[ -d "${dest}" ]]; then
-            >&2 printf 'Already cloned: %s\n' "${name}"
-        else
-            remote="${base}${name}"
-            >&2 printf 'Cloning %s\n' "${remote}"
-            >&2 printf 'Dest: %s\n' "${dest}"
-            git clone --recursive "${remote}" "${dest}"
-        fi
-    done
-}
+repos=($(lines_from_file dat/github.txt))
+inactive=($(lines_from_file dat/inactive.txt))
 
 
 clone_many 'git@github.com:' "${repo_home}" "${repos[@]}"

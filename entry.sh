@@ -21,45 +21,69 @@
 # Credit:
 # http://stackoverflow.com/questions/16843382/colored-shell-script-output-library
 
+export RCol='\e[0m' # Text Reset
+export Bla='\e[0;30m' # Regular
+export Red='\e[0;31m'
+export Gre='\e[0;32m'
+export Yel='\e[0;33m'
+export Blu='\e[0;34m'
+export Pur='\e[0;35m'
+export Cya='\e[0;36m'
+export Whi='\e[0;37m'
+export BBla='\e[1;30m' # Bold
+export BRed='\e[1;31m'
+export BGre='\e[1;32m'
+export BYel='\e[1;33m'
+export BBlu='\e[1;34m'
+export BPur='\e[1;35m'
+export BCya='\e[1;36m'
+export BWhi='\e[1;37m'
+export UBla='\e[4;30m' # Underline
+export URed='\e[4;31m'
+export UGre='\e[4;32m'
+export UYel='\e[4;33m'
+export UBlu='\e[4;34m'
+export UPur='\e[4;35m'
+export UCya='\e[4;36m'
+export UWhi='\e[4;37m'
+export IBla='\e[0;90m' # High Intensity
+export IRed='\e[0;91m'
+export IGre='\e[0;92m'
+export IYel='\e[0;93m'
+export IBlu='\e[0;94m'
+export IPur='\e[0;95m'
+export ICya='\e[0;96m'
+export IWhi='\e[0;97m'
+export On_Bla='\e[40m' # Background
+export On_Red='\e[41m'
+export On_Gre='\e[42m'
+export On_Yel='\e[43m'
+export On_Blu='\e[44m'
+export On_Pur='\e[45m'
+export On_Cya='\e[46m'
+export On_Whi='\e[47m'
+export BIBla='\e[1;90m' # BoldHigh Intens
+export BIRed='\e[1;91m'
+export BIGre='\e[1;92m'
+export BIYel='\e[1;93m'
+export BIBlu='\e[1;94m'
+export BIPur='\e[1;95m'
+export BICya='\e[1;96m'
+export BIWhi='\e[1;97m'
+export On_IBla='\e[0;100m' # High Intensity Backgrounds
+export On_IRed='\e[0;101m'
+export On_IGre='\e[0;102m'
+export On_IYel='\e[0;103m'
+export On_IBlu='\e[0;104m'
+export On_IPur='\e[0;105m'
+export On_ICya='\e[0;106m'
+export On_IWhi='\e[0;107m'
 
-# Text Reset
-RCol='\e[0m'
 
-# Regular           Bold                Underline
-Bla='\e[0;30m';     BBla='\e[1;30m';    UBla='\e[4;30m';
-Red='\e[0;31m';     BRed='\e[1;31m';    URed='\e[4;31m';
-Gre='\e[0;32m';     BGre='\e[1;32m';    UGre='\e[4;32m';
-Yel='\e[0;33m';     BYel='\e[1;33m';    UYel='\e[4;33m';
-Blu='\e[0;34m';     BBlu='\e[1;34m';    UBlu='\e[4;34m';
-Pur='\e[0;35m';     BPur='\e[1;35m';    UPur='\e[4;35m';
-Cya='\e[0;36m';     BCya='\e[1;36m';    UCya='\e[4;36m';
-Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';
-
-# High Intensity      BoldHigh Intens     Background
-IBla='\e[0;90m';    BIBla='\e[1;90m';   On_Bla='\e[40m';
-IRed='\e[0;91m';    BIRed='\e[1;91m';   On_Red='\e[41m';
-IGre='\e[0;92m';    BIGre='\e[1;92m';   On_Gre='\e[42m';
-IYel='\e[0;93m';    BIYel='\e[1;93m';   On_Yel='\e[43m';
-IBlu='\e[0;94m';    BIBlu='\e[1;94m';   On_Blu='\e[44m';
-IPur='\e[0;95m';    BIPur='\e[1;95m';   On_Pur='\e[45m';
-ICya='\e[0;96m';    BICya='\e[1;96m';   On_Cya='\e[46m';
-IWhi='\e[0;97m';    BIWhi='\e[1;97m';   On_Whi='\e[47m';
-
-# High Intensity Backgrounds
-On_IBla='\e[0;100m';
-On_IRed='\e[0;101m';
-On_IGre='\e[0;102m';
-On_IYel='\e[0;103m';
-On_IBlu='\e[0;104m';
-On_IPur='\e[0;105m';
-On_ICya='\e[0;106m';
-On_IWhi='\e[0;107m';
+typeset -xr VERSION_STRING="${BICya}Unish-0.1.0${RCol}"
 
 
-typeset -xr VERSION_STRING="${BICya}Unish-0.0.1${RCol}"
-
-
-printf "This is ${VERSION_STRING}\n\n"
+printf "Welcome to ${VERSION_STRING}\n\n"
 
 
 log_simple() {
@@ -170,7 +194,7 @@ info 'Starting Unish Base...'
 source "$UNISH"/lib/meta.sh
 
 
-for one in math str media file shellcoding; do
+for one in math str media file repo; do
     source_if_exists "$UNISH"/lib/$one.sh
 done
 
