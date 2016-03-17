@@ -286,6 +286,14 @@ Configure For Disk-Encryption a.k.a Interesting Part II
 Configure The Kernel
 ********************
 
+- Edit ``/etc/fstab``.
+
+  Add ``noauto`` to options of ``/boot`` and ``/boot/efi``
+  so as to unplug the pendrive after loading the kernel.
+
+  We will need to mount it when there are kernel updates or
+  when we want to regenerate initramfs.
+
 - Create ``/etc/crypttab.initramfs``
 
   In our example, add the following line.
@@ -321,8 +329,8 @@ Configure The Kernel
      mkinitcpio -p linux
 
 
-Install And Configure GRUB
-**************************
+Configure The Bootloader
+************************
 
 - Install GRUB and efibootmgr.
 
@@ -370,6 +378,7 @@ Configure users
 - Set the root password.
 
   ::
+
      passwd
 
 - Add a user and grant it administrator privilege.
@@ -392,9 +401,13 @@ Exit chroot, do some cleanup and reboot.
 
    umount -R /mnt
    swapoff /dev/vga/swap
+
    vgchange -an vga
+
    cryptsetup close root
    cryptsetup close boot
+
+   reboot
 
 
 .. _Version 1: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.sh
