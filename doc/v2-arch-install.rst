@@ -292,7 +292,7 @@ Configure The Kernel
   so as to unplug the pendrive after loading the kernel.
 
   We will need to mount it when there are kernel updates or
-  when we want to regenerate initramfs.
+  we want to regenerate the initramfs.
 
 - Create ``/etc/crypttab.initramfs``
 
@@ -410,6 +410,20 @@ Exit chroot, do some cleanup and reboot.
    reboot
 
 
+Caveats
+-------
+
+``/sbin/sulogin`` may not be copied into the initramfs,
+and therefore you won't be able to get a root shell for maintenance
+when something goes wrong.
+
+In that circumstance, you can use the installation medium
+to diagnose problems.
+
+See `FS#36265`_,
+``[systemd] rd.systemd.unit=emergency.target does not work``.
+
+
 .. _Version 1: https://github.com/NoviceLive/unish/blob/master/doc/arch-install.sh
 .. _Version 2: https://github.com/NoviceLive/unish/blob/master/doc/v2-arch-install.rst
 
@@ -422,3 +436,5 @@ Exit chroot, do some cleanup and reboot.
 .. _Encryption options for LUKS mode: https://wiki.archlinux.org/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode
 .. _Installation guide: https://wiki.archlinux.org/index.php/Installation_guide
 .. _Beginners' guide: https://wiki.archlinux.org/index.php/Beginners%27_guide
+
+.. _FS#36265: https://bugs.archlinux.org/task/36265
