@@ -34,21 +34,26 @@ we are given a root shell.
 Securely Erase Your Disks
 +++++++++++++++++++++++++
 
-Identify block devices with ``lsblk``.
+- Identify block devices with ``lsblk``.
 
-Suppose that we are going to install Arch on ``/dev/sdX``,
-and the boot partition on ``/dev/sdY``.
-We'll want to wipe them to prevent unintended data recovery,
-as suggested by `dm-crypt/Drive preparation`_.
+  ::
 
-Note that this might consume several hours.
-See ``shred --help`` for more details.
+     lsblk
 
-::
+- Wipe disks.
 
-   lsblk
-   time shred /dev/sdX &
-   time shred /dev/sdY
+  Suppose that we are going to install Arch on ``/dev/sdX``,
+  and the boot partition on ``/dev/sdY``.
+  We'll want to wipe them to prevent unintended data recovery,
+  as suggested by `dm-crypt/Drive preparation`_.
+
+  Note that this might consume several hours.
+  See ``shred --help`` for more details.
+
+  ::
+
+     time shred /dev/sdX &
+     time shred /dev/sdY
 
 
 Perform Some Boring Routines
@@ -59,27 +64,31 @@ for more details.
 
 - Check the UEFI mode.
 
-- Load necessary key maps.
+  ::
 
-- Set console fonts if needed.
+     ls /sys/firmware/efi/efivars
+
+- Load necessary key maps and set console fonts if needed.
+
+  ::
+
+     # loadkeys skipped
+     # setfont skipped
 
 - Check or configure the network.
 
+  ::
+
+     # network configuration skipped
+     ping -c4 google.com
+
 - Update the system clock.
 
-::
+  ::
 
-   ls /sys/firmware/efi/efivars
-
-   # loadkeys skipped
-   # setfont skipped
-
-   # network configuration skipped
-   ping -c4 google.com
-
-   timedatectl status
-   timedatectl set-ntp true
-   timedatectl status
+     timedatectl status
+     timedatectl set-ntp true
+     timedatectl status
 
 
 Prepare Partitions a.k.a Interesting Part I
@@ -105,38 +114,38 @@ Prepare Root
 
 **Warning: Don't do partition!**
 
-Setup LUKS using a remote header.
+- Setup LUKS using a remote header.
 
-::
+  ::
 
-   truncate -s 2M root.header
+     truncate -s 2M root.header
 
-   cryptsetup --header root.header \
-   --cipher serpent-xts-plain64 --key-size 512 \
-   --hash whirlpool --iter-time 5000 --use-random \
-   luksFormat /dev/sdX
+     cryptsetup --header root.header \
+     --cipher serpent-xts-plain64 --key-size 512 \
+     --hash whirlpool --iter-time 5000 --use-random \
+     luksFormat /dev/sdX
 
-   cryptsetup --header root.header open /dev/sdX root
+     cryptsetup --header root.header open /dev/sdX root
 
-Setup LVM in the encrypted container.
+- Setup LVM in the encrypted container.
 
-Note that you will want to make preferred adaptation.
+  Note that you will want to make preferred adaptation.
 
-::
+  ::
 
-   pvcreate /dev/mapper/root
-   vgcreate vga /dev/mapper/root
-   lvcreate -n swap -L 4G vga
-   lvcreate -n root -L 96G vga
-   lvcreate -n home -l 100%FREE vga
+     pvcreate /dev/mapper/root
+     vgcreate vga /dev/mapper/root
+     lvcreate -n swap -L 4G vga
+     lvcreate -n root -L 96G vga
+     lvcreate -n home -l 100%FREE vga
 
-Create the swap and file systems.
+- Create the swap and file systems.
 
-::
+  ::
 
-   mkswap /dev/vga/swap
-   mkfs.ext4 /dev/vga/root
-   mkfs.ext4 /dev/vga/home
+     mkswap /dev/vga/swap
+     mkfs.ext4 /dev/vga/root
+     mkfs.ext4 /dev/vga/home
 
 
 Prepare Boot
@@ -200,57 +209,75 @@ Perform System Installation
 
   They are essential to an enhanced download experience.
 
+  ::
+
+     nano /etc/pacman.d/mirrorlist
+
 - Install the base system.
+
+  ::
+
+     pacstrap -i /mnt base base-devel zsh grml-zsh-config
 
 - Generate ``fstab`` and check it.
 
+  ::
+
+     genfstab -U /mnt >> /mnt/etc/fstab
+     nano /mnt/etc/fstab
+
 - Change root.
 
-::
+  ::
 
-   nano /etc/pacman.d/mirrorlist
-
-   pacstrap -i /mnt base base-devel zsh grml-zsh-config
-
-   genfstab -U /mnt >> /mnt/etc/fstab
-   nano /mnt/etc/fstab
-
-   arch-chroot /mnt /bin/zsh
+     arch-chroot /mnt /bin/zsh
 
 
 Configure Some Boring Stuff For The Freshly Installed System
 ************************************************************
 
-- Choose locales and generate them.
+- Choose locales and generate them and
+  set the locale, which shall be the first chosen entry.
 
-- Set the locale, which shall be the first chosen entry.
+  ::
+
+     nano /etc/loacle.gen
+     locale-gen
+     nano /etc/locale.conf
+
+- Configure ``/etc/vconsole.conf`` if necessary.
+
+  ::
+
+     # /etc/vconsole.conf configuration skipped
 
 - Select and set the time zone.
 
+  ::
+
+     tzselect
+     ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 - Set or update the hardware clock.
+
+  ::
+
+     hwclock --systohc --utc
 
 - Again, check or configure the network.
 
+  ::
+
+     # network configuraion skipped
+     ping -c4 github.com
+
+
 - Set the hostname and add it to ``/etc/hosts``.
 
-::
+  ::
 
-   nano /etc/loacle.gen
-   locale-gen
-   nano /etc/locale.conf
-
-   # /etc/vconsole.conf configuration skipped
-
-   tzselect
-   ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
-   hwclock --systohc --utc
-
-   # network configuraion skipped
-   # ping -c4 github.com
-
-   nano /etc/hostname
-   nano /etc/hosts
+     nano /etc/hostname
+     nano /etc/hosts
 
 
 Configure For Disk-Encryption a.k.a Interesting Part II
@@ -259,39 +286,39 @@ Configure For Disk-Encryption a.k.a Interesting Part II
 Configure The Kernel
 ********************
 
-Create ``/etc/crypttab.initramfs``,
-and in our example, add the following line.
+- Create ``/etc/crypttab.initramfs``
 
-::
+  In our example, add the following line.
 
-   vga /dev/sdX none header=/boot/root.header
+  ::
 
-Edit ``/etc/mkinitcpio.conf``, add the header to ``FILES``.
+     vga /dev/sdX none header=/boot/root.header
 
-::
+- Edit ``/etc/mkinitcpio.conf``
 
-   FILES="/boot/root.header"
+  Add the header to ``FILES``.
 
-As a result, the header will be copied into the initramfs.
+  ::
 
-As for ``HOOKS``, replace ``udev`` with ``systemd``,
-and add ``sd-encrypt`` and ``sd-lvm2`` between ``block`` and ``filesystems``.
+     FILES="/boot/root.header"
 
-In my example, it reads.
+  As a result, the header will be copied into the initramfs.
 
-::
+  As for ``HOOKS``, replace ``udev`` with ``systemd``,
+  and add ``sd-encrypt`` and ``sd-lvm2``
+  between ``block`` and ``filesystems``.
 
-   HOOKS="base systemd autodetect modconf block sd-encrypt sd-lvm2 filesystems keyboard fsck"
+  In my example, it reads.
 
-Generate initramfs.
+  ::
 
-::
+     HOOKS="base systemd autodetect modconf block sd-encrypt sd-lvm2 filesystems keyboard fsck"
 
-   nano /etc/crypttab.initramfs
+- Regenerate initramfs.
 
-   nano /etc/mkinitcpio.conf
+  ::
 
-   mkinitcpio -p linux
+     mkinitcpio -p linux
 
 
 Install And Configure GRUB
@@ -299,11 +326,17 @@ Install And Configure GRUB
 
 - Install GRUB and efibootmgr.
 
-- Edit the GRUB ``default`` file, add the line,
+  ::
+
+     pacman -S grub efibootmgr
+
+- Edit ``/etc/default/grub``.
+
+  Add the line,
   ``GRUB_ENABLE_CRYPTODISK=y``,
   and add necessary kernel parameters.
 
-  In this example, it looks like.
+  In this example, it looks like the following.
 
   ::
 
@@ -315,14 +348,17 @@ Install And Configure GRUB
 
 - Generate ``grub.cfg``.
 
+  ::
+
+     grub-mkconfig -o /boot/grub/grub.cfg
+
 - Install GRUB to the pendrive.
 
-::
+  Notice: Don't forget ``--removable``.
 
-   pacman -S grub efibootmgr
-   nano /etc/default/grub
-   grub-mkconfig -o /boot/grub/grub.cfg
-   grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck --removable
+  ::
+
+     grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck --removable
 
 
 Perform Some Most Boring Post Installation Tasks
@@ -333,11 +369,12 @@ Configure users
 
 - Set the root password.
 
-- Add a normal user.
+  ::
+     passwd
+
+- Add a user and grant it administrator privilege.
 
 ::
-
-   passwd
 
    useradd -m -G wheel -s /bin/zsh toor
    passwd toor

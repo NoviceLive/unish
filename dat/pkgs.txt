@@ -1,7 +1,9 @@
 ibus-libpinyin noto-fonts noto-fonts-cjk noto-fonts-emoji
 firefox flashplugin shadowsocks privoxy openssh
 tmux xclip wget htop iotop lsof strace rlwrap mlocate pkgfile fish
-gdb checksec
+gdb checksec hardening-wrapper valgrind
 python-virtualenvwrapper
 shellcheck python-pylint python2-pylint splint cloc sloccount
 xdot
+python-pip python2-pip python-click python2-click python-pyperclip python2-pyperclip python-colorama python2-colorama
+python-nose python2-nose
