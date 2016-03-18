@@ -80,7 +80,7 @@ ruby:
 
 
 gnome:
-	${BIN}/gnome.sh
+	${BIN}/gnome.py
 
 
 github:
@@ -89,6 +89,10 @@ github:
 
 arch:
 	sudo ${SBIN}/arch.sh ${DAT}/pkgs.txt
+
+
+pip:
+	${SBIN}/pip.sh ${DAT}/pip.txt
 
 
 # # # # # # # # # # Shortcuts # # # # # # # # # #

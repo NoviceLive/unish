@@ -21,7 +21,7 @@
 
 
 ETC='etc'
-PRIV='../../private/2016.hg/private.ssh'
+PRIV='../../private/unish.hg/etc/ssh.conf'
 CONF="${HOME}/.ssh/config"
 
 
