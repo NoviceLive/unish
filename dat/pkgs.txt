@@ -2,16 +2,18 @@ ibus-libpinyin noto-fonts noto-fonts-cjk noto-fonts-emoji
 firefox flashplugin shadowsocks privoxy openssh
 tmux xclip wget htop iotop net-tools lsof strace rlwrap mlocate pkgfile fish
 gdb checksec hardening-wrapper valgrind
-xdot
 shellcheck python-pylint python2-pylint splint cloc sloccount
-python-pip python2-pip python-click python2-click python-pyperclip python2-pyperclip python-colorama python2-colorama
+python-click python2-click python-pyperclip python2-pyperclip python-colorama python2-colorama
 python-virtualenvwrapper python-nose python2-nose
-stack scons meson sbt cargo cmake
-ghc scala clojure racket rust ruby
+python-sqlalchemy python2-sqlalchemy
+scons python-pip python2-pip stack cabal-install meson sbt cargo cmake
+ghc scala clojure racket rust ruby erlang elixir
 virtualbox linux-headers virtualbox-guest-iso qemu qemu-arch-extra
 pandoc gimp texlive-core libreoffice-fresh
 vlc gst-plugins-ugly gst-libav avidemux-gtk avidemux-cli audacity alsa-utils
-skype skype-call-recorder mutt irssi
+skype skype-call-recorder mutt irssi chromium
 python-pyelftools
-kdegraphics-okular okteta
-python-sqlalchemy python2-sqlalchemy
+xdot kdegraphics-okular okteta
+radare2
+nodejs npm
+kchmviewer

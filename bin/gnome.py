@@ -3,32 +3,28 @@
 
 from collections import OrderedDict, namedtuple
 from subprocess import check_output
-from functools import partial
 
 
 Shortcut = namedtuple('Shortcut', 'name command binding')
 
 
-preferences = [
-    {'org.gnome.nautilus.preferences click-policy': 'single'},
-    {'org.gnome.desktop.media-handling automount': 'false'},
-    {'org.gnome.desktop.privacy remember-recent-files': 'false'},
-]
-
-shortcuts = [
-    Shortcut('GNOME Terminal', 'gnome-terminal', '<ctrl><alt>t'),
-    Shortcut('Firefox', 'firefox', '<super>f'),
-    Shortcut('VirtualBox', 'virtualbox', '<super>b'),
-    Shortcut('Nautilus', 'nautilus', '<super>e'),
-]
-
-
 def main():
-    setup_preferences()
-    setup_shortcuts()
+    preferences = [
+        {'org.gnome.nautilus.preferences click-policy': 'single'},
+        {'org.gnome.desktop.media-handling automount': 'false'},
+        {'org.gnome.desktop.privacy remember-recent-files': 'false'},
+    ]
+    shortcuts = [
+        Shortcut('GNOME Terminal', 'gnome-terminal', '<ctrl><alt>t'),
+        Shortcut('Firefox', 'firefox', '<super>f'),
+        Shortcut('VirtualBox', 'virtualbox', '<super>b'),
+        Shortcut('Nautilus', 'nautilus', '<super>e'),
+    ]
+    setup_preferences(preferences)
+    setup_shortcuts(shortcuts)
 
 
-def setup_shortcuts():
+def setup_shortcuts(shortcuts):
     root = 'org.gnome.settings-daemon.plugins.media-keys'
     path = root + '.custom-keybinding'
     more = '/{}/custom-keybindings'.format(root.replace('.', '/'))
@@ -39,11 +35,10 @@ def setup_shortcuts():
         print('==> Binding {} to {}'.format(
             shortcut.binding, shortcut.command))
         key = '{}:{}'.format(path, key)
-        gsettings('set', key, 'name', shortcut.name)
-        gsettings('set', key, 'command', shortcut.command)
-        gsettings('set', key, 'binding', shortcut.binding)
+        for one in ['name', 'command', 'binding']:
+            gsettings('set', key, one, getattr(shortcut, one))
         print('    Done.')
-    print('==> Round up')
+    print('==> Rounding up')
     original = gsettings('get', root, 'custom-keybindings')
     print('    Original Value:', original)
     gsettings('set', root, 'custom-keybindings', str(keys))
@@ -52,7 +47,7 @@ def setup_shortcuts():
     print('    Done')
 
 
-def setup_preferences():
+def setup_preferences(preferences):
     items = OrderedDict()
     for one in preferences:
         items.update(one)

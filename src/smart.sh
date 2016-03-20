@@ -56,6 +56,8 @@ Smart cd.
         git status
     elif [[ -d .hg ]]; then
         hg status
+    elif [[ -d .svn ]]; then
+        svn status --verbose
     else
         local total
         total=$(count_items)
