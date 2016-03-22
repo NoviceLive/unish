@@ -3,3 +3,4 @@ create_ap
 python26 python32 python33 python34
 virtualbox-ext-oracle
 vdfuse
+trid
