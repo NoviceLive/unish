@@ -1,0 +1,4 @@
+apt-file
+git mercurial subversion
+tmux
+zsh

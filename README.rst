@@ -38,6 +38,14 @@ but with Linux or in general with POSIX or UNIX.
     +-------------------+------------------------+-------------------------------------------+
 
 
+Warning
+-------
+
+
+Unish may work only in Zsh 5.2 & Bash 4.3.
+You have been warned.
+
+
 Features
 --------
 

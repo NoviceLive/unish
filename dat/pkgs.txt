@@ -17,3 +17,4 @@ python-pyelftools
 xdot kdegraphics-okular okteta
 ropper
 socat nmap gnu-netcat wireshark-gtk tcpdump
+go
