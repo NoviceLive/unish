@@ -2,3 +2,5 @@ apt-file
 git mercurial subversion
 tmux
 zsh
+gdb
+python-pip python3-pip

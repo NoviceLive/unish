@@ -1,0 +1,3 @@
+dkms-2.2.0.3-31.git.7c3e7c5.fc23.noarch
+kernel-devel-4.4.5-300.fc23.x86_64
+glibc.i686

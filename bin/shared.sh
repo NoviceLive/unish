@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 
-sudo mount --types vboxsf shared --options uid=1000,gid=1000 shared/
+sudo mount --types vboxsf shared \
+     --options uid=1000,gid=1000 \
+     "${HOME}/shared"
