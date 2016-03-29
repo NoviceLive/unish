@@ -11,15 +11,16 @@ scons python-pip python2-pip stack cabal-install meson sbt cargo cmake
 ghc scala clojure racket rust ruby erlang elixir nodejs npm go
 virtualbox linux-headers virtualbox-guest-iso qemu qemu-arch-extra
 kchmviewer pandoc gimp texlive-core libreoffice-fresh
-vlc gst-plugins-ugly gst-libav avidemux-gtk avidemux-cli audacity alsa-utils
+vlc gst-plugins-ugly gst-libav avidemux-gtk avidemux-cli audacity alsa-utils smplayer
 skype skype-call-recorder mutt irssi chromium
 python-pyelftools
 xdot kdegraphics-okular okteta
 socat nmap gnu-netcat wireshark-gtk tcpdump
-checksec radare2 ropper
-unrar
+nasm yasm astyle checksec radare2 ropper
+unrar p7zip upx
 python-mako python2-mako
 octave texmacs
 rfkill
 python-cx_freeze
-nasm yasm
+python-jinja python2-jinja
+mariadb

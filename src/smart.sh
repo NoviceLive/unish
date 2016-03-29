@@ -221,7 +221,7 @@ Usage: e <name> <options>
 Open an existing file using Emacs or create a new one using tm.
 "
     local name="${1}"
-    local templator=tm
+    local templator='tmgr'
     if [[ -f "${name}" ]]
     then
         emacs "${name}" &
