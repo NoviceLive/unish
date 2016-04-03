@@ -28,7 +28,7 @@ from __future__ import print_function
 from logging import basicConfig, DEBUG
 
 import click
-from plumbum import local
+from plumbum import local, FG
 
 
 @click.command()
@@ -41,6 +41,8 @@ def main(streams, binary):
     basicConfig(level=DEBUG)
     if binary == 'pacman':
         doer = Pacman()
+    elif binary == 'yaourt':
+        doer = Pacman('yaourt')
     elif binary == 'pip2':
         doer = Pip(2)
     elif binary == 'pip3':
@@ -51,7 +53,7 @@ def main(streams, binary):
         for packages, comment in parse(stream.read()):
             if comment:
                 print(comment)
-            print(doer.install(packages))
+            doer.install(packages)
 
 
 class Pip(object):
@@ -62,21 +64,19 @@ class Pip(object):
             self.pip = local['pip2']
 
     def install(self, packages):
-        output = self.pip('install', *packages)
-        return output
+        self.pip['install', packages] & FG
 
 
 class Pacman(object):
-    def __init__(self):
-        self.pacman = local['pacman']
-        # self.refresh()
+    def __init__(self, binary='pacman'):
+        self.pacman = local[binary]
+        self.refresh()
 
     def refresh(self):
-        self.pacman('--sync', '--refresh', '--refresh')
+        self.pacman['--sync', '--refresh', '--refresh'] & FG
 
     def install(self, packages):
-        output = self.pacman('--sync', '--needed', *packages)
-        return output
+        self.pacman['--sync', '--needed', packages] & FG
 
 
 def parse(text):

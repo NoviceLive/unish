@@ -24,7 +24,7 @@ mercurial
 
 flashplugin chromium
 ibus-libpinyin noto-fonts noto-fonts-cjk noto-fonts-emoji
-tmux xclip wget htop iotop net-tools lsof strace rlwrap mlocate pkgfile fish
+tmux xclip wget htop iotop net-tools lsof strace rlwrap mlocate pkgfile fish haveged
 gdb hardening-wrapper valgrind-multilib dosfstools
 python-pylint python2-pylint flake8 python2-flake8
 hlint ghc-mod hoogle shellcheck splint cloc sloccount

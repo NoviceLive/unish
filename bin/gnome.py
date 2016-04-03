@@ -2,7 +2,7 @@
 
 
 """
-Setup GNOME preferences.
+Setup GNOME preferences using dconf.
 
 Copyright 2015-2016 Gu Zhengxiong <rectigu@gmail.com>
 
@@ -21,56 +21,39 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Unish.  If not, see <http://www.gnu.org/licenses/>.
-
-An example session.
-
-==> Setting up org.gnome.nautilus.preferences click-policy to single
-    Original Value: 'double'
-    Current Value: 'single'
-    Done.
-==> Setting up org.gnome.desktop.media-handling automount to false
-    Original Value: true
-    Current Value: false
-    Done.
-==> Setting up org.gnome.desktop.privacy remember-recent-files to false
-    Original Value: true
-    Current Value: false
-    Done.
-==> Binding <ctrl><alt>t to gnome-terminal
-    Done.
-==> Binding <super>f to firefox
-    Done.
-==> Binding <super>b to virtualbox
-    Done.
-==> Binding <super>e to nautilus
-    Done.
-==> Rounding up
-    Original Value: @as []
-    Current Value: ['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
-    Done.
 """
 
 
-from collections import OrderedDict, namedtuple
-from subprocess import check_output
+from collections import namedtuple
+
+from plumbum import local
 
 
 Shortcut = namedtuple('Shortcut', 'name command binding')
+dconf = local['dconf']
+gsettings = local['gsettings']
 
 
 def main():
     preferences = [
-        {'org.gnome.nautilus.preferences click-policy': 'single'},
-        {'org.gnome.desktop.media-handling automount': 'false'},
-        {'org.gnome.desktop.privacy remember-recent-files': 'false'},
+        ('desktop/media-handling/automount', 'false'),
+        ('desktop/privacy/remember-recent-files', 'false'),
+        ('terminal/legacy/default-show-menubar', 'false'),
+        # Strings need extra quoting: "'single'".
+        ('nautilus/preferences/click-policy', "'single'"),
     ]
+    for item, value in preferences:
+        key = '/org/gnome/' + item
+        print('{}: {}'.format(key, value))
+        old = set_key_value(key, value)
+        print('Old: {}'.format(old))
+
     shortcuts = [
         Shortcut('GNOME Terminal', 'gnome-terminal', '<ctrl><alt>t'),
         Shortcut('Firefox', 'firefox', '<super>f'),
         Shortcut('VirtualBox', 'virtualbox', '<super>b'),
         Shortcut('Nautilus', 'nautilus', '<super>e'),
     ]
-    setup_preferences(preferences)
     setup_shortcuts(shortcuts)
 
 
@@ -97,24 +80,10 @@ def setup_shortcuts(shortcuts):
     print('    Done.')
 
 
-def setup_preferences(preferences):
-    items = OrderedDict()
-    for one in preferences:
-        items.update(one)
-    for key in items:
-        print('==> Setting up {} to {}'.format(key, items[key]))
-        original = gsettings('get', *key.split())
-        print('    Original Value:', original)
-        gsettings('set', *key.split(), items[key])
-        current = gsettings('get', *key.split())
-        print('    Current Value:', current)
-        print('    Done.')
-
-
-def gsettings(*args):
-    output = check_output(['gsettings', *args],
-                          universal_newlines=True)
-    return output.strip()
+def set_key_value(key, value):
+    old = dconf('read', key).strip()
+    dconf('write', key, value)
+    return old
 
 
 if __name__ == '__main__':

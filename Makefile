@@ -92,6 +92,10 @@ arch:
 	sudo ${CMD}/ins -bpacman ${DAT}/pkgs.txt
 
 
+aur:
+	${CMD}/ins -byaourt ${DAT}/aur.txt
+
+
 pip3:
 	sudo ${CMD}/ins -bpip3 ${DAT}/pip3.txt
 
