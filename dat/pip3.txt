@@ -1,0 +1,6 @@
+pat # My package.
+urlmark # My package.
+
+more_itertools python-magic
+radon
+pecoff

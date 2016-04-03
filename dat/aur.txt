@@ -1,3 +1,6 @@
+# aurpkg package-query
+# aurpkg yaourt
+
 egypt
 create_ap
 python26 python32 python33 python34

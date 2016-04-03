@@ -17,6 +17,14 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+pylint() {
+    command pylint "${@}" \
+            --disable 'too-few-public-methods,missing-docstring' \
+            --disable 'bad-builtin' \
+        | less -FXR
+}
+
+
 mkinc() {
     local dir="${1:-$PWD}"
     debug "Searching for headers in: ${dir}"

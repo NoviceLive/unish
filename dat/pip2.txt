@@ -1,4 +1,2 @@
-more-itertools
-python-magic
-pecoff
+more-itertools python-magic
 pyelftools

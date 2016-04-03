@@ -206,8 +206,11 @@ info 'Started Unish Base.'
 # I often place binaries and symbolic links here.
 export PATH=$PATH:$HOME/bin:$HOME/bin/lnk
 
+export PATH=$PATH:${UNISH}/cmd
+
 # Stack installs binaries here.
 export PATH=$PATH:$HOME/.local/bin
+
 
 
 export VISUAL='emacs -nw'

@@ -20,6 +20,7 @@
 ETC = etc
 BIN = bin
 SBIN = sbin
+CMD = cmd
 DAT = dat
 
 
@@ -88,11 +89,15 @@ github:
 
 
 arch:
-	sudo ${SBIN}/arch.py ${DAT}/pkgs.txt
+	sudo ${CMD}/ins -bpacman ${DAT}/pkgs.txt
 
 
-pip:
-	${SBIN}/pip.sh ${DAT}/pip.txt
+pip3:
+	sudo ${CMD}/ins -bpip3 ${DAT}/pip3.txt
+
+
+pip2:
+	sudo ${CMD}/ins -bpip2 ${DAT}/pip2.txt
 
 
 # # # # # # # # # # Shortcuts # # # # # # # # # #
