@@ -5,7 +5,7 @@ from os.path import basename, splitext
 from logging import basicConfig, DEBUG
 
 import click
-from plumbum import local
+from plumbum import local, FG
 
 
 __author__ = 'Gu Zhengxiong'
@@ -78,7 +78,7 @@ class Git(object):
     def clone(self, dest=None):
         if dest is None:
             dest = self.base
-        self.git('clone', self.url, dest, '--recursive')
+        self.git['clone', self.url, dest, '--recursive'] & FG
 
 
 class Hg(object):
@@ -92,7 +92,7 @@ class Hg(object):
     def clone(self, dest=None):
         if dest is None:
             dest = self.base + self.suffix
-        self.hg('clone', self.url, dest)
+        self.hg['clone', self.url, dest] & FG
 
 
 if __name__ == '__main__':

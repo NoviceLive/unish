@@ -39,3 +39,5 @@ xdot kdegraphics-okular okteta
 socat nmap gnu-netcat wireshark-gtk tcpdump
 nasm yasm astyle checksec radare2 ropper unrar p7zip upx rfkill
 mariadb
+linux-manpages
+gcc-multilib

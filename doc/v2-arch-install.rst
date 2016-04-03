@@ -299,6 +299,12 @@ Perform System Installation
 
      nano /etc/pacman.d/mirrorlist
 
+  Enable ``multilib`` if intended.
+
+  ::
+
+     nano /etc/pacman.conf
+
 - Install the base system.
 
   ::
@@ -516,6 +522,40 @@ to diagnose problems.
 
 See `FS#36265`_,
 ``[systemd] rd.systemd.unit=emergency.target does not work``.
+
+
+Appendices
+----------
+
+Example session of encrypting a loop device
++++++++++++++++++++++++++++++++++++++++++++
+
+::
+
+   # Create a file.
+   dd if=/dev/urandom of=secret.tomb bs=1M count=10
+
+   # Load the ``loop`` module if necessary.
+   sudo modprobe loop
+
+   # Setup the loop device.
+   sudo losetup /dev/loop0 secret.tomb
+
+   # Setup encryption.
+   sudo cryptsetup luksFormat /dev/loop0
+   sudo cryptsetup open /dev/loop0 tomb
+
+   # Create a file system and mount it.
+   sudo mkfs.ext4 /dev/mapper/tomb
+   sudo mkdir /mnt/tomb
+   sudo mount /mnt/mapper/tomb /mnt/tomb
+
+   # Add some files.
+
+   # Unmount and cleanup.
+   sudo umount /mnt/tomb
+   sudo cryptsetup close tomb
+   sudo losetup -d /dev/loop0
 
 
 .. _NoviceLive: https://github.com/NoviceLive
