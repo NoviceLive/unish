@@ -88,7 +88,7 @@ github:
 
 
 arch:
-	sudo ${SBIN}/arch.sh ${DAT}/pkgs.txt
+	sudo ${SBIN}/arch.py ${DAT}/pkgs.txt
 
 
 pip:

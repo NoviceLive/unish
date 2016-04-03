@@ -1,3 +1,41 @@
-firefox
-openssh
-xclip
+# Packages Check List When I Reinstall Arch Linux
+
+
+# base base-devel zsh grml-zsh-config # Installed manually.
+# grub efibootmgr # Installed manually.
+# git # Used to clone the first copy of Unish via https.
+
+
+# The follwing packages or groups are installed using sbin/gnome.sh.
+# xorg-server
+# nvidia
+# gnome
+
+
+firefox # Used to log in Github and setup an SSH key.
+openssh # Used to generate an SSH key.
+xclip # Used to copy SSH keys to the clipboard.
+
+
+emacs
+shadowsocks privoxy
+mercurial
+
+
+flashplugin chromium
+ibus-libpinyin noto-fonts noto-fonts-cjk noto-fonts-emoji
+tmux xclip wget htop iotop net-tools lsof strace rlwrap mlocate pkgfile fish
+gdb hardening-wrapper valgrind-multilib dosfstools
+python-pylint python2-pylint flake8 python2-flake8
+hlint ghc-mod hoogle shellcheck splint cloc sloccount
+scons python-pip python2-pip stack cabal-install meson sbt cargo cmake
+ghc scala clojure racket rust ruby erlang elixir nodejs npm go
+python-virtualenvwrapper python-click python2-click python-pyperclip python2-pyperclip python-colorama python2-colorama python-jinja python2-jinja python-mako python2-mako python-nose python2-nose python-sqlalchemy python2-sqlalchemy python-pyelftools
+virtualbox linux-headers virtualbox-guest-iso qemu qemu-arch-extra
+kchmviewer pandoc gimp texlive-core libreoffice-fresh octave texmacs
+vlc gst-plugins-ugly gst-libav avidemux-gtk avidemux-cli audacity alsa-utils smplayer
+skype mutt irssi
+xdot kdegraphics-okular okteta
+socat nmap gnu-netcat wireshark-gtk tcpdump
+nasm yasm astyle checksec radare2 ropper unrar p7zip upx rfkill
+mariadb
