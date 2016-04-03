@@ -1,6 +1,56 @@
 #!/usr/bin/env python
 
 
+"""
+Setup GNOME preferences.
+
+Copyright 2015-2016 Gu Zhengxiong <rectigu@gmail.com>
+
+This file is part of Unish.
+
+Unish is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License
+as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Unish is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Unish.  If not, see <http://www.gnu.org/licenses/>.
+
+An example session.
+
+==> Setting up org.gnome.nautilus.preferences click-policy to single
+    Original Value: 'double'
+    Current Value: 'single'
+    Done.
+==> Setting up org.gnome.desktop.media-handling automount to false
+    Original Value: true
+    Current Value: false
+    Done.
+==> Setting up org.gnome.desktop.privacy remember-recent-files to false
+    Original Value: true
+    Current Value: false
+    Done.
+==> Binding <ctrl><alt>t to gnome-terminal
+    Done.
+==> Binding <super>f to firefox
+    Done.
+==> Binding <super>b to virtualbox
+    Done.
+==> Binding <super>e to nautilus
+    Done.
+==> Rounding up
+    Original Value: @as []
+    Current Value: ['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+    Done.
+"""
+
+
 from collections import OrderedDict, namedtuple
 from subprocess import check_output
 
@@ -44,7 +94,7 @@ def setup_shortcuts(shortcuts):
     gsettings('set', root, 'custom-keybindings', str(keys))
     current = gsettings('get', root, 'custom-keybindings')
     print('    Current Value:', current)
-    print('    Done')
+    print('    Done.')
 
 
 def setup_preferences(preferences):
