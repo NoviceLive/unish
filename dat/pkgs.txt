@@ -41,3 +41,7 @@ socat nmap gnu-netcat wireshark-gtk tcpdump
 nasm yasm astyle checksec radare2 ropper unrar p7zip upx rfkill
 mariadb
 linux-manpages
+dos2unix
+adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
+adobe-source-han-sans-otc-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-tw-fonts
+gvim

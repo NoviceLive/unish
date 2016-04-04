@@ -41,6 +41,8 @@ def main():
         ('terminal/legacy/default-show-menubar', 'false'),
         # Strings need extra quoting: "'single'".
         ('nautilus/preferences/click-policy', "'single'"),
+        # This is actually the default.
+        ('desktop/interface/monospace-font-name', "'Monospace 11'"),
     ]
     for item, value in preferences:
         key = '/org/gnome/' + item
