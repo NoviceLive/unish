@@ -1,6 +1,12 @@
-pat # My package.
-urlmark # My package.
+pat # My package, new-style.
+urlmark # My package, new-style.
+tmgr # My package, old-style.
+lsext # My package, old-style, inactive.
+pdfextract # My package, old-style, inactive.
+pdfmark # My package, old-style, inactive.
 
-more_itertools python-magic
+
 radon
+
+
 pecoff

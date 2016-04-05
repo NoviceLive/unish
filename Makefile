@@ -97,11 +97,11 @@ aur:
 
 
 pip3:
-	sudo ${CMD}/ins -bpip3 ${DAT}/pip3.txt
+	sudo ${CMD}/ins -bpip3 ${DAT}/pip.txt ${DAT}/pip3.txt
 
 
 pip2:
-	sudo ${CMD}/ins -bpip2 ${DAT}/pip2.txt
+	sudo ${CMD}/ins -bpip2 ${DAT}/pip.txt ${DAT}/pip2.txt
 
 
 # # # # # # # # # # Shortcuts # # # # # # # # # #
