@@ -17,18 +17,6 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-rmtmp() {
-    : "
-Delete some temporary files.
-
-Usage: rmtmp
-
-Included files: *.pyc, __pycache__.
-"
-    find -name '*.pyc' -delete && find -name '__pycache__' -delete
-}
-
-
 # TODO: I will not always leave this a no-op.
 _command_not_found_handler() {
     printf 'command not found: %s\n' "$*" 1>&2

@@ -17,19 +17,31 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+objdump() {
+    command objdump "${@}" | less -FXR
+}
+
+
+pysetup() {
+    python setup.py "${@}" | less -FXR
+}
+
+
 pylint() {
     : "
 Lint Python code using pylint with some warnings disabled
 and display results using a pager if necessary.
 "
     command pylint "${@}" \
+            --output-format colorized \
+            --max-line-length 69 \
             --disable 'too-few-public-methods,missing-docstring' \
             --disable 'bad-builtin' \
         | less -FXR
 }
 
 
-bashcheck() {
+shlint() {
     : "
 Usage: bashcheck <options> <arguments>
 

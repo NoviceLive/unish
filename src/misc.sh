@@ -134,7 +134,7 @@ gbk2utf8() {
     if iconv -f gbk -t utf8 "${name}" -o "${name}".utf8; then
         mv "${name}".utf8 "${name}"
     else
-        rm -f "${name}".utf8
+        command rm -f "${name}".utf8
     fi
 }
 
@@ -153,16 +153,11 @@ alias ee='echo $?'
 
 
 alias mksvg='dot -Tsvg -O *.gv'
-alias rmsvg='rm -f *.svg'
 alias mkpng='dot -Tpng -O *.gv'
-alias rmpng='rm -f *.png'
 alias mkjpg='dot -Tjpg -O *.gv'
-alias rmjpg='rm -f *.jpg'
-alias rmgv='rm -f *.gv'
 
 
-for one in xz gzip gunzip bzip2 bunzip2
-do
+for one in xz gzip gunzip bzip2 bunzip2; do
     eval "
 ${one}() {
     : \"

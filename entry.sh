@@ -158,14 +158,19 @@ if source "$UNISH"/lib/logging.sh; then
     info 'Started Logging System.'
 else
     debug() {
+        :
     }
     info() {
+        :
     }
     warning() {
+        :
     }
     error() {
+        :
     }
     critical() {
+        :
     }
 fi
 
@@ -223,7 +228,6 @@ export PATH=$PATH:${UNISH}/cmd
 
 # Stack installs binaries here.
 export PATH=$PATH:$HOME/.local/bin
-
 
 
 export VISUAL='emacs -nw'

@@ -21,6 +21,70 @@
 #       rm<hash>_rec, ls<hash>_rec.
 
 
+rmthumb() {
+    : "
+Usage: rmthumb
+
+Delete the directory: ~/.cache/thumbnails/.
+"
+    command rm -rf "${HOME}"/.cache/thumbnails/
+}
+
+
+rmtmp() {
+    : "
+Try to delete /tmp.
+"
+    sudo rm -rf /tmp
+}
+
+
+unalias_if_exists rm
+
+rm() {
+    : "
+Smart rm.
+
+Usage: rm <options> <arguments>
+
+Invoked without arguments, delete the following files,
+*.pyc, __pycache__, *.egg-info.
+
+With arguments, pass control to /usr/bin/rm.
+"
+    if [[ $# -eq 0 ]]; then
+        find -name '*.pyc' -delete &&
+            find -name '__pycache__' -exec rm -rf "{}" \; -prune &&
+            find -name '*.egg-info' -exec rm -rf "{}" \; -prune
+    else
+        command rm -rf "${@}"
+    fi
+}
+
+
+_extensions=(svg png jpg gv bin o obj)
+
+_make_rm_ext_name() { stdout "rm${1}"; }
+
+for one in "${_extensions[@]}"; do
+    see_aslo=$(make_see_also "${one}" _make_rm_ext_name \
+                             "${_extensions[@]}")
+    eval "
+rm${one}() {
+    : \"
+Usage: rm${one}
+
+Remove files of ${one} extension.
+
+See Also: ${see_aslo}
+\"
+
+    command rm -f *.${one}
+}
+"
+done
+
+
 _hash_types=(sha{1,224,256,383,512} md5)
 
 _make_ls_hash_name() { stdout "ls${1}"; }
@@ -89,7 +153,7 @@ _rm_hash_generic() {
             debug "Checking ${current} against ${wanted}..."
             if [[ "${current}" == "${wanted}" ]]; then
                 info "Deleting ${filename}..."
-                rm -f "${filename}"
+                command rm -f "${filename}"
             fi
         done
     done
