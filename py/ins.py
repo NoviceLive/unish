@@ -38,6 +38,7 @@ from plumbum import local, FG
 @click.option('-b', '--binary', default='pacman', show_default=True,
               help='Use the binary.')
 def main(streams, binary):
+    """Initial package installation manager."""
     basicConfig(level=DEBUG)
     if binary == 'pacman':
         doer = Pacman()

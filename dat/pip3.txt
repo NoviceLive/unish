@@ -1,12 +1,15 @@
-pat # My package, new-style.
-urlmark # My package, new-style.
-tmgr # My package, old-style.
-lsext # My package, old-style, inactive.
-pdfextract # My package, old-style, inactive.
-pdfmark # My package, old-style, inactive.
+# Install all of my packages to setup a familiar environment.
+bintut
+pat
+urlmark
+tmgr
+lsext
+pdfextract
+pdfmark
 
 
 radon
 
 
+pyelftools
 pecoff

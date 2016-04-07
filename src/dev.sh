@@ -18,10 +18,53 @@
 
 
 pylint() {
+    : "
+Lint Python code using pylint with some warnings disabled
+and display results using a pager if necessary.
+"
     command pylint "${@}" \
             --disable 'too-few-public-methods,missing-docstring' \
             --disable 'bad-builtin' \
         | less -FXR
+}
+
+
+bashcheck() {
+    : "
+Usage: bashcheck <options> <arguments>
+
+Check Bash script using shellcheck.
+
+With the following excluded.
+
+SC1090: Can't follow non-constant source. Use a directive to specify location.
+"
+    shellcheck "${@}" --shell=bash --exclude=SC1090 | less -FXR
+}
+
+
+dog() {
+    : "
+Colorized cat.
+
+Usage: dog <file>
+"
+    if [[ $# -ne 1 ]]; then
+        error "One argument for the file name to view!"
+        return 1
+    fi
+    if exists highlight; then
+        debug "Using highlight"
+        highlight -O xterm256 --style breeze --line-numbers "$1" \
+            | less -FXR
+    elif exists pygmentize; then
+        debug "Using pygmentize"
+        pygmentize -g -O style=colorful,linenos=1 "$1" | less -FXR
+    else
+        error "No highlighter available"
+        info "Try installing 'highlight' or 'pygmentize'"
+        return 1
+    fi
 }
 
 
@@ -61,45 +104,6 @@ List syscall definitions in files.
 Usage: lssc <file> <file> ...
 "
     grep -zoP '(?s)SYSCALL_DEFINE\d\(.+?(?=[#{])' "${@}"
-}
-
-
-bashcheck() {
-    : "
-Usage: bashcheck <options> <arguments>
-
-Check Bash script using shellcheck.
-
-With the following excluded.
-
-SC1090: Can't follow non-constant source. Use a directive to specify location.
-"
-    shellcheck "${@}" --shell=bash --exclude=SC1090
-}
-
-
-dog() {
-    : "
-Colorized cat.
-
-Usage: dog <file>
-"
-    if [[ $# -ne 1 ]]; then
-        error "One argument for the file name to view!"
-        return 1
-    fi
-    if exists highlight; then
-        debug "Using highlight"
-        highlight -O xterm256 --style breeze --line-numbers "$1" \
-            | less -FXR
-    elif exists pygmentize; then
-        debug "Using pygmentize"
-        pygmentize -g -O style=colorful,linenos=1 "$1" | less -FXR
-    else
-        error "No highlighter available"
-        info "Try installing 'highlight' or 'pygmentize'"
-        return 1
-    fi
 }
 
 

@@ -66,6 +66,7 @@ Make a See Also string used in function definition.
 "
     local current="${1}"
     local alg="${2}"
+    # This seems problematic in old versions of Zsh, e.g. 5.0 or so.
     local all=("${@:3}")
     local see_also
     see_also=$(for i in "${all[@]}"; do
@@ -143,6 +144,7 @@ _log_generic() {
 for one in "${_log_levels[@]}"; do
     see_also=$(make_see_also "${one}" lower \
                              "${_log_levels[@]}")
+
     if [[ $one != "INFO" ]]; then
         name=$(lower "${one}")
         eval "

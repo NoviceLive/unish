@@ -154,8 +154,20 @@ log_simple "Exported UNISH to ${UNISH}."
 
 
 log_simple 'Starting Logging System...'
-source "$UNISH"/lib/logging.sh && \
+if source "$UNISH"/lib/logging.sh; then
     info 'Started Logging System.'
+else
+    debug() {
+    }
+    info() {
+    }
+    warning() {
+    }
+    error() {
+    }
+    critical() {
+    }
+fi
 
 
 reexec() {
@@ -206,6 +218,7 @@ info 'Started Unish Base.'
 # I often place binaries and symbolic links here.
 export PATH=$PATH:$HOME/bin:$HOME/bin/lnk
 
+# Here reside commands provided by Unish.
 export PATH=$PATH:${UNISH}/cmd
 
 # Stack installs binaries here.

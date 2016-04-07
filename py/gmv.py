@@ -16,6 +16,7 @@ from git import Repo
 @click.argument('source')
 @click.argument('dest')
 def main(source, dest):
+    """Rename a Git repository and update its remote accordingly."""
     basicConfig(level=DEBUG)
     try:
         repo = Repo(source)

@@ -218,19 +218,20 @@ Smart Emacs.
 
 Usage: e <name> <options>
 
-Open an existing file using Emacs or create a new one using tm.
+Open an existing file using Emacs
+or create a new one applying a template manager if available.
 "
     local name="${1}"
+    # TMgr: See https://github.com/NoviceLive/tmgr.
     local templator='tmgr'
-    if [[ -f "${name}" ]]
-    then
-        emacs "${name}" &
+    if [[ -f "${name}" ]]; then
+        emacs -nw "${name}"
     elif exists ${templator}; then
-        ${templator} "${@}" \
-            || warning "The File '${name}' is not Templated"
-        emacs "${name}" &
+        ${templator} "${@}" || \
+            warning "The file '${name}' is not templated"
+        emacs -nw "${name}"
     else
-        warning "${templator} Unavailable"
-        emacs "${name}" &
+        warning "the template manager ${templator} is unavailable!"
+        emacs -nw "${name}"
     fi
 }
