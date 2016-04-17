@@ -12,3 +12,4 @@ pyinstaller
 metasploit
 ropgadget
 chromium-pepper-flash
+haroopad

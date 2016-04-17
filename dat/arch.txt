@@ -22,7 +22,7 @@ shadowsocks privoxy
 mercurial
 
 
-flashplugin chromium
+flashplugin chromium gvim
 ibus-libpinyin noto-fonts noto-fonts-cjk noto-fonts-emoji
 tmux xclip wget htop iotop net-tools lsof strace rlwrap mlocate pkgfile fish haveged
 gcc-multilib gdb hardening-wrapper valgrind-multilib dosfstools
@@ -44,4 +44,7 @@ linux-manpages
 dos2unix
 adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
 adobe-source-han-sans-otc-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-tw-fonts
-gvim
+dmidecode bluez-utils python-pybluez python2-pybluez
+tesseract tesseract-data-eng tesseract-data-chi_sim
+festival espeak
+scrapy python-requests python2-requests python-lxml python2-lxml python-beautifulsoup4 python2-beautifulsoup4
