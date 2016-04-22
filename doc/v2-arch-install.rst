@@ -97,11 +97,11 @@ Securely Erase Disks
     ::
 
        cryptsetup --key-file /dev/random open --type plain /dev/sdX one
-       dd if=/dev/zero of=/dev/sdX
+       dd if=/dev/zero of=/dev/mapper/one
        cryptsetup close one
 
        cryptsetup --key-file /dev/random open --type plain /dev/sdY two
-       dd if=/dev/zero of=/dev/sdY
+       dd if=/dev/zero of=/dev/mapper/two
        cryptsetup close two
 
 

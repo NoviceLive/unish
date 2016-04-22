@@ -11,5 +11,4 @@ pdfmark
 radon
 
 
-pyelftools
 pecoff

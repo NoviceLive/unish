@@ -1,0 +1,3 @@
+python-pip python2-pip
+python-click python2-click
+python-capstone python2-capstone
