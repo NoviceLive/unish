@@ -41,8 +41,8 @@ fi
 
 
 printf 'Creating Symbolic Link for Git...\n'
-ln -srf ${ETC}/git.conf ${HOME}/.gitconfig
+ln -srf ${ETC}/.gitconfig ${HOME}/
 
 
 printf 'Creating Symbolic Link for Mercurial...\n'
-ln -srf ${ETC}/hgrc.conf ${HOME}/.hgrc
+ln -srf ${ETC}/.hgrc ${HOME}/

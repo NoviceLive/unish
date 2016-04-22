@@ -30,6 +30,27 @@ default:
 	# And because this Makefile isn't well-written :(.
 
 
+shell:
+	ln -srf ${ETC}/.xinitrc ~/
+	ln -srf ${ETC}/.Xresources ~/
+	make fish
+	make zsh
+	make bash
+	make tmux
+
+
+conf:
+	make tmux
+	make stack
+	make ghci
+	make gdb
+
+
+xconf:
+	make ruby
+	make gnome
+
+
 fish:
 	mkdir -p ~/.config/fish/
 	ln -srf fish.fish ~/.config/fish/config.fish
@@ -43,11 +64,9 @@ bash:
 	ln -srf entry.sh ~/.bashrc
 
 
-# # # # # # # # # # Static # # # # # # # # # #
-
-
 tmux:
-	ln -srf ${ETC}/tmux.conf ~/.tmux.conf
+	ln -srf ${ETC}/.tmux.conf ~/
+
 
 
 stack:
@@ -69,15 +88,12 @@ gtk:
 	ln -srf ${ETC}/gtk.conf ~/.config/gtk-3.0/settings.ini
 
 
-# # # # # # # # # # Dynamic # # # # # # # # # #
-
-
 scm:
 	${BIN}/scm.sh
 
 
 ruby:
-	${BIN}/ruby.sh
+	# ${BIN}/ruby.sh
 
 
 gnome:
@@ -102,26 +118,3 @@ pip3:
 
 pip2:
 	sudo ${CMD}/ins -bpip2 ${DAT}/pip.txt ${DAT}/pip2.txt
-
-
-# # # # # # # # # # Shortcuts # # # # # # # # # #
-# Warning:
-# Don't use them unless you really want to get messed up with me.
-
-
-shell:
-	make fish
-	make zsh
-	make bash
-
-
-conf:
-	make tmux
-	make stack
-	make ghci
-	make gdb
-
-
-xconf:
-	make ruby
-	make gnome

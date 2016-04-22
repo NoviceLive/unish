@@ -69,7 +69,7 @@ and otherwise pass control to the real 'command ls'.
     if [[ $# -eq 1 && -f "${1}" ]]; then
         less -FX "${1}"
     else
-        command ls --color=auto "${@}"
+        command ls --color=auto --all "${@}"
     fi
 }
 
