@@ -220,6 +220,11 @@ done
 info 'Started Unish Base.'
 
 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+
 # I often place binaries and symbolic links here.
 export PATH=$PATH:$HOME/bin:$HOME/bin/lnk
 

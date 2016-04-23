@@ -51,6 +51,11 @@ xconf:
 	make gnome
 
 
+awesome:
+	mkdir -p ~/.config/awesome
+	ln -srf ${ETC}/rc.lua ~/.config/awesome
+
+
 fish:
 	mkdir -p ~/.config/fish/
 	ln -srf fish.fish ~/.config/fish/config.fish

@@ -217,13 +217,13 @@ or create a new one applying a template manager if available.
     # TMgr: See https://github.com/NoviceLive/tmgr.
     local templator='tmgr'
     if [[ -f "${name}" ]]; then
-        emacs -nw "${name}"
+        emacs "${name}" &
     elif exists ${templator}; then
         ${templator} "${@}" || \
             warning "The file '${name}' is not templated"
-        emacs -nw "${name}"
+        emacs "${name}" &
     else
         warning "the template manager ${templator} is unavailable!"
-        emacs -nw "${name}"
+        emacs "${name}" &
     fi
 }
