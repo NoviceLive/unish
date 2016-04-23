@@ -17,10 +17,14 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-# TODO: I will not always leave this a no-op.
 _command_not_found_handler() {
-    printf 'command not found: %s\n' "$*" 1>&2
-    return 127
+    debug "${*}"
+    if [[ ${1} == "_" ]]; then
+        firefox "https://www.google.com/#newwindow=1&q=${*:2}"
+    else
+        firefox "https://www.google.com/#newwindow=1&q=${*}"
+    fi
+    return 0
 }
 
 
