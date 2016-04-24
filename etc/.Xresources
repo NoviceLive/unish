@@ -1,1 +1,12 @@
 XTerm*metaSendsEscape: true
+XTerm*background: black
+XTerm*foreground: green
+XTerm*fullscreen: always
+
+
+xterm*faceName: Source Code Pro:style=Regular
+xterm*faceNameDoublesize: Source Han Sans
+xterm*faceSize: 12
+
+
+xscreensaver*splash: false
