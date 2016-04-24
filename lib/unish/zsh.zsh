@@ -26,11 +26,7 @@ B() {
 
 
 command_not_found_handler() {
-    if which _command_not_found_handler > /dev/null; then
-        _command_not_found_handler "${@}"
-    else
-        return 127
-    fi
+    404 "${@}"
 }
 
 

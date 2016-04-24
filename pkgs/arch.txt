@@ -1,7 +1,7 @@
 # base base-devel zsh grml-zsh-config
 # grub efibootmgr dialog wpa_supplicant
 # git
-nvidia xorg-server xorg-xinit xorg-xset awesome alsa-utils
+nvidia xorg-server xorg-xinit xorg-apps awesome alsa-utils
 lightdm lightdm-gtk-greeter xterm xclip xscreensaver
 firefox flashplugin shadowsocks privoxy openssh
 ibus-libpinyin wqy-bitmapfont wqy-microhei wqy-zenhei noto-fonts noto-fonts-emoji noto-fonts-cjk
