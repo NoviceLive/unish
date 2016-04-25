@@ -1,4 +1,4 @@
-bcdedit /enum | more
-bcdedit /? types bootapp | more
+rem bcdedit /enum | more
+rem bcdedit /? types bootapp | more
 bcdedit /set testsigning on
-bcdedit /enum | more
+rem bcdedit /enum | more

@@ -1,3 +1,3 @@
-net use
+rem net use
 net use f: \\vboxsrv\shared
-net use /delete f:
+rem net use /delete f:

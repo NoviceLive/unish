@@ -1,0 +1,1 @@
+symchk /ip * /v
