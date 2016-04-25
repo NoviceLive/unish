@@ -21,7 +21,7 @@
 
 
 ETC='etc'
-PRIV='../../private/unish.hg/etc/ssh.conf'
+PRIV='../../private/unish.hg/etc/ssh_config'
 CONF="${HOME}/.ssh/config"
 
 
@@ -33,10 +33,10 @@ mkdir -p ~/.ssh &&
 
 if [[ -f ${PRIV} ]]; then
     printf 'Found Private Configuration!\n'
-    cat ${ETC}/ssh.conf ${PRIV} >> ${CONF}
+    cat ${ETC}/ssh_config ${PRIV} >> ${CONF}
 else
     printf 'No Private Configuration Used.\n'
-    cat ${ETC}/ssh.conf >> ${CONF}
+    cat ${ETC}/ssh_config >> ${CONF}
 fi
 
 

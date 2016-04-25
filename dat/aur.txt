@@ -1,0 +1,18 @@
+# package-query
+# yaourt
+
+
+# For USB support and the like.
+virtualbox-ext-oracle
+
+
+# Internationalized unzip.
+unzip-natspec
+
+
+# For creating WiFi access points with ease.
+create_ap # High-profile: ``dnsmasq``, ``hostapd`` & ``iw``.
+
+
+# Historic versions of Python.
+python32 python33 python34

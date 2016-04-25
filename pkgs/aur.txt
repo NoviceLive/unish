@@ -1,4 +1,0 @@
-# package-query
-# yaourt
-virtualbox-ext-oracle
-unzip-natspec

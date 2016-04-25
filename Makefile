@@ -85,7 +85,7 @@ ghci:
 
 
 gdb:
-	ln -srf ${ETC}/gdb.conf ~/.gdbinit
+	ln -srf ${ETC}/.gdbinit ~/
 
 
 gtk:
@@ -98,6 +98,7 @@ scm:
 
 
 ruby:
+	echo Deprecated.
 	# ${BIN}/ruby.sh
 
 
@@ -106,7 +107,8 @@ gnome:
 
 
 github:
-	${BIN}/github.sh
+	echo Deprecated.
+	# ${BIN}/github.sh
 
 
 arch:
