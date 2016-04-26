@@ -30,7 +30,8 @@ tmux rlwrap
 shellcheck
 dosfstools
 wget net-tools
-htop iotop
+htop iotop iftop atop powertop
+whois
 pkgfile # ``pkgfile --update``.
 fish
 dmidecode
@@ -103,6 +104,8 @@ lib32-mesa-libgl winetricks # High-profile: ``cabextract`` & ``wine``.
 chromium
 octave
 gvim texmacs
+zenity
+eog
 
 
 # Various document consumers & producers.
@@ -123,3 +126,4 @@ ruby ruby-bundler
 go
 nodejs npm
 swi-prolog gprolog python-pyswip python2-pyswip
+shutter
