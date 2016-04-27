@@ -17,6 +17,11 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+clipboard() {
+    xclip -o | xclip -selection clipboard
+}
+
+
 aurpkg() {
     : "
 Download PKGBUILD from AUR and build them.
