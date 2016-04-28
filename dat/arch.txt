@@ -42,6 +42,7 @@ unrar p7zip upx dos2unix rfkill
 festival espeak
 socat nmap gnu-netcat wireshark-gtk tcpdump
 checksec radare2 ropper
+highlight pygmentize
 
 
 # Chinese input and some fonts.
@@ -104,9 +105,7 @@ lib32-mesa-libgl winetricks # High-profile: ``cabextract`` & ``wine``.
 chromium
 octave
 gvim texmacs
-zenity
-eog
-
+eog shutter zenity
 
 # Various document consumers & producers.
 xdot # High-profile: ``graphviz`` & ``ghostscript``.
@@ -126,4 +125,4 @@ ruby ruby-bundler
 go
 nodejs npm
 swi-prolog gprolog python-pyswip python2-pyswip
-shutter
+vbetool
