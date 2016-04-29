@@ -26,10 +26,11 @@ qemu qemu-arch-extra
 
 
 # Awesome utilities mainly for shells.
+hexedit dhex
 tmux rlwrap
 shellcheck
 dosfstools
-wget net-tools
+wget net-tools traceroute
 htop iotop iftop atop powertop
 whois
 pkgfile # ``pkgfile --update``.
@@ -42,7 +43,7 @@ unrar p7zip upx dos2unix rfkill
 festival espeak
 socat nmap gnu-netcat wireshark-gtk tcpdump
 checksec radare2 ropper
-highlight pygmentize
+highlight pygmentize source-highlight
 
 
 # Chinese input and some fonts.
@@ -126,3 +127,7 @@ go
 nodejs npm
 swi-prolog gprolog python-pyswip python2-pyswip
 vbetool
+
+
+# Wireless
+pcsclite
