@@ -26,7 +26,7 @@ B() {
 
 
 command_not_found_handler() {
-    404 "${@}"
+    _command_not_found_handler "${@}"
 }
 
 

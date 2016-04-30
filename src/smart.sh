@@ -18,13 +18,7 @@
 
 
 _command_not_found_handler() {
-    debug "${*}"
-    if [[ ${1} == "_" ]]; then
-        firefox "https://www.google.com/#newwindow=1&q=${*:2}"
-    else
-        firefox "https://www.google.com/#newwindow=1&q=${*}"
-    fi
-    return 0
+    404 "${@}" || return 127
 }
 
 

@@ -2,6 +2,9 @@ Requirements
 ============
 
 
+sudo pacman -S python-virtualenvwrapper
+
+
 Deployment Requirements (Incomplete)
 ------------------------------------
 

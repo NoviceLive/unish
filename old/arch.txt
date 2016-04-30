@@ -1,0 +1,133 @@
+# Packages Check List When I Reinstall Arch Linux
+
+
+# Base packages.
+# base base-devel zsh grml-zsh-config
+# grub efibootmgr dialog wpa_supplicant
+# git
+
+
+# Video card driver, X, DM, WM and various applications.
+nvidia
+xorg-server xorg-xinit xorg-apps
+alsa-utils
+lightdm lightdm-gtk-greeter
+awesome
+xterm xclip xscreensaver cbatticon
+
+
+# Essential packages.
+firefox flashplugin
+openssh shadowsocks privoxy
+emacs
+linux-headers linux-manpages
+virtualbox virtualbox-guest-iso
+qemu qemu-arch-extra
+
+
+# Awesome utilities mainly for shells.
+hexedit dhex
+tmux rlwrap
+shellcheck
+dosfstools
+wget net-tools traceroute
+htop iotop iftop atop powertop
+whois
+pkgfile # ``pkgfile --update``.
+fish
+dmidecode
+strace lsof
+haveged
+mlocate
+unrar p7zip upx dos2unix rfkill
+festival espeak
+socat nmap gnu-netcat wireshark-gtk tcpdump
+checksec radare2 ropper
+highlight pygmentize source-highlight
+
+
+# Chinese input and some fonts.
+ibus-libpinyin
+adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
+adobe-source-han-sans-kr-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-cn-fonts
+adobe-source-han-sans-otc-fonts
+wqy-bitmapfont wqy-microhei wqy-zenhei
+noto-fonts noto-fonts-cjk noto-fonts-emoji
+ttf-dejavu terminus-font
+
+
+# Python development libraries and tools.
+python-virtualenvwrapper
+python-pylint python2-pylint flake8 python2-flake8
+python-pip python2-pip
+python-click python2-click
+python-capstone python2-capstone
+python-requests python2-requests
+python-beautifulsoup4 python2-beautifulsoup4
+python-lxml python2-lxml
+python-pyperclip python2-pyperclip
+python-colorama python2-colorama
+python-jinja python2-jinja
+python-mako python2-mako
+python-nose python2-nose
+python-sqlalchemy python2-sqlalchemy
+python-filebytes python2-filebytes
+python-pybluez python2-pybluez
+python-pyelftools
+scrapy
+python-sphinx python2-sphinx
+python-sphinx_rtd_theme python2-sphinx_rtd_theme
+
+
+# Haskell development libraries and tools.
+ghc stack cabal-install
+ghc-mod hlint
+hoogle # ``hoogle data``.
+
+
+scala scala-docs sbt
+
+
+# General development tools.
+gcc-multilib valgrind-multilib
+gdb hardening-wrapper
+mercurial subversion
+scons meson cmake
+cloc sloccount
+nasm yasm astyle
+tesseract tesseract-data-eng tesseract-data-chi_sim
+bluez-utils
+
+
+# Media players and more.
+vlc skype
+avidemux-gtk avidemux-cli audacity smplayer
+lib32-mesa-libgl winetricks # High-profile: ``cabextract`` & ``wine``.
+chromium
+octave
+gvim texmacs
+eog shutter zenity
+
+# Various document consumers & producers.
+xdot # High-profile: ``graphviz`` & ``ghostscript``.
+pandoc
+kdegraphics-okular kchmviewer okteta
+gimp libreoffice-fresh texlive-core texlive-latexextra
+
+
+# Programming languages to play with.
+racket
+ocaml ocaml-findlib
+erlang erlang-docs
+elixir
+rust cargo
+clojure
+ruby ruby-bundler
+go
+nodejs npm
+swi-prolog gprolog python-pyswip python2-pyswip
+vbetool
+
+
+# Wireless
+pcsclite

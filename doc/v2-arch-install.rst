@@ -299,12 +299,6 @@ Perform System Installation
 
      nano /etc/pacman.d/mirrorlist
 
-  Enable ``multilib`` if intended.
-
-  ::
-
-     nano /etc/pacman.conf
-
 - Install the base system.
 
   ::

@@ -2,7 +2,7 @@
 
 
 from logging import basicConfig, DEBUG, root as logger
-from sys import argv
+from sys import argv, exit
 from subprocess import Popen
 
 
@@ -12,13 +12,15 @@ def main():
     logger.debug('argv: %s', argv)
     if argv[1] in '-_+=@':
         index = 2
+        joined = ' '.join(argv[index:])
+        logger.debug('joined: %s', joined)
+        args = ['firefox', 'https://www.google.com/#newwindow=1&q=' + joined]
+        logger.debug('Popen: %s', args)
+        Popen(args)
+        exit(0)
     else:
-        index = 1
-    joined = ' '.join(argv[index:])
-    logger.debug('joined: %s', joined)
-    args = ['firefox', 'https://www.google.com/#newwindow=1&q=' + joined]
-    logger.debug('Popen: %s', args)
-    Popen(args)
+        exit(1)
+
 
 
 if __name__ == '__main__':

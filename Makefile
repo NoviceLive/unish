@@ -31,27 +31,14 @@ default:
 
 
 shell:
-	ln -srf ${ETC}/.xinitrc ~/
-	ln -srf ${ETC}/.Xresources ~/
-	make fish
-	make zsh
 	make bash
+	make zsh
 	make tmux
-
-
-conf:
-	make tmux
-	make stack
-	make ghci
-	make gdb
-
-
-xconf:
-	make ruby
-	make gnome
 
 
 awesome:
+	ln -srf ${ETC}/.Xresources ~/
+	ln -srf ${ETC}/.xinitrc ~/
 	mkdir -p ~/.config/awesome
 	ln -srf ${ETC}/rc.lua ~/.config/awesome
 

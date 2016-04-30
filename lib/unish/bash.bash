@@ -26,12 +26,7 @@ Z() {
 
 
 command_not_found_handle() {
-    404 "${@}"
-    # if type _command_not_found_handler > /dev/null 2>&1; then
-    #     _command_not_found_handler "${@}"
-    # else
-    #     return 127
-    # fi
+    _command_not_found_handler "${@}"
 }
 
 
