@@ -1,0 +1,11 @@
+scala scala-docs sbt
+ocaml ocaml-findlib
+racket
+erlang erlang-docs
+elixir
+rust cargo
+clojure
+ruby ruby-bundler
+go
+nodejs npm
+swi-prolog gprolog python-pyswip python2-pyswip

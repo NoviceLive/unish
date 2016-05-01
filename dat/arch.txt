@@ -1,0 +1,30 @@
+# Packages Check List When I Reinstall Arch Linux
+# Version 2016-04-30
+
+
+base base-devel zsh grml-zsh-config
+wpa_supplicant dialog
+grub efibootmgr intel-ucode
+
+
+git
+nvidia alsa-utils
+xorg-server xorg-xinit xorg-apps
+lightdm lightdm-gtk-greeter
+awesome xterm xclip xscreensaver cbatticon
+adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts
+
+
+tmux
+python-virtualenvwrapper
+python-pip python2-pip python-click python2-click
+
+
+firefox openssh shadowsocks privoxy emacs
+ibus-libpinyin noto-fonts-cjk noto-fonts-emoji
+mercurial
+
+
+virtualbox virtualbox-guest-iso virtualbox-host-dkms linux-headers
+flashplugin
+gcc-multilib

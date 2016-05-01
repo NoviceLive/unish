@@ -10,7 +10,9 @@ def main():
     """Intentional command not found handler."""
     basicConfig(level=DEBUG)
     logger.debug('argv: %s', argv)
-    if argv[1] in '-_+=@':
+    start = argv[1]
+    logger.debug('start: %s', start)
+    if start[0] in '-_+=@':
         index = 2
         joined = ' '.join(argv[index:])
         logger.debug('joined: %s', joined)

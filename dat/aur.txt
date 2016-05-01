@@ -15,10 +15,13 @@ create_ap # High-profile: ``dnsmasq``, ``hostapd`` & ``iw``.
 
 
 # Historic versions of Python.
-python32 python33 python34
+python26 python32 python33 python34
 
 
 haroopad
 
 
 mfoc
+
+
+chromium-pepper-flash

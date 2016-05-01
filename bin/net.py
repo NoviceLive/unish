@@ -28,7 +28,7 @@ def get_speed(upload=False):
 
 def read_statistics(trans=False):
     name = 'tx_bytes' if trans else 'rx_bytes'
-    path = '/sys/class/net/enp4s0f2/statistics/' + name
+    path = '/sys/class/net/wlp3s0/statistics/' + name
     with open(path) as stream:
         value = stream.read()
     return int(value)
