@@ -12,3 +12,6 @@ radon
 
 
 pecoff
+
+
+speechrecognition pyaudio pocketsphinx

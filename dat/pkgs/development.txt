@@ -6,3 +6,4 @@ cloc sloccount
 nasm yasm astyle
 tesseract tesseract-data-eng tesseract-data-chi_sim
 bluez-utils
+swig

@@ -6,7 +6,7 @@ XTerm*fullscreen: always
 
 xterm*faceName: Source Code Pro:style=Regular
 xterm*faceNameDoublesize: Source Han Sans
-xterm*faceSize: 12
+xterm*faceSize: 11
 
 
 xscreensaver*splash: false

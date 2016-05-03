@@ -18,3 +18,4 @@ checksec radare2 ropper
 highlight pygmentize source-highlight
 qemu qemu-arch-extra
 vbetool
+abs

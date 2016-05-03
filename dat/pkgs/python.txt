@@ -21,3 +21,5 @@ python-pyelftools
 scrapy
 python-sphinx python2-sphinx
 python-sphinx_rtd_theme python2-sphinx_rtd_theme
+python-markdown python2-markdown
+python-flask python2-flask python-django python2-django

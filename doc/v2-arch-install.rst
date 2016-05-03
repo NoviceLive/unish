@@ -5,6 +5,10 @@ Full-Disk Encrypted Arch Installation Version 2
 Metadata
 --------
 
+Created: March 10, 2016
+
+Updated: May 3, 2016
+
 Maintainer: Gu Zhengxiong (`NoviceLive`_) <rectigu@gmail.com>
 
 License: `GNU Free Documentation License`_ Version 1.3
