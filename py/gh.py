@@ -34,9 +34,11 @@ def main():
 
 
 @main.command()
-@click.argument('url')
+@click.argument('url', required=False)
 def cl(url):
     """Clone a repository in a simplified manner."""
+    from pyperclip import paste
+    url = url if url else paste().strip()
     SCM(url).doer.clone()
 
 

@@ -19,3 +19,4 @@ highlight pygmentize source-highlight
 qemu qemu-arch-extra
 vbetool
 abs
+binwalk
