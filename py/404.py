@@ -10,19 +10,47 @@ def main():
     """Intentional command not found handler."""
     basicConfig(level=DEBUG)
     logger.debug('argv: %s', argv)
-    start = argv[1]
-    logger.debug('start: %s', start)
-    if start[0] in '-_+=@':
-        index = 2
-        joined = ' '.join(argv[index:])
-        logger.debug('joined: %s', joined)
-        args = ['firefox', 'https://www.google.com/#newwindow=1&q=' + joined]
+    args = ' '.join(argv[1:])
+    handle_args(args)
+
+
+def handle_args(args):
+    parts = args.split()
+    start = parts[0]
+    if start[0] == '@':
+        operator = start[1:] if start[1:] else 'google'
+        args = ' '.join(parts[1:])
+        logger.debug('operator: %s', operator)
+        logger.debug('args: %s', args)
+        handle_operator(operator, args)
+    else:
+        raise RuntimeError('undefined!')
+
+
+def handle_operator(operator, args):
+    if args:
+        try:
+            url = globals()['handle_' + operator](args)
+        except KeyError:
+            raise
+        args = ['firefox', url]
         logger.debug('Popen: %s', args)
         Popen(args)
-        exit(0)
     else:
-        exit(1)
+        # TODO: Integrate with UrlMark.
+        pass
 
+
+def handle_google(args):
+    return 'https://www.google.com/#newwindow=1&q=' + args
+
+
+def handle_bing(args):
+    return 'https://bing.com/search?q=' + args
+
+
+def handle_baidu(args):
+    return 'https://www.baidu.com/s?wd=' + args
 
 
 if __name__ == '__main__':

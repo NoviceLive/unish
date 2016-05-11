@@ -12,7 +12,6 @@ strace lsof
 haveged
 mlocate
 unrar p7zip upx dos2unix rfkill
-festival espeak
 socat nmap gnu-netcat wireshark-gtk tcpdump
 checksec radare2 ropper
 highlight pygmentize source-highlight

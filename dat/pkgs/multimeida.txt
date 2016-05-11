@@ -1,12 +1,8 @@
-vlc skype eog shutter avidemux-gtk avidemux-cli audacity smplayer
+vlc eog shutter avidemux-gtk avidemux-cli audacity smplayer
 winetricks chromium octave gvim texmacs zenity
 xdot pandoc gimp
 kdegraphics-okular kchmviewer
 texlive-core texlive-latexextra libreoffice-fresh
-wqy-bitmapfont wqy-microhei wqy-zenhei
-adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
-adobe-source-han-sans-jp-fonts adobe-source-han-sans-tw-fonts
-adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts
-lib32-alsa-plugins
-pulseaudio
-festival-english
+skype lib32-alsa-plugins pulseaudio
+espeak festival festival-english
+youtube-dl

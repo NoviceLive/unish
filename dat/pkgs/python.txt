@@ -1,26 +1,12 @@
-python-virtualenvwrapper
-
-python-pip python2-pip
-
-python-click python2-click
-
 python-pylint python2-pylint flake8 python2-flake8
-python-capstone python2-capstone
-python-requests python2-requests
-python-beautifulsoup4 python2-beautifulsoup4
-python-lxml python2-lxml
-python-pyperclip python2-pyperclip
-python-colorama python2-colorama
-python-jinja python2-jinja
-python-mako python2-mako
-python-nose python2-nose
-python-sqlalchemy python2-sqlalchemy
-python-filebytes python2-filebytes
-python-pybluez python2-pybluez
-python-pyelftools
-scrapy
-python-sphinx python2-sphinx
-python-sphinx_rtd_theme python2-sphinx_rtd_theme
-python-markdown python2-markdown
-python-flask python2-flask python-django python2-django
-python-logbook python2-logbook
+
+python-capstone python2-capstone python-filebytes python2-filebytes python-pybluez python2-pybluez python-pyelftools
+
+python-colorama python2-colorama python-requests python2-requests python-beautifulsoup4 python2-beautifulsoup4 python-lxml python2-lxml python-logbook python2-logbook
+
+python-jinja python2-jinja python-mako python2-mako python-nose python2-nose python-sqlalchemy python2-sqlalchemy python-markdown python2-markdown
+
+
+python-sphinx python2-sphinx python-sphinx_rtd_theme python2-sphinx_rtd_theme
+
+python-flask python2-flask python-django python2-django scrapy

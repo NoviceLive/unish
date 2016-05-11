@@ -3,3 +3,5 @@ pathlib2
 click
 plumbum
 gitpython
+
+pyperclip
