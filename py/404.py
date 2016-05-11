@@ -53,5 +53,22 @@ def handle_baidu(args):
     return 'https://www.baidu.com/s?wd=' + args
 
 
+def handle_urban(args):
+    return 'https://www.urbandictionary.com/define.php?term=' + args
+
+
+def handle_etymo(args):
+    return 'http://www.etymonline.com/index.php?search=' + args
+
+
+def handle_ahd(args):
+    return 'https://ahdictionary.com/word/search.html?q=' + args
+
+
+def handle_oxford(args):
+    return 'https://www.oxforddictionaries.com/' \
+        'us/definition/american_english/' + args
+
+
 if __name__ == '__main__':
     main()

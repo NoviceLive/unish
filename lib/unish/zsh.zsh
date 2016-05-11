@@ -17,7 +17,10 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-setopt null_glob
+setopt nullglob
+
+# For use with intentional command-not-found handler.
+setopt nocorrect
 
 
 B() {
