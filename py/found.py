@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 
 
+"""
+Copyright 2016 Gu Zhengxiong <rectigu@gmail.com>
+"""
+
+
+from __future__ import division, absolute_import, print_function
 from logging import basicConfig, DEBUG, root as logger
 from sys import argv, exit
+from os.path import dirname, join, realpath
+from sqlite3 import connect, OperationalError
 from subprocess import Popen
 
 
 def main():
-    """Intentional command not found handler."""
+    """Intentional command-not-found handler."""
     basicConfig(level=DEBUG)
     logger.debug('argv: %s', argv)
     args = ' '.join(argv[1:])
@@ -33,12 +41,31 @@ def handle_operator(operator, args):
             url = globals()['handle_' + operator](args)
         except KeyError:
             raise
-        args = ['firefox', url]
-        logger.debug('Popen: %s', args)
-        Popen(args)
     else:
-        # TODO: Integrate with UrlMark.
-        pass
+        path = join(dirname(argv[0]), '..', 'dat', 'aliases.db')
+        path = realpath(path)
+        logger.debug('path: %s', path)
+        with connect(path) as database:
+            cursor = database.cursor()
+            sql = 'select link from aliases where name = ?'
+            args = (operator,)
+            logger.debug('sql: %s')
+            logger.debug('args: %s', args)
+            try:
+                cursor.execute(sql, args)
+            except OperationalError:
+                logger.exception('')
+                exit(1)
+            else:
+                link = cursor.fetchone()
+                if link:
+                    url = link[0]
+                else:
+                    print('Sorry, you have not defined this alias!')
+                    exit(1)
+    args = ['firefox', url]
+    logger.debug('Popen: %s', args)
+    Popen(args)
 
 
 def handle_google(args):
@@ -57,7 +84,7 @@ def handle_urban(args):
     return 'https://www.urbandictionary.com/define.php?term=' + args
 
 
-def handle_etymo(args):
+def handle_etym(args):
     return 'http://www.etymonline.com/index.php?search=' + args
 
 

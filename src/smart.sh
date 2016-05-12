@@ -18,7 +18,8 @@
 
 
 _command_not_found_handler() {
-    404 "${@}" || return 127
+    # See ``py/found.py`` for details of ``found``.
+    found "${@}" || return 127
 }
 
 
