@@ -31,9 +31,9 @@ default:
 
 
 shell:
-	make bash
-	make zsh
-	make tmux
+	ln -srf entry.sh ~/.bashrc
+	ln -srf entry.sh ~/.zshrc
+	ln -srf ${ETC}/.tmux.conf ~/
 
 
 awesome:
@@ -43,63 +43,37 @@ awesome:
 	ln -srf ${ETC}/rc.lua ~/.config/awesome
 
 
-fish:
-	mkdir -p ~/.config/fish/
-	ln -srf fish.fish ~/.config/fish/config.fish
+scm:
+	${BIN}/scm.sh
 
 
-zsh:
-	ln -srf entry.sh ~/.zshrc
-
-
-bash:
-	ln -srf entry.sh ~/.bashrc
-
-
-tmux:
-	ln -srf ${ETC}/.tmux.conf ~/
-
-
-
-stack:
-	mkdir -p ~/.stack
-	ln -srf ${ETC}/config.yaml ~/.stack/config.yaml
-
-
-ghci:
+ghc:
 	mkdir -p ~/.ghc
 	ln -srf ${ETC}/ghci.conf ~/.ghc/ghci.conf
+	mkdir -p ~/.stack
+	ln -srf ${ETC}/config.yaml ~/.stack/config.yaml
 
 
 gdb:
 	ln -srf ${ETC}/.gdbinit ~/
 
 
-gtk:
-	mkdir -p ~/.config/gtk-3.0
-	ln -srf ${ETC}/gtk.conf ~/.config/gtk-3.0/settings.ini
+fish:
+	mkdir -p ~/.config/fish/
+	ln -srf fish.fish ~/.config/fish/config.fish
 
 
-scm:
-	${BIN}/scm.sh
+# gtk:
+# 	mkdir -p ~/.config/gtk-3.0
+# 	ln -srf ${ETC}/gtk.conf ~/.config/gtk-3.0/settings.ini
 
 
-ruby:
-	echo Deprecated.
-	# ${BIN}/ruby.sh
-
-
-gnome:
-	${BIN}/gnome.py
-
-
-github:
-	echo Deprecated.
-	# ${BIN}/github.sh
+# gnome:
+# 	${BIN}/gnome.py
 
 
 arch:
-	sudo ${CMD}/ins -bpacman ${DAT}/pkgs.txt
+	sudo ${CMD}/ins -bpacman ${DAT}/arch.txt
 
 
 aur:

@@ -8,3 +8,4 @@ tesseract tesseract-data-eng tesseract-data-chi_sim
 bluez-utils
 swig
 go-tools subversion bzr
+shellcheck

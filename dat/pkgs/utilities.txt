@@ -1,21 +1,23 @@
 hexedit dhex
 tmux rlwrap
-shellcheck
 dosfstools
-wget net-tools traceroute dnsmasq hostapd iw macchanger
+macchanger
+wget net-tools traceroute
+dnsmasq hostapd iw haveged
 htop iotop iftop atop powertop
 whois
 pkgfile
 fish
 dmidecode
 strace lsof
-haveged
+
 mlocate
 unrar p7zip upx dos2unix rfkill
 socat nmap gnu-netcat wireshark-gtk tcpdump
 checksec radare2 ropper
 highlight pygmentize source-highlight
 qemu qemu-arch-extra
-vbetool
-abs
 binwalk
+
+
+abs

@@ -25,7 +25,7 @@ along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
 from __future__ import print_function
-from logging import basicConfig, DEBUG
+from logging import basicConfig, DEBUG, root as logger
 
 import click
 from plumbum import local, FG
@@ -51,10 +51,43 @@ def main(streams, binary):
     else:
         raise RuntimeError('No doers for %s', binary)
     for stream in streams:
-        for packages, comment in parse(stream.read()):
-            if comment:
-                print(comment)
-            doer.install(packages)
+        for packages in parse(stream.read()):
+            many = ' '.join(str(one) for one in packages)
+            if shot:
+                print('>>>', many)
+                doer.install(many)
+
+
+def parse(text):
+    blocks = text.split('\n\n')
+    for block in blocks:
+        packages = []
+        lines = filter(bool, block.strip().splitlines())
+        for line in lines:
+            try:
+                index = line.index('#')
+            except ValueError:
+                names = line
+                comment = ''
+            else:
+                names = line[:index]
+                comment = line[index+1:].strip()
+            if not names:
+                continue
+            packages.append(Packages(names, comment))
+        yield packages
+
+
+class Packages(object):
+    def __init__(self, names, comment):
+        self.names = names
+        self.comment = comment
+
+    def __repr__(self):
+        return self.names
+
+    def __str__(self):
+        return self.names
 
 
 class Pip(object):
@@ -78,22 +111,6 @@ class Pacman(object):
 
     def install(self, packages):
         self.pacman['--sync', '--needed', packages] & FG
-
-
-def parse(text):
-    lines = filter(bool, text.splitlines())
-    for line in lines:
-        try:
-            index = line.index('#')
-        except ValueError:
-            packages = line
-            comment = ''
-        else:
-            packages = line[:index]
-            comment = line[index+1:].strip()
-        packages = packages.strip().split()
-        if list(filter(bool, packages)):
-            yield (packages, comment)
 
 
 if __name__ == '__main__':

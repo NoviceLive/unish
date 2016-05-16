@@ -5,23 +5,33 @@
 # base base-devel zsh grml-zsh-config
 # grub efibootmgr intel-ucode dialog wpa_supplicant
 
+
 # git
-nvidia alsa-utils xorg-server xorg-xinit xorg-xset lightdm lightdm-gtk-greeter
-awesome xterm xclip xscreensaver cbatticon
+nvidia
+alsa-utils
+xorg-server
+xorg-xinit xorg-xset
+lightdm lightdm-gtk-greeter
+awesome
+xterm xclip xscreensaver cbatticon
 adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts
 
 
 tmux python-virtualenvwrapper
 python-pip python2-pip
-python-click python2-click python-pyperclip python2-pyperclip
+python-click python2-click
+python-pyperclip python2-pyperclip
 
 
-firefox openssh shadowsocks privoxy emacs
-ibus-libpinyin noto-fonts-cjk noto-fonts-emoji
-mercurial
+firefox flashplugin
+openssh shadowsocks privoxy mercurial
+emacs
+ibus-libpinyin
+noto-fonts noto-fonts-cjk noto-fonts-emoji
 
 
-virtualbox virtualbox-guest-iso virtualbox-host-dkms linux-headers qt4
-flashplugin
+virtualbox virtualbox-guest-iso virtualbox-host-dkms
+linux-headers qt4
+
 
 gcc-multilib
