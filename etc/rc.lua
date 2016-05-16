@@ -446,8 +446,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 awful.util.spawn("ibus-daemon --daemonize --xim --replace --desktop awesome")
+awful.util.spawn("ss-local -c /home/anon/private/unish.hg/etc/ss.json")
 awful.util.spawn("cbatticon")
 awful.util.spawn("xscreensaver")
-awful.util.spawn("xterm")
-awful.util.spawn("firefox")
-awful.util.spawn("virtualbox")
+-- awful.util.spawn("xterm")
+-- awful.util.spawn("firefox")
+-- awful.util.spawn("virtualbox")

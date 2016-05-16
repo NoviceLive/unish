@@ -433,6 +433,20 @@ Configure The Bootloader
 
      pacman -S grub efibootmgr
 
+  For Intel CPU, it's advised to install ``intel-ucode``.
+
+  ::
+
+     pacman -S intel-ucode
+
+  The following packages are also suggested to be installed,
+  if not previously installed,
+  at this stage for systems mainly depending on Wi-Fi.
+
+  ::
+     pacman -S dialog wpa_supplicant
+
+
 - Edit ``/etc/default/grub``.
 
   Add the line,

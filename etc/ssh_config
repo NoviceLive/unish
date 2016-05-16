@@ -10,3 +10,10 @@ User git
 HostName bitbucket.org
 IdentityFile ~/.ssh/b
 PreferredAuthentications publickey
+
+
+Host e
+User git
+HostName gitlab.com
+IdentityFile ~/.ssh/e
+PreferredAuthentications publickey
