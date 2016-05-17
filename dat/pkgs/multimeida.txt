@@ -6,4 +6,3 @@ texlive-core texlive-latexextra libreoffice-fresh
 skype lib32-alsa-plugins pulseaudio
 espeak festival festival-english
 youtube-dl
-bcloud

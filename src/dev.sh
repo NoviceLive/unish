@@ -17,8 +17,11 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-hdoc() {
-    ghci -v0 <<< ":info ${@}"
+hsdoc() {
+    : "
+Extremely naive clone of pydoc for Haskell.
+"
+    ghci -v0 <<< ":info ${*}"
 }
 
 

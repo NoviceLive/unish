@@ -33,32 +33,16 @@ Delete the directory: ~/.cache/thumbnails/.
 
 rmtmp() {
     : "
-Try to delete /tmp.
-"
-    sudo rm -rf /tmp
-}
+Remove temporary files.
 
-
-unalias_if_exists rm
-
-rm() {
-    : "
-Smart rm.
-
-Usage: rm <options> <arguments>
+Usage: rmtmp
 
 Invoked without arguments, delete the following files,
 *.pyc, __pycache__, *.egg-info.
-
-With arguments, pass control to /usr/bin/rm.
 "
-    if [[ $# -eq 0 ]]; then
-        find -name '*.pyc' -delete &&
-            find -name '__pycache__' -exec rm -rf "{}" \; -prune &&
-            find -name '*.egg-info' -exec rm -rf "{}" \; -prune
-    else
-        command rm -rf "${@}"
-    fi
+    find -name '*.pyc' -delete &&
+        find -name '__pycache__' -exec rm -rf "{}" \; -prune &&
+        find -name '*.egg-info' -exec rm -rf "{}" \; -prune
 }
 
 
@@ -89,6 +73,7 @@ _hash_types=(sha{1,224,256,383,512} md5)
 
 _make_ls_hash_name() { stdout "ls${1}"; }
 _make_rm_hash_name() { stdout "rm${1}"; }
+_make_hash_sign_name() { stdout "${1}sign"; }
 
 for one in "${_hash_types[@]}"; do
     debug "Creating function ls${one}..."
@@ -124,7 +109,30 @@ See Also: ${see_also}
     _rm_hash_generic ${one}sum \"\${@}\"
 }
 "
+    debug "Creating function ${one}sign..."
+    see_also=$(make_see_also "${one}" _make_hash_sign_name \
+                             "${_hash_types[@]}")
+    eval "
+${one}sign() {
+    : \"
+Usage: ${one}sign <filename>
+
+See Also: ${see_also}
+\"
+    _hash_sign_generic ${one} \"\${@}\"
+}
+"
 done
+
+
+_hash_sign_generic() {
+    local algorithm="${1}"
+    local filename="${2}"
+
+    "${algorithm}sum" --tag "${filename}" | \
+        gpg --clearsign --armor \
+            --output "${filename}.${algorithm}sum.asc"
+}
 
 
 _ls_hash_generic() {
