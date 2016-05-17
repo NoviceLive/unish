@@ -49,6 +49,28 @@ You have been warned.
 Features
 --------
 
+- Intentional command-not-found handler
+
+  Work in progress, prototype available.
+
+  For more details, see ``py/found.py``, ``py/fdb.py``,
+  as well as the command-not-found handling functions.
+
+  **Show Cases**
+
+  ::
+
+     $ # Search in Google or Bing, and many others.
+     $ @google Who is the president of US
+     $ @bing Who is the president of US
+
+     $ # Open a website.
+     $ @github
+
+     $ # Search in dictionaries.
+     $ @oxford pulchritude
+     $ @urban '<3'
+
 - Smart Commands (Growing)
 
   Commands with knowledge of their invocation environment and behave
