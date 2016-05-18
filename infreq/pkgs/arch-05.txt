@@ -45,3 +45,4 @@ docker
 vagrant
 unzip
 pcsclite
+powerline

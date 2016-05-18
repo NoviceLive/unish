@@ -17,13 +17,24 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+remac() {
+    sudo netctl stop-all && \
+        sudo macchanger -a wlp3s0 && sudo netctl start wlp3s0-DIVI
+}
+
+
 syncboard() {
     xclip -o | xclip -selection clipboard
 }
 
 
-clipboard() {
+outboard() {
     xclip -o -selection clipboard
+}
+
+
+inboard() {
+    xclip -selection clipboard
 }
 
 

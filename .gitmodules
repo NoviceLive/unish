@@ -4,6 +4,3 @@
 [submodule "bundle/zsh-history-substring-search"]
 	path = bundle/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "bundle/virtualenvwrapper"]
-	path = bundle/virtualenvwrapper
-	url = https://novicelive@bitbucket.org/virtualenvwrapper/virtualenvwrapper.git

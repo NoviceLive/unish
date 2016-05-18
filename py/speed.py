@@ -5,13 +5,16 @@ from time import perf_counter, sleep
 
 
 def main():
-    while True:
-        try:
-            print('{} {:.2f} KiB/s {} {:.2f} KiB/s\r'.format(
-                chr(8595), get_speed(),
-                chr(8593), get_speed(True)), end='')
-        except KeyboardInterrupt:
-            break
+    print('{} {:.2f} KiB/s {} {:.2f} KiB/s'.format(
+        chr(8595), get_speed(),
+        chr(8593), get_speed(True)), end='')
+    # while True:
+    #     try:
+    #         print('{} {:.2f} KiB/s {} {:.2f} KiB/s\r'.format(
+    #             chr(8595), get_speed(),
+    #             chr(8593), get_speed(True)), end='')
+    #     except KeyboardInterrupt:
+    #         break
 
 
 def get_speed(upload=False):

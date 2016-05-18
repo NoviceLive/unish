@@ -2,7 +2,7 @@ Requirements
 ============
 
 
-sudo pacman -S python-virtualenvwrapper
+sudo pacman -S python-virtualenvwrapper powerline
 
 
 Deployment Requirements (Incomplete)

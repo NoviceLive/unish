@@ -17,11 +17,6 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-_plugins_dir="${UNISH}/bundle"
-
-_plugin_name=virtualenvwrapper
-_plugin_entry="$_plugins_dir/$_plugin_name/$_plugin_name.sh"
-
 export WORKON_HOME=${HOME}/.virtualenv
 export PROJECT_HOME=${HOME}/private
-source_if_exists "$_plugin_entry"
+source_if_exists "/usr/bin/virtualenvwrapper.sh"
