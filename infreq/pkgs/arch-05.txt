@@ -20,3 +20,28 @@ bc
 macchanger
 shellcheck
 pandoc
+python-jinja python2-jinja
+audacity smplayer avidemux-gtk youtube-dl
+qemu qemu-arch-extra
+virtualbox virtualbox-guest-iso virtualbox-host-dkms linux-headers qt4
+checksec radare2 ropper socat nmap gnu-netcat wireshark-gtk tcpdump binwalk
+geoip-database-extra
+python-geoip python2-geoip python-pygeoip python2-pygeoip
+htop iotop iftop powertop
+wget net-tools traceroute dosfstools hexedit dhex rlwrap strace lsof dmidecode highlight pygmentize source-highlight
+whois unrar p7zip upx dos2unix rfkill
+gdb subversion scons cmake cloc sloccount nasm yasm astyle
+tesseract tesseract-data-eng tesseract-data-chi_sim
+python-flask python2-flask python-django python2-django scrapy
+ipython ipython2
+python-nose python2-nose
+ghc stack ghc-mod cabal-install
+scala sbt scala-docs ocaml ocaml-findlib racket erlang erlang-docs elixir rust cargo clojure ruby ruby-bundler go go-tools nodejs npm swi-prolog gprolog python-pyswip python2-pyswip
+ruby-docs
+xdot
+aircrack-ng bluez-utils dnsmasq hostapd haveged
+gcc-multilib valgrind-multilib
+docker
+vagrant
+unzip
+pcsclite

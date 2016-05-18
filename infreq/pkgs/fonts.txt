@@ -1,4 +1,0 @@
-wqy-microhei wqy-zenhei wqy-bitmapfont
-adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
-adobe-source-han-sans-jp-fonts adobe-source-han-sans-tw-fonts
-adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts

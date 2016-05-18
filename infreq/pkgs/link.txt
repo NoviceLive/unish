@@ -1,5 +1,0 @@
-github https://github.com/
-gb https://github.com/
-fishroom https://fishroom.tuna.moe/
-tuna https://tuna.moe/
-pretotyping http://www.pretotyping.org/

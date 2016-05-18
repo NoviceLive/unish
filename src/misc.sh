@@ -17,8 +17,13 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
-clipboard() {
+syncboard() {
     xclip -o | xclip -selection clipboard
+}
+
+
+clipboard() {
+    xclip -o -selection clipboard
 }
 
 
