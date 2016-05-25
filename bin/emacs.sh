@@ -179,3 +179,4 @@ cat >> "${INIT}" <<EOF
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
 EOF
+git submodule add --depth 1 https://github.com/immerrr/lua-mode.git vendor/lua-mode
