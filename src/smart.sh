@@ -208,6 +208,10 @@ Usage: e <name> <options>
 Open an existing file using Emacs
 or create a new one applying a template manager if available.
 "
+    if [[ $# -eq 0 ]]; then
+        emacs &
+        return 0
+    fi
     local name="${1}"
     # TMgr: See https://github.com/NoviceLive/tmgr.
     local templator='tmgr'

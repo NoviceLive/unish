@@ -46,3 +46,15 @@ vagrant
 unzip
 pcsclite
 powerline
+mariadb
+redis python-redis python2-redis
+winetricks
+wine-mono wine_gecko
+python-pyelftools
+python-construct python2-construct
+vlc
+kamoso
+qt5-quickcontrols2
+qt5-quickcontrols
+eog
+kdegraphics-okular

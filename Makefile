@@ -86,3 +86,7 @@ pip3:
 
 pip2:
 	sudo ${CMD}/ins -bpip2 ${DAT}/pip.txt ${DAT}/pip2.txt
+
+
+profile:
+	sudo ln -srf ${ETC}/profile.sh /etc/profile.d/profile-anon.sh
