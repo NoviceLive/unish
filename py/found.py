@@ -49,7 +49,7 @@ def handle_operator(operator, args):
             cursor = database.cursor()
             sql = 'select link from aliases where name = ?'
             args = (operator,)
-            logger.debug('sql: %s')
+            logger.debug('sql: %s', sql)
             logger.debug('args: %s', args)
             try:
                 cursor.execute(sql, args)
@@ -66,6 +66,14 @@ def handle_operator(operator, args):
     args = ['firefox', url]
     logger.debug('Popen: %s', args)
     Popen(args)
+
+
+def handle_github(args):
+    return 'https://github.com/search?&q=' + args
+
+
+def handle_tmall(args):
+    return 'https://list.tmall.com/search_product.htm?q=' + args
 
 
 def handle_google(args):

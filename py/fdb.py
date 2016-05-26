@@ -23,10 +23,31 @@ def main():
         sql = 'create table if not exists ' \
               'aliases (name text unique, link text)'
         cursor.execute(sql)
-        for name in argv[1:]:
-            with open(name) as stream:
-                for line in stream:
-                    name, link = line.split()
+        handle(cursor, argv[1:], parse_comment)
+
+
+def parse_comment(line):
+    from parse import parse
+    tag = parse('{}[{name}]({link}){}<!--{mark}-->{}', line)
+    try:
+        return tag.named['mark'].strip(), tag.named['link'].strip()
+    except AttributeError:
+        return None
+
+
+def parse_simple(line):
+    return line.split()
+
+
+def handle(cursor, filenames, parser):
+    for filename in filenames:
+        with open(filename) as stream:
+            for line in stream:
+                try:
+                    name, link = parser(line)
+                except TypeError:
+                    pass
+                else:
                     sql = 'insert into aliases values (?, ?)'
                     args = (name, link)
                     try:
@@ -34,7 +55,7 @@ def main():
                     except IntegrityError:
                         pass
                     else:
-                        print(name, link)
+                        print('Inserted', name, link)
 
 
 if __name__ == '__main__':

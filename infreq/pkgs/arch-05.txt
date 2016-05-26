@@ -58,3 +58,9 @@ qt5-quickcontrols2
 qt5-quickcontrols
 eog
 kdegraphics-okular
+linux-manpages linux-docs
+tree
+chromium
+espeak festival festival-english festival-us
+tesseract-data-chi_tra
+python-parse python2-parse
