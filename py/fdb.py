@@ -27,12 +27,33 @@ def main():
 
 
 def parse_comment(line):
-    from parse import parse
-    tag = parse('{}[{name}]({link}){}<!--{mark}-->{}', line)
+    from re import match
+    re = r'\s*-\s\[(?P<name>.+)\]\((?P<link>.+)\)\s<!--(?P<mark>.+)-->'
+    one = match(re, line)
+    # If we have commented the alias, use it.
     try:
-        return tag.named['mark'].strip(), tag.named['link'].strip()
+        return one.group('mark').strip(), one.group('link')
     except AttributeError:
-        return None
+        # If not, fallback to the lower case of the name,
+        # which just works most of the time
+        # and saves us from unnecessarily commenting.
+        # TODO: Replace spaces with underscores and the like.
+        re = r'\s*-\s\[(?P<name>.+)\]\((?P<link>.+)\)'
+        one = match(re, line)
+        try:
+            return one.group('name').lower().strip(), one.group('link')
+        except AttributeError:
+            # This should never happen in my opinion.
+            raise ValueError
+
+
+# def parse_comment(line):
+#     from parse import parse
+#     tag = parse('{}[{name}]({link}){}<!--{mark}-->{}', line)
+#     try:
+#         return tag.named['mark'].strip(), tag.named['link'].strip()
+#     except AttributeError:
+        # raise ValueError
 
 
 def parse_simple(line):
@@ -45,9 +66,11 @@ def handle(cursor, filenames, parser):
             for line in stream:
                 try:
                     name, link = parser(line)
-                except TypeError:
+                except ValueError:
                     pass
                 else:
+                    if link.strip() == '#':
+                        continue
                     sql = 'insert into aliases values (?, ?)'
                     args = (name, link)
                     try:
