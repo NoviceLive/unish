@@ -42,7 +42,7 @@ and display results using a pager if necessary.
 "
     command pylint "${@}" \
             --output-format colorized \
-            --max-line-length 69 \
+            --max-line-length 72 \
             --disable 'too-few-public-methods,missing-docstring' \
             --disable 'bad-builtin' \
         | less -FXR
