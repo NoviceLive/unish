@@ -17,6 +17,11 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+export XMODIFIERS="@im=ibus"
+export GTK_IM_MODULE="ibus"
+export QT_IM_MODULE="ibus"
+
+
 # Lazily use it for the time being.
 # Credit:
 # http://stackoverflow.com/questions/16843382/colored-shell-script-output-library
