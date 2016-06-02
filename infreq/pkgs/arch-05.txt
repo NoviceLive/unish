@@ -67,3 +67,7 @@ python-parse python2-parse
 python-sphinx python2-sphinx python-sphinx_rtd_theme python2-sphinx_rtd_theme python-sphinx-alabaster-theme python2-sphinx-alabaster-theme
 python-pylint python2-pylint
 ntp
+libreoffice-fresh
+python-future python2-future
+beep
+icoutils
