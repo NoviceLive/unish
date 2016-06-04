@@ -36,3 +36,8 @@ ibus-libpinyin
 virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
 
 alsa-utils
+
+kdegraphics-okular phonon-qt4-vlc kchmviewer
+eog eog-plugins
+smplayer smplayer-themes smplayer-skins vlc audacity avidemux-cli avidemux-gtk
+xmobar

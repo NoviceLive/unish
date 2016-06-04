@@ -48,11 +48,15 @@ ibus:
 xmonad:
 	mkdir -p ~/.xmonad/
 	ln -srf ${ETC}/xmonad.hs ~/.xmonad/
+	ln -srf ${ETC}/xmobar.hs ~/.xmobarrc
+
+
+xinitrc:
+	ln -srf ${ETC}/.xinitrc ~/
 
 
 awesome:
 	ln -srf ${ETC}/.Xresources ~/
-	ln -srf ${ETC}/.xinitrc ~/
 	mkdir -p ~/.config/awesome
 	ln -srf ${ETC}/rc.lua ~/.config/awesome
 
