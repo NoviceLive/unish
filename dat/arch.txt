@@ -41,3 +41,5 @@ kdegraphics-okular phonon-qt4-vlc kchmviewer
 eog eog-plugins
 smplayer smplayer-themes smplayer-skins vlc audacity avidemux-cli avidemux-gtk
 xmobar
+xscreensaver
+htop
