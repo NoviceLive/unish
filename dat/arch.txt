@@ -7,22 +7,32 @@
 # lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings xmonad termite
 
 gmrun
+dmenu
+
 firefox openssh shadowsocks-libev privoxy libx264-10bit noto-fonts
 git
 xclip
+
 tmux
 powerline
+
 mercurial
 macchanger
 noto-fonts-cjk noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-serif-pro-fonts adobe-source-sans-pro-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-tw-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts
-macchanger
-python-pyperclip python2-pyperclip
+
 python-pip python2-pip
 python-click python2-click
+python-pyperclip python2-pyperclip
+python-markdown python2-markdown
+python-beautifulsoup4 python2-beautifulsoup4
+python-lxml python2-lxml
+
 emacs
-dmenu
+
 pkgfile
 xdg-utils
 chromium
 ibus-libpinyin
 virtualbox virtualbox-guest-iso virtualbox-host-modules-arch
+
+alsa-utils

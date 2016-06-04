@@ -45,6 +45,11 @@ ibus:
 	sudo cp ${ETC}/ibus.sh /etc/profile.d/ibus-env-vars.sh
 
 
+xmonad:
+	mkdir -p ~/.xmonad/
+	ln -srf ${ETC}/xmonad.hs ~/.xmonad/
+
+
 awesome:
 	ln -srf ${ETC}/.Xresources ~/
 	ln -srf ${ETC}/.xinitrc ~/

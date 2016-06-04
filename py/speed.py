@@ -5,7 +5,8 @@ from time import perf_counter, sleep
 
 
 def main():
-    print('{} {:.2f} KiB/s {} {:.2f} KiB/s'.format(
+    print('{} {} {:.2f} KiB/s {} {:.2f} KiB/s'.format(
+        get_ac_status(),
         chr(8595), get_speed(),
         chr(8593), get_speed(True)), end='')
     # while True:
@@ -15,6 +16,11 @@ def main():
     #             chr(8593), get_speed(True)), end='')
     #     except KeyboardInterrupt:
     #         break
+
+def get_ac_status():
+    with open('/sys/class/power_supply/AC0/online') as stream:
+        status = stream.read().strip()
+    return 'OFFLINE' if status == '0' else 'ONLINE'
 
 
 def get_speed(upload=False):
