@@ -36,6 +36,15 @@ shell:
 	ln -srf ${ETC}/.tmux.conf ~/
 
 
+termite:
+	mkdir -p ~/.config/termite
+	ln -srf ${ETC}/termite.conf ~/.config/termite/config
+
+
+ibus:
+	sudo cp ${ETC}/ibus.sh /etc/profile.d/ibus-env-vars.sh
+
+
 awesome:
 	ln -srf ${ETC}/.Xresources ~/
 	ln -srf ${ETC}/.xinitrc ~/
@@ -72,21 +81,17 @@ fish:
 # 	${BIN}/gnome.py
 
 
-arch:
-	sudo ${CMD}/ins -bpacman ${DAT}/arch.txt
+# arch:
+# 	sudo ${CMD}/ins -bpacman ${DAT}/arch.txt
 
 
-aur:
-	${CMD}/ins -byaourt ${DAT}/aur.txt
+# aur:
+# 	${CMD}/ins -byaourt ${DAT}/aur.txt
 
 
-pip3:
-	sudo ${CMD}/ins -bpip3 ${DAT}/pip.txt ${DAT}/pip3.txt
+# pip3:
+# 	sudo ${CMD}/ins -bpip3 ${DAT}/pip.txt ${DAT}/pip3.txt
 
 
-pip2:
-	sudo ${CMD}/ins -bpip2 ${DAT}/pip.txt ${DAT}/pip2.txt
-
-
-profile:
-	sudo ln -srf ${ETC}/profile.sh /etc/profile.d/profile-anon.sh
+# pip2:
+# 	sudo ${CMD}/ins -bpip2 ${DAT}/pip.txt ${DAT}/pip2.txt

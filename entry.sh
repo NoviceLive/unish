@@ -237,6 +237,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 export VISUAL='emacs -nw'
 export EDITOR="$VISUAL"
+export BROWSER='firefox'
 
 export LESS='FXR'
 
