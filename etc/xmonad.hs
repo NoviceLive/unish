@@ -1,13 +1,41 @@
-import XMonad
-import XMonad.Hooks.DynamicLog
+-- The third one.
 
 
-main = xmonad =<< xmobar defaultConfig { modMask = mod4Mask }
+-- import XMonad
+-- import XMonad.Hooks.DynamicLog
 
 
--- import XMonad (xmonad, defaultConfig, modMask, mod4Mask)
+-- main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
 
 
--- main = xmonad defaultConfig
---        { modMask = mod4Mask
---        }
+-- myBar = "xmobar"
+
+
+-- myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
+
+
+-- toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+
+-- myConfig = defaultConfig { modMask = mod4Mask }
+
+
+-- The second one.
+
+
+-- import XMonad
+-- import XMonad.Hooks.DynamicLog
+
+
+-- main = xmonad =<< xmobar defaultConfig { modMask = mod4Mask }
+
+
+-- The first one.
+
+
+import XMonad (xmonad, defaultConfig, modMask, mod4Mask)
+
+
+main = xmonad defaultConfig
+       { modMask = mod4Mask
+       }

@@ -30,6 +30,13 @@ default:
 	# And because this Makefile isn't well-written :(.
 
 
+reloc:
+	make shell
+	make scm
+	make termite
+	make xmonad
+
+
 shell:
 	ln -srf entry.sh ~/.bashrc
 	ln -srf entry.sh ~/.zshrc
@@ -63,6 +70,11 @@ awesome:
 
 scm:
 	${BIN}/scm.sh
+
+
+git:
+	ln -srf ${ETC}/.gitconfig ${HOME}/
+	ln -srf ${ETC}/.hgrc ${HOME}/
 
 
 ghc:

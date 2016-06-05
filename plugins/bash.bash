@@ -20,7 +20,8 @@
 # TODO: The plugin system.
 
 
-source_if_exists /usr/share/bash-completion/bash_completion
+# source_if_exists /usr/share/bash-completion/bash_completion
+# source_if_exists /usr/share/bash-completion
 
 
 # export BASH_IT="$HOME/refsrc/bash-it.git"

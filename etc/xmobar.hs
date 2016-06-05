@@ -1,7 +1,7 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "SourceCodePro 10"
        , additionalFonts = []
-       , borderColor = "black"
-       , border = TopB
+       , borderColor = "red"
+       , border = BottomB
        , bgColor = "black"
        , fgColor = "green"
        , alpha = 255
@@ -28,6 +28,5 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
            ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%cpu% | %memory% + %swap% | %wlp3s0% }\
-                    \{ <fc=#ff0000>%date%</fc> | %uname%"
+       , template = "%cpu% | %memory% | %swap% | %wlp3s0% }{ <fc=#ff0000>%date%</fc> | %uname%"
        }

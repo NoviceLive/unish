@@ -43,3 +43,6 @@ smplayer smplayer-themes smplayer-skins vlc audacity avidemux-cli avidemux-gtk
 xmobar
 xscreensaver
 htop
+powertop
+wget
+dzen2
