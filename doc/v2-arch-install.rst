@@ -395,7 +395,7 @@ Configure The Kernel
 
   - **Tips**
 
-    It's strongly recommended to use persisten device naming,
+    It's strongly recommended to use persistent device naming,
     e.g., using ``/dev/disk/by-id/``.
 
   ::
@@ -461,7 +461,7 @@ Configure The Bootloader
 
   - **Tips**
 
-    It's strongly recommended to use persisten device naming,
+    It's strongly recommended to use persistent device naming,
     e.g., using ``/dev/disk/by-id/``.
 
   In this example, it looks like the following.
