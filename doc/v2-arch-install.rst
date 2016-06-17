@@ -393,6 +393,11 @@ Configure The Kernel
 
   In our example, add the following line.
 
+  - **Tips**
+
+    It's strongly recommended to use persisten device naming,
+    e.g., using ``/dev/disk/by-id/``.
+
   ::
 
      vga /dev/sdX none header=/boot/root.header
@@ -444,6 +449,7 @@ Configure The Bootloader
   at this stage for systems mainly depending on Wi-Fi.
 
   ::
+
      pacman -S dialog wpa_supplicant
 
 
@@ -452,6 +458,11 @@ Configure The Bootloader
   Add the line,
   ``GRUB_ENABLE_CRYPTODISK=y``,
   and add necessary kernel parameters.
+
+  - **Tips**
+
+    It's strongly recommended to use persisten device naming,
+    e.g., using ``/dev/disk/by-id/``.
 
   In this example, it looks like the following.
 
