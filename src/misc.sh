@@ -19,7 +19,7 @@
 
 remac() {
     sudo netctl stop-all && \
-        sudo macchanger -a wlp3s0 && sudo netctl start wlp3s0-DIVI
+        sudo macchanger -a wlp3s0 && sudo netctl start faster
 }
 
 

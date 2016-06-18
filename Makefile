@@ -30,7 +30,7 @@ default:
 	# And because this Makefile isn't well-written :(.
 
 
-reloc:
+refresh:
 	make shell
 	make scm
 	make termite
@@ -60,12 +60,12 @@ xmonad:
 
 xinitrc:
 	ln -srf ${ETC}/.xinitrc ~/
-
-
-awesome:
 	ln -srf ${ETC}/.Xresources ~/
-	mkdir -p ~/.config/awesome
-	ln -srf ${ETC}/rc.lua ~/.config/awesome
+
+
+# awesome:
+# 	mkdir -p ~/.config/awesome
+# 	ln -srf ${ETC}/rc.lua ~/.config/awesome
 
 
 scm:
