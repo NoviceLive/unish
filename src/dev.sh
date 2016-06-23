@@ -17,6 +17,18 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+-h() {
+    ${1} --help | less -FXR
+
+
+}
+
+
+--help() {
+    ${1} --help | less -FXR
+}
+
+
 hsdoc() {
     : "
 Extremely naive clone of pydoc for Haskell.
