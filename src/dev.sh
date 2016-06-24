@@ -100,6 +100,11 @@ Usage: dog <file>
 }
 
 
+dog.py() {
+    pygmentize -g -O style=colorful,linenos=1 "$1" | less -FXR
+}
+
+
 mkinc() {
     local dir="${1:-$PWD}"
     debug "Searching for headers in: ${dir}"

@@ -127,11 +127,14 @@ done
 
 _hash_sign_generic() {
     local algorithm="${1}"
-    local filename="${2}"
+    local filenames=("${@:2}")
+    local filename
 
-    "${algorithm}sum" --tag "${filename}" | \
-        gpg --clearsign --armor \
-            --output "${filename}.${algorithm}sum.asc"
+    for filename in "${filenames[@]}"; do
+        "${algorithm}sum" --tag "${filename}" | \
+            gpg --clearsign --armor \
+                --output "${filename}.${algorithm}sum.asc"
+    done
 }
 
 
