@@ -41,9 +41,19 @@ but with Linux or in general with POSIX or UNIX.
 Warning
 -------
 
-
 Unish may work only in Zsh 5.2 & Bash 4.3.
 You have been warned.
+
+
+Still Warning
+-------------
+
+You are not recommended to use Unish directly. (It sucks :(.)
+Instead, absorbing or extracting and adapting
+some bits or pieces that fit in your needs.
+
+But it's not abandoned and will be updated regularly
+as I experiment on various fancy stuffs.
 
 
 Features
@@ -56,20 +66,26 @@ Features
   For more details, see ``py/found.py``, ``py/fdb.py``,
   as well as the command-not-found handling functions.
 
-  **Show Cases**
+Update
+++++++
 
-  ::
+``py/found.py`` and related code now reside in UrlMark_.
 
-     $ # Search in Google or Bing, and many others.
-     $ @google Who is the president of US
-     $ @bing Who is the president of US
+Show Cases
+++++++++++
 
-     $ # Open a website.
-     $ @github
+::
 
-     $ # Search in dictionaries.
-     $ @oxford pulchritude
-     $ @urban '<3'
+   $ # Search in Google or Bing, and many others.
+   $ @google Who is the president of US
+   $ @bing Who is the president of US
+
+   $ # Open a website.
+   $ @github
+
+   $ # Search in dictionaries.
+   $ @oxford pulchritude
+   $ @urban '<3'
 
 - Smart Commands (Growing)
 
@@ -226,10 +242,6 @@ Major Functions Currently Available
 Bundled Packages
 ----------------
 
-- zsh & bash
-
-  - `virtualenvwrapper / virtualenvwrapper <https://bitbucket.org/virtualenvwrapper/virtualenvwrapper>`_ MIT
-
 - zsh
 
   - `zsh-users/zsh-syntax-highlighting <https://github.com/zsh-users/zsh-syntax-highlighting>`_ BSD-3
@@ -267,3 +279,4 @@ or (at your option) any later version.
 .. _LVM on LUKS: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS
 .. _on a pendrive: https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29
 .. _using a remote header: https://wiki.archlinux.org/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header
+.. _UrlMark: https://github.com/NoviceLive/urlmark
