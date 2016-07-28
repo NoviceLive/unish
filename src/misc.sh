@@ -23,18 +23,23 @@ remac() {
 }
 
 
-syncboard() {
-    xclip -o | xclip -selection clipboard
-}
-
-
 outboard() {
     xclip -o -selection clipboard
 }
 
 
+# alias in='xclip -in -selection clipboard'
+# alias out='xclip -out -selection clipboard'
+
+# INFO: We can use pipes, e.g. ``echo blabla | inboard``.
+# TODO: Using names ``in`` and ``out`` ?
+
 inboard() {
     xclip -selection clipboard
+}
+
+syncboard() {
+    xclip -o | xclip -selection clipboard
 }
 
 

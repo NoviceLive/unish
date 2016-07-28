@@ -396,7 +396,8 @@ Configure The Kernel
   - **Tips**
 
     It's strongly recommended to use persistent device naming,
-    e.g., using ``/dev/disk/by-id/``.
+    e.g., using ``/dev/disk/by-id/``, e.g.,
+    ``anon /dev/disk/by-id/ata-HGST_HTS721010A9E630_JR10006PH244KE /boot/keyfile header=/boot/header``.
 
   ::
 
@@ -462,7 +463,9 @@ Configure The Bootloader
   - **Tips**
 
     It's strongly recommended to use persistent device naming,
-    e.g., using ``/dev/disk/by-id/``.
+    e.g., using ``/dev/disk/by-id/``, e.g.,
+    ``/dev/disk/by-id/ata-HGST_HTS721010A9E630_JR10006PH244KE``
+    .
 
   In this example, it looks like the following.
 
@@ -579,6 +582,17 @@ Example session of encrypting a loop device
    sudo umount /mnt/tomb
    sudo cryptsetup close tomb
    sudo losetup -d /dev/loop0
+
+Readings / Projects Of Interests
+++++++++++++++++++++++++++++++++
+
+- https://tails.boum.org/contribute/design/memory_erasure/
+
+  In order to protect against memory recovery such as cold boot attack, the system RAM is overwritten when Tails is being shutdown or when the boot medium is physically removed.
+
+- http://www.breaknenter.org/projects/inception/
+
+  Inception is a physical memory manipulation and hacking tool exploiting PCI-based DMA. The tool can attack over FireWire, Thunderbolt, ExpressCard, PC Card and any other PCI/PCIe interfaces.
 
 
 .. _NoviceLive: https://github.com/NoviceLive
