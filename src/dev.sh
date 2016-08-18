@@ -17,6 +17,37 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+unalias urlhead 2> /dev/null
+urlhead() {
+    local url=${1}
+
+    verbose curl --head --output - --silent --fail "${url}"
+}
+
+
+url_exists() {
+    local url=${1}
+
+    curl --fail --head --silent --output /dev/null "${url}"
+}
+
+
+unalias unmute 2> /dev/null
+unmute() {
+    verbose amixer sset Master unmute &&
+        verbose amixer sset Headphone unmute
+}
+
+
+unalias rmhist 2> /dev/null
+rmhist() {
+    verbose rm -rf \
+       ${HOME}/.zsh_history ${HOME}/.zdirs\
+       ${HOME}/.bash_history \
+       ${HOME}/.python_history
+}
+
+
 -h() {
     ${1} --help | less -FXR
 

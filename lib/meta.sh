@@ -17,6 +17,12 @@
 # along with Unish.  If not, see <http://www.gnu.org/licenses/>.
 
 
+unalias verbose 2> /dev/null
+verbose() {
+    >&2 printf "==> Running '%s'\n" "${*}" && "${@}"
+}
+
+
 count_items() {
     : "
 Display item count in the given or current working directory.
