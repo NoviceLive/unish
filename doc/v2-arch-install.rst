@@ -7,7 +7,7 @@ Metadata
 
 Created: March 10, 2016
 
-Updated: May 3, 2016
+Updated: October 30, 2016
 
 Maintainer: Gu Zhengxiong (`NoviceLive`_) <rectigu@gmail.com>
 
@@ -586,13 +586,26 @@ Example session of encrypting a loop device
 Readings / Projects Of Interests
 ++++++++++++++++++++++++++++++++
 
-- https://tails.boum.org/contribute/design/memory_erasure/
+- Cryptography?
 
-  In order to protect against memory recovery such as cold boot attack, the system RAM is overwritten when Tails is being shutdown or when the boot medium is physically removed.
+  - You Don't Want XTS, https://sockpuppet.org/blog/2014/04/30/you-dont-want-xts/
 
-- http://www.breaknenter.org/projects/inception/
+- TODO?
 
-  Inception is a physical memory manipulation and hacking tool exploiting PCI-based DMA. The tool can attack over FireWire, Thunderbolt, ExpressCard, PC Card and any other PCI/PCIe interfaces.
+  - grub
+
+    - Cryptomount enhancements - revised, http://lists.gnu.org/archive/html/grub-devel/2015-06/msg00109.html
+    - Grub Crypt, http://grub.johnlane.ie/
+
+- Others
+
+  - https://tails.boum.org/contribute/design/memory_erasure/
+
+    In order to protect against memory recovery such as cold boot attack, the system RAM is overwritten when Tails is being shutdown or when the boot medium is physically removed.
+
+  - http://www.breaknenter.org/projects/inception/
+
+    Inception is a physical memory manipulation and hacking tool exploiting PCI-based DMA. The tool can attack over FireWire, Thunderbolt, ExpressCard, PC Card and any other PCI/PCIe interfaces.
 
 
 .. _NoviceLive: https://github.com/NoviceLive
