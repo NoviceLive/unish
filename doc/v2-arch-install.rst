@@ -13,6 +13,8 @@ Maintainer: Gu Zhengxiong <rectigu@gmail.com>
 
 License: `GNU Free Documentation License`_ Version 1.3
 
+.. contents:: :local:
+
 
 Foreword
 --------
