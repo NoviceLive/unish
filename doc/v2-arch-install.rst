@@ -7,9 +7,9 @@ Metadata
 
 Created: March 10, 2016
 
-Updated: October 30, 2016
+Updated: December 12, 2016
 
-Maintainer: Gu Zhengxiong (`NoviceLive`_) <rectigu@gmail.com>
+Maintainer: Gu Zhengxiong <rectigu@gmail.com>
 
 License: `GNU Free Documentation License`_ Version 1.3
 
@@ -549,6 +549,79 @@ to diagnose problems.
 See `FS#36265`_,
 ``[systemd] rd.systemd.unit=emergency.target does not work``.
 
+
+Caveats
+-------
+
+Don't be fooled by the eventual success of mkinitcpio
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Once upon a time,
+a breaking update of ``readline`` from 6 to 7 broke my initcpio images.
+
+``lvm2`` was updated after the ``linux`` kernel,
+before whose update ``readline`` had already been updated to version 7
+and after that there was an initcpio regeneration process,
+where some binaries, including those from the older ``lvm2`` package
+since my ``mkinitcpio.conf`` included the ``sd-lvm2`` hook,
+and their library dependencies,
+which however might no longer exist,
+due to the breaking update of ``readline`` from 6 to 7,
+as complained by ``mkinitcpio``
+but overlooked by a lazy as well as credulous user,
+were bundled into the initramfs,
+and thus problematic initcpio images were born.
+``<-- English Language Proficiency Test?``
+
+Log excerpt is as follows,
+`click here <samples/readline.log>`_
+for the full transaction log if needed.
+
+::
+
+   [2016-11-15 02:48] [ALPM] transaction started
+   ...
+   [2016-11-15 02:48] [ALPM] upgraded readline (6.3.008-4 -> 7.0-1)
+   ...
+   [2016-11-15 02:48] [ALPM] upgraded linux (4.8.6-1 -> 4.8.7-1)
+   ...
+   [2016-11-15 02:48] [ALPM-SCRIPTLET] >>> Generating initial ramdisk, using mkinitcpio. Please wait...
+   ...
+   [2016-11-15 02:48] [ALPM-SCRIPTLET] ==> ERROR: binary dependency `libreadline.so.6' not found for `/usr/bin/lvm'
+   ...
+   [2016-11-15 02:48] [ALPM-SCRIPTLET] ==> Image generation successful
+   ...
+   [2016-11-15 02:48] [ALPM-SCRIPTLET] ==> ERROR: binary dependency `libreadline.so.6' not found for `/usr/bin/lvm'
+   ...
+   [2016-11-15 02:48] [ALPM-SCRIPTLET] ==> Image generation successful
+   ...
+   [2016-11-15 02:48] [ALPM] upgraded lvm2 (2.02.166-1 -> 2.02.167-2)
+   ...
+
+Some seemingly innocuous packages would trigger initcpio regeneration
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+E.g., ``device-mapper``.
+
+::
+
+  $ less -FXR /usr/share/libalpm/hooks/99-linux.hook
+  [Trigger]
+  Type = File
+  Operation = Install
+  Operation = Upgrade
+  Target = boot/vmlinuz-linux
+  Target = usr/lib/initcpio/*
+
+  [Action]
+  Description = Updating linux initcpios
+  When = PostTransaction
+  Exec = /usr/bin/mkinitcpio -p linux
+
+  $ pkgfile -l device-mapper | grep -e boot -e initcpio
+  core/device-mapper      /usr/lib/initcpio/
+  core/device-mapper      /usr/lib/initcpio/udev/
+  core/device-mapper      /usr/lib/initcpio/udev/11-dm-initramfs.rules
 
 Appendices
 ----------
