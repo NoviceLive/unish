@@ -5,7 +5,42 @@ Unish - One Configuration To Rule Them All
 Hopefully it will eventually come true in ten years. :)
 
 
-Current State: Primitive and Under Heavy Development.
+Current State: Primitive.
+
+
+Some One-Liners That May Fade From Memory
+=========================================
+
+- If you have many Git repositories, this one-liner might come in handy.
+
+  Note that all my repositories are named in this format, '<name>.<vcs>'.
+  For instance, ``unish.git``, ``unish.hg`` and ``unish.svn``.
+
+  ::
+
+     find -maxdepth 1 -name '*.git' -exec sh -c 'cd {} && git status' \;
+
+- Clean up compiled Python files before packaging or distributing.
+
+  ::
+
+     find -name '*.pyc' -delete && find -name '__pycache__' -delete
+
+- I tend to use this ``pylint`` recently.
+
+  E.g, ``1000``, to which pylint defaults,
+  is not a good candidate for maximum line count,
+  whereas ``999`` or ``9999`` is.
+
+  Guess what?
+
+  I refuse to pay the space of a single character, ``len('1000') - len('999')``,
+  for a single line, ``1000 - 999``,
+  when my editors always have line numbers on.
+
+  ::
+
+     pylint --reports n --output-format colorized --disable=missing-docstring,too-few-public-methods,too-many-ancestors,broad-except,invalid-name,too-many-locals,too-many-arguments,too-many-instance-attributes,too-many-public-methods,too-many-lines,too-many-branches,too-many-statements,duplicate-code
 
 
 Documentation

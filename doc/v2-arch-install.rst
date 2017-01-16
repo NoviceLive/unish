@@ -625,6 +625,8 @@ E.g., ``device-mapper``.
   core/device-mapper      /usr/lib/initcpio/udev/
   core/device-mapper      /usr/lib/initcpio/udev/11-dm-initramfs.rules
 
+Still e.g., ``mkinitcpio-busybox`` and ``systemd``, among many others.
+
 Appendices
 ----------
 
