@@ -18,7 +18,7 @@ Some One-Liners That May Fade From Memory
 
   ::
 
-     tilsuc() { while true; do "${@}"; if [[ $? -eq 0 ]]; then break; fi; done; }; tilsuc youtube-dl --proxy 'socks5://127.0.0.1:1080' 'http://www.pbs.org/newshour/episode/pbs-newshour-full-episode-feb-24-2017/'
+     tilsuc() { while true; do "${@}"; if [[ $? -eq 0 ]]; then break; fi; sleep 1; done; }; tilsuc youtube-dl --proxy 'socks5://127.0.0.1:1080' 'http://www.pbs.org/newshour/episode/pbs-newshour-full-episode-feb-24-2017/'
 
 - If you have many Git repositories, this one-liner might come in handy.
 
