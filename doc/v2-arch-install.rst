@@ -88,7 +88,7 @@ Securely Erase Disks
   - Using ``/dev/urandom`` and ``dd``
 
     It's unbearably slow no matter what ``bs`` value you choose,
-    due to the bottleneck of pseudorandom number generation.
+    due to the bottleneck of pseudo-random number generation.
 
     ::
 
@@ -153,7 +153,7 @@ Prepare Partitions a.k.a Interesting Part I
 Choose algorithms
 *****************
 
-Running benckmarks may help you choose the algorithms.
+Running benchmarks may help you choose the algorithms.
 
 Also, see `Encryption options for LUKS mode`_
 and `Ciphers and modes of operation`_ for more information.
@@ -167,7 +167,7 @@ Tips
 the encryption algorithm is `serpent`_,
 other candidates being `twofish`_ and `aes`_,
 the `chain mode`_ is `xts`_,
-and the `intialization vector`_ generator is plain64.
+and the `initialization vector`_ generator is plain64.
 
 ::
 
@@ -207,7 +207,7 @@ Tips
 
 - Setup LUKS using a remote header.
 
-  **Recomendation:** Use or add a key file for the root drive
+  **Recommendation:** Use or add a key file for the root drive
   so as to unlock automatically during the normal boot process.
   See corresponding notes below and around for more information.
 
@@ -368,7 +368,7 @@ Configure Some Boring Stuff For The Freshly Installed System
 
   ::
 
-     # network configuraion skipped
+     # network configuration skipped
      # I will simply use ``systemctl enable dhcpcd@enp4s0f2``
 
      ping -c4 archlinux.org
@@ -722,7 +722,7 @@ Readings / Projects Of Interests
 .. _aes: https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 .. _xts: https://en.wikipedia.org/wiki/Disk_encryption_theory#XTS
 .. _chain mode: https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
-.. _intialization vector: https://en.wikipedia.org/wiki/Initialization_vector
+.. _initialization vector: https://en.wikipedia.org/wiki/Initialization_vector
 
 .. _Installation guide: https://wiki.archlinux.org/index.php/Installation_guide
 .. _Beginners' guide: https://wiki.archlinux.org/index.php/Beginners%27_guide
