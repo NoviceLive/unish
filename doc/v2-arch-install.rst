@@ -7,7 +7,7 @@ Metadata
 
 Created: March 10, 2016
 
-Updated: December 12, 2016
+Updated: May 19, 2017
 
 Maintainer: Gu Zhengxiong <rectigu@gmail.com>
 
@@ -136,8 +136,7 @@ for more details.
 
      # network configuration skipped
 
-     # You may want to ping google.com instead.
-     ping -c4 baidu.com
+     ping -c4 archlinux.org
 
 - Update the system clock.
 
@@ -208,6 +207,10 @@ Tips
 
 - Setup LUKS using a remote header.
 
+  **Recomendation:** Use or add a key file for the root drive
+  so as to unlock automatically during the normal boot process.
+  See corresponding notes below and around for more information.
+
   ::
 
      truncate -s 2M root.header
@@ -276,7 +279,10 @@ Activate The Swap And Mount File Systems
 ****************************************
 
 Also, move the header into boot,
-we will configure ``mkinitcpio`` to copy the header into the initramfs.
+we will configure ``mkinitcpio`` to copy it into the initramfs.
+
+**Note:** If key files are used to unlock the root drive,
+remember to move them to our new boot partition also.
 
 ::
 
@@ -365,8 +371,7 @@ Configure Some Boring Stuff For The Freshly Installed System
      # network configuraion skipped
      # I will simply use ``systemctl enable dhcpcd@enp4s0f2``
 
-     # You may want to ping google.com instead.
-     ping -c4 baidu.com
+     ping -c4 archlinux.org
 
 
 - Set the hostname and add it to ``/etc/hosts``.
@@ -388,12 +393,18 @@ Configure The Kernel
   Add ``noauto`` to options of ``/boot`` and ``/boot/efi``
   so as to unplug the pendrive after loading the kernel.
 
-  We will need to mount it when there are kernel updates or
-  we want to regenerate the initramfs.
+  We will need to plug it in, unlock and mount them,
+  whenever access to ``/boot`` is required,
+  for instance, when there are kernel updates
+  or when we want to regenerate the initramfs.
 
 - Create ``/etc/crypttab.initramfs``
 
   In our example, add the following line.
+
+  ::
+
+     vga /dev/sdX none header=/boot/root.header
 
   - **Tips**
 
@@ -401,13 +412,16 @@ Configure The Kernel
     e.g., using ``/dev/disk/by-id/``, e.g.,
     ``anon /dev/disk/by-id/ata-HGST_HTS721010A9E630_JR10006PH244KE /boot/keyfile header=/boot/header``.
 
-  ::
-
-     vga /dev/sdX none header=/boot/root.header
+    **Note:** The above exemplary persistent device naming line
+    demonstrates a configuration
+    that achieves automatic unlock of the root disk,
+    if it's been set up properly.
 
 - Edit ``/etc/mkinitcpio.conf``
 
   Add the header to ``FILES``.
+
+  **Note:** Remember to include key files also if they are used.
 
   ::
 
@@ -448,7 +462,7 @@ Configure The Bootloader
      pacman -S intel-ucode
 
   The following packages are also suggested to be installed,
-  if not previously installed,
+  if not previously done,
   at this stage for systems mainly depending on Wi-Fi.
 
   ::
@@ -476,6 +490,7 @@ Configure The Bootloader
      GRUB_CMDLINE_LINUX_DEFAULT="cryptdevice=/dev/sdX:root:header"
 
   Note that ``root`` is the mapped name of our encrypted container.
+  (**FIXME: No, this seems to be false.**)
 
   Also, I removed the ``quiet`` parameter.
 
@@ -487,11 +502,11 @@ Configure The Bootloader
 
 - Install GRUB to the pendrive.
 
-  Notice: Don't forget ``--removable``.
+  **Notice:** Don't forget ``--removable``.
 
   ::
 
-     grub-install --target=x86_64-efi --efi-directory=/boot/efi --recheck --removable
+     grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
 
 
 Perform Some Most Boring Post Installation Tasks

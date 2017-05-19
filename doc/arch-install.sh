@@ -57,7 +57,7 @@ ls /sys/firmware/efi/efivars/
 
 
 # Check for the Internet connection.
-ping -c4 github.com
+ping -c4 archlinux.org
 # DHCP works like a charm in my case, and skip network configuration.
 
 
