@@ -1,0 +1,819 @@
+[2017-05-29 06:26] [PACMAN] Running 'pacman -r /mnt -Sy --cachedir=/mnt/var/cache/pacman/pkg base base-devel zsh grml-zsh-config'
+[2017-05-29 06:26] [PACMAN] synchronizing package lists
+[2017-05-29 06:39] [ALPM] transaction started
+[2017-05-29 06:39] [ALPM] installed linux-api-headers (4.10.1-1)
+[2017-05-29 06:39] [ALPM] installed tzdata (2017b-1)
+[2017-05-29 06:39] [ALPM] installed iana-etc (20170512-1)
+[2017-05-29 06:39] [ALPM] installed filesystem (2017.03-2)
+[2017-05-29 06:39] [ALPM] installed glibc (2.25-1)
+[2017-05-29 06:39] [ALPM] installed gcc-libs (6.3.1-2)
+[2017-05-29 06:39] [ALPM] installed ncurses (6.0+20170429-1)
+[2017-05-29 06:39] [ALPM] installed readline (7.0.003-1)
+[2017-05-29 06:39] [ALPM] installed bash (4.4.012-2)
+[2017-05-29 06:39] [ALPM] installed bzip2 (1.0.6-6)
+[2017-05-29 06:39] [ALPM] installed attr (2.4.47-2)
+[2017-05-29 06:39] [ALPM] installed acl (2.2.52-3)
+[2017-05-29 06:39] [ALPM] installed gmp (6.1.2-1)
+[2017-05-29 06:39] [ALPM] installed libcap (2.25-1)
+[2017-05-29 06:39] [ALPM] installed gdbm (1.13-1)
+[2017-05-29 06:39] [ALPM] installed db (5.3.28-3)
+[2017-05-29 06:39] [ALPM] installed perl (5.24.1-1)
+[2017-05-29 06:39] [ALPM] installed openssl (1.1.0.f-1)
+[2017-05-29 06:39] [ALPM] installed coreutils (8.27-1)
+[2017-05-29 06:39] [ALPM] installed libgpg-error (1.27-1)
+[2017-05-29 06:39] [ALPM] installed libgcrypt (1.7.6-1)
+[2017-05-29 06:39] [ALPM] installed lz4 (1:1.7.5-1)
+[2017-05-29 06:39] [ALPM] installed xz (5.2.3-1)
+[2017-05-29 06:39] [ALPM] installed libsystemd (232-8)
+[2017-05-29 06:39] [ALPM] installed expat (2.2.0-2)
+[2017-05-29 06:39] [ALPM] installed dbus (1.10.18-1)
+[2017-05-29 06:39] [ALPM] installed libmnl (1.0.4-1)
+[2017-05-29 06:39] [ALPM] installed libnftnl (1.0.7-1)
+[2017-05-29 06:39] [ALPM] installed libnl (3.2.29-2)
+[2017-05-29 06:39] [ALPM] installed libusb (1.0.21-1)
+[2017-05-29 06:39] [ALPM] installed libpcap (1.8.1-2)
+[2017-05-29 06:39] [ALPM] installed iptables (1.6.1-1)
+[2017-05-29 06:39] [ALPM] installed zlib (1:1.2.11-1)
+[2017-05-29 06:39] [ALPM] installed cracklib (2.9.6-1)
+[2017-05-29 06:39] [ALPM] installed libutil-linux (2.29.2-2)
+[2017-05-29 06:39] [ALPM] installed e2fsprogs (1.43.4-1)
+[2017-05-29 06:39] [ALPM] installed libsasl (2.1.26-11)
+[2017-05-29 06:39] [ALPM] installed libldap (2.4.44-4)
+[2017-05-29 06:39] [ALPM] installed keyutils (1.5.10-1)
+[2017-05-29 06:39] [ALPM] installed krb5 (1.15-1)
+[2017-05-29 06:39] [ALPM] installed libtirpc (1.0.1-3)
+[2017-05-29 06:39] [ALPM] installed pambase (20130928-1)
+[2017-05-29 06:39] [ALPM] installed pam (1.3.0-1)
+[2017-05-29 06:39] [ALPM] installed kbd (2.0.4-1)
+[2017-05-29 06:39] [ALPM] installed kmod (24-1)
+[2017-05-29 06:39] [ALPM] installed hwids (20170328-1)
+[2017-05-29 06:39] [ALPM] installed libidn (1.33-1)
+[2017-05-29 06:39] [ALPM] installed libelf (0.168-1)
+[2017-05-29 06:39] [ALPM] installed libseccomp (2.3.2-1)
+[2017-05-29 06:39] [ALPM] installed shadow (4.4-3)
+[2017-05-29 06:39] [ALPM] installed util-linux (2.29.2-2)
+[2017-05-29 06:39] [ALPM] installed systemd (232-8)
+[2017-05-29 06:39] [ALPM-SCRIPTLET] Initializing machine ID from random generator.
+[2017-05-29 06:39] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/getty.target.wants/getty@tty1.service → /usr/lib/systemd/system/getty@.service.
+[2017-05-29 06:39] [ALPM-SCRIPTLET] Created symlink /etc/systemd/system/multi-user.target.wants/remote-fs.target → /usr/lib/systemd/system/remote-fs.target.
+[2017-05-29 06:39] [ALPM-SCRIPTLET] :: Append 'init=/usr/lib/systemd/systemd' to your kernel command line in your
+[2017-05-29 06:39] [ALPM-SCRIPTLET]    bootloader to replace sysvinit with systemd, or install systemd-sysvcompat
+[2017-05-29 06:39] [ALPM] installed device-mapper (2.02.171-1)
+[2017-05-29 06:39] [ALPM] installed popt (1.16-8)
+[2017-05-29 06:39] [ALPM] installed cryptsetup (1.7.5-1)
+[2017-05-29 06:39] [ALPM] installed dhcpcd (6.11.5-1)
+[2017-05-29 06:39] [ALPM] installed diffutils (3.5-1)
+[2017-05-29 06:39] [ALPM] installed file (5.30-1)
+[2017-05-29 06:39] [ALPM] installed findutils (4.6.0-2)
+[2017-05-29 06:39] [ALPM] installed mpfr (3.1.5.p2-1)
+[2017-05-29 06:39] [ALPM] installed gawk (4.1.4-2)
+[2017-05-29 06:39] [ALPM] installed pcre (8.40-1)
+[2017-05-29 06:39] [ALPM] installed libffi (3.2.1-2)
+[2017-05-29 06:39] [ALPM] installed glib2 (2.52.2+1+gb8bd46bc8-1)
+[2017-05-29 06:39] [ALPM] installed libunistring (0.9.7-1)
+[2017-05-29 06:39] [ALPM] installed gettext (0.19.8.1-2)
+[2017-05-29 06:39] [ALPM] installed grep (3.0-1)
+[2017-05-29 06:39] [ALPM] installed less (487-1)
+[2017-05-29 06:39] [ALPM] installed gzip (1.8-2)
+[2017-05-29 06:39] [ALPM] installed inetutils (1.9.4-5)
+[2017-05-29 06:39] [ALPM] installed iproute2 (4.11.0-1)
+[2017-05-29 06:39] [ALPM] installed sysfsutils (2.1.0-9)
+[2017-05-29 06:39] [ALPM] installed iputils (20161105.1f2bb12-2)
+[2017-05-29 06:39] [ALPM] installed jfsutils (1.1.15-4)
+[2017-05-29 06:39] [ALPM] installed licenses (20140629-2)
+[2017-05-29 06:39] [ALPM] installed linux-firmware (20170422.ade8332-1)
+[2017-05-29 06:39] [ALPM] installed mkinitcpio-busybox (1.25.1-1)
+[2017-05-29 06:39] [ALPM] installed libarchive (3.3.1-5)
+[2017-05-29 06:39] [ALPM] installed mkinitcpio (23-1)
+[2017-05-29 06:39] [ALPM] installed linux (4.11.2-1)
+[2017-05-29 06:39] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2017-05-29 06:39] [ALPM] installed logrotate (3.12.2-1)
+[2017-05-29 06:39] [ALPM] installed libaio (0.3.110-1)
+[2017-05-29 06:39] [ALPM] installed thin-provisioning-tools (0.6.3-1)
+[2017-05-29 06:39] [ALPM] installed lvm2 (2.02.171-1)
+[2017-05-29 06:39] [ALPM] installed groff (1.22.3-7)
+[2017-05-29 06:39] [ALPM] installed libpipeline (1.4.1-1)
+[2017-05-29 06:39] [ALPM] installed man-db (2.7.6.1-2)
+[2017-05-29 06:39] [ALPM] installed man-pages (4.11-1)
+[2017-05-29 06:39] [ALPM] installed mdadm (4.0-1)
+[2017-05-29 06:39] [ALPM] installed nano (2.8.2-1)
+[2017-05-29 06:39] [ALPM] installed openresolv (3.9.0-1)
+[2017-05-29 06:39] [ALPM] installed netctl (1.12-2)
+[2017-05-29 06:39] [ALPM] installed libtasn1 (4.10-1)
+[2017-05-29 06:39] [ALPM] installed p11-kit (0.23.5-1)
+[2017-05-29 06:39] [ALPM] installed ca-certificates-utils (20170307-1)
+[2017-05-29 06:39] [ALPM] installed ca-certificates-mozilla (3.30.2-1)
+[2017-05-29 06:39] [ALPM] installed ca-certificates-cacert (20140824-4)
+[2017-05-29 06:39] [ALPM] installed ca-certificates (20170307-1)
+[2017-05-29 06:39] [ALPM] installed libssh2 (1.8.0-2)
+[2017-05-29 06:39] [ALPM] installed icu (59.1-1)
+[2017-05-29 06:39] [ALPM] installed libpsl (0.17.0-2)
+[2017-05-29 06:39] [ALPM] installed libnghttp2 (1.22.0-1)
+[2017-05-29 06:39] [ALPM] installed curl (7.54.0-3)
+[2017-05-29 06:39] [ALPM] installed npth (1.4-1)
+[2017-05-29 06:39] [ALPM] installed libksba (1.3.4-2)
+[2017-05-29 06:39] [ALPM] installed libassuan (2.4.3-1)
+[2017-05-29 06:39] [ALPM] installed libsecret (0.18.5+14+g9980655-1)
+[2017-05-29 06:39] [ALPM] installed pinentry (1.0.0-1)
+[2017-05-29 06:39] [ALPM] installed nettle (3.3-1)
+[2017-05-29 06:39] [ALPM] installed gnutls (3.5.12-1)
+[2017-05-29 06:39] [ALPM] installed sqlite (3.18.0-1)
+[2017-05-29 06:39] [ALPM] installed gnupg (2.1.21-1)
+[2017-05-29 06:39] [ALPM] installed gpgme (1.9.0-3)
+[2017-05-29 06:39] [ALPM] installed pacman-mirrorlist (20170427-1)
+[2017-05-29 06:39] [ALPM] installed archlinux-keyring (20170320-1)
+[2017-05-29 06:39] [ALPM] installed pacman (5.0.1-5)
+[2017-05-29 06:39] [ALPM] installed pciutils (3.5.4-1)
+[2017-05-29 06:39] [ALPM] installed pcmciautils (018-7)
+[2017-05-29 06:39] [ALPM] installed procps-ng (3.3.12-1)
+[2017-05-29 06:39] [ALPM] installed psmisc (22.21-3)
+[2017-05-29 06:39] [ALPM] installed reiserfsprogs (3.6.25-1)
+[2017-05-29 06:39] [ALPM] installed s-nail (14.8.16-2)
+[2017-05-29 06:39] [ALPM] installed sed (4.4-1)
+[2017-05-29 06:39] [ALPM] installed systemd-sysvcompat (232-8)
+[2017-05-29 06:39] [ALPM] installed tar (1.29-2)
+[2017-05-29 06:39] [ALPM] installed texinfo (6.3-1)
+[2017-05-29 06:39] [ALPM] installed usbutils (008-1)
+[2017-05-29 06:39] [ALPM] installed vi (1:070224-2)
+[2017-05-29 06:39] [ALPM] installed which (2.21-2)
+[2017-05-29 06:39] [ALPM] installed xfsprogs (4.11.0-1)
+[2017-05-29 06:39] [ALPM] installed m4 (1.4.18-1)
+[2017-05-29 06:39] [ALPM] installed autoconf (2.69-4)
+[2017-05-29 06:39] [ALPM] installed automake (1.15-2)
+[2017-05-29 06:39] [ALPM] installed binutils (2.28.0-2)
+[2017-05-29 06:39] [ALPM] installed bison (3.0.4-2)
+[2017-05-29 06:39] [ALPM] installed fakeroot (1.21-2)
+[2017-05-29 06:39] [ALPM] installed flex (2.6.4-1)
+[2017-05-29 06:39] [ALPM] installed libmpc (1.0.3-2)
+[2017-05-29 06:39] [ALPM] installed gcc (6.3.1-2)
+[2017-05-29 06:39] [ALPM] installed libtool (2.4.6-7)
+[2017-05-29 06:39] [ALPM] installed libatomic_ops (7.4.6-1)
+[2017-05-29 06:39] [ALPM] installed gc (7.6.0-1)
+[2017-05-29 06:39] [ALPM] installed guile (2.2.2-1)
+[2017-05-29 06:39] [ALPM] installed make (4.2.1-2)
+[2017-05-29 06:39] [ALPM] installed patch (2.7.5-1)
+[2017-05-29 06:39] [ALPM] installed pkg-config (0.29.2-1)
+[2017-05-29 06:39] [ALPM] installed sudo (1.8.20-1)
+[2017-05-29 06:39] [ALPM] installed zsh (5.3.1-2)
+[2017-05-29 06:39] [ALPM] installed grml-zsh-config (0.14.2-1)
+[2017-05-29 06:39] [ALPM] transaction completed
+[2017-05-29 06:39] [ALPM] running '90-linux.hook'...
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux.img
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> Starting build: 4.11.2-1-ARCH
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [autodetect]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> Generating module dependencies
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> Creating gzip-compressed initcpio image: /boot/initramfs-linux.img
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> Image generation successful
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux-fallback.img -S autodetect
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> Starting build: 4.11.2-1-ARCH
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+[2017-05-29 06:39] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: wd719x
+[2017-05-29 06:39] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: aic94xx
+[2017-05-29 06:40] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+[2017-05-29 06:40] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+[2017-05-29 06:40] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+[2017-05-29 06:40] [ALPM-SCRIPTLET] ==> Generating module dependencies
+[2017-05-29 06:40] [ALPM-SCRIPTLET] ==> Creating gzip-compressed initcpio image: /boot/initramfs-linux-fallback.img
+[2017-05-29 06:40] [ALPM-SCRIPTLET] ==> Image generation successful
+[2017-05-29 06:40] [ALPM] running 'systemd-hwdb.hook'...
+[2017-05-29 06:40] [ALPM] running 'systemd-sysusers.hook'...
+[2017-05-29 06:40] [ALPM] running 'systemd-tmpfiles.hook'...
+[2017-05-29 06:40] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 06:40] [ALPM] running 'texinfo-install.hook'...
+[2017-05-29 06:40] [ALPM] running 'update-ca-trust.hook'...
+[2017-05-29 02:45] [PACMAN] Running 'pacman -S grub efibootmgr intel-ucode'
+[2017-05-29 02:46] [ALPM] transaction started
+[2017-05-29 02:46] [ALPM] installed grub (2:2.02-1)
+[2017-05-29 02:46] [ALPM-SCRIPTLET] Generating grub.cfg.example config file...
+[2017-05-29 02:46] [ALPM-SCRIPTLET] This may fail on some machines running a custom kernel.
+[2017-05-29 02:46] [ALPM-SCRIPTLET] done.
+[2017-05-29 02:46] [ALPM] installed efivar (31-1)
+[2017-05-29 02:46] [ALPM] installed efibootmgr (15-1)
+[2017-05-29 02:46] [ALPM] installed intel-ucode (20170511-1)
+[2017-05-29 02:46] [ALPM] transaction completed
+[2017-05-29 02:46] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 02:46] [ALPM] running 'texinfo-install.hook'...
+[2017-05-29 02:46] [PACMAN] Running 'pacman -S dialog wpa_supplicant'
+[2017-05-29 02:46] [ALPM] transaction started
+[2017-05-29 02:46] [ALPM] installed dialog (1:1.3_20170509-1)
+[2017-05-29 02:46] [ALPM] installed wpa_supplicant (1:2.6-5)
+[2017-05-29 02:46] [ALPM] transaction completed
+[2017-05-29 02:46] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 03:03] [PACMAN] Running 'pacman -S xorg-server xorg-xdpyinfo alsa-utils'
+[2017-05-29 03:05] [ALPM] transaction started
+[2017-05-29 03:05] [ALPM] installed libepoxy (1.4.2-1)
+[2017-05-29 03:05] [ALPM] installed libpng (1.6.29-1)
+[2017-05-29 03:05] [ALPM] installed graphite (1:1.3.10-1)
+[2017-05-29 03:05] [ALPM] installed harfbuzz (1.4.6-1)
+[2017-05-29 03:05] [ALPM] installed freetype2 (2.8-2)
+[2017-05-29 03:05] [ALPM] installed libfontenc (1.1.3-1)
+[2017-05-29 03:05] [ALPM] installed xproto (7.0.31-1)
+[2017-05-29 03:05] [ALPM] installed fontsproto (2.1.3-1)
+[2017-05-29 03:05] [ALPM] installed libxfont2 (2.0.1-1)
+[2017-05-29 03:05] [ALPM] installed pixman (0.34.0-1)
+[2017-05-29 03:05] [ALPM] installed xkeyboard-config (2.20-1)
+[2017-05-29 03:05] [ALPM] installed xcb-proto (1.12-3)
+[2017-05-29 03:05] [ALPM] installed libxdmcp (1.1.2-1)
+[2017-05-29 03:05] [ALPM] installed libxau (1.0.8-2)
+[2017-05-29 03:05] [ALPM] installed libxcb (1.12-1)
+[2017-05-29 03:05] [ALPM] installed kbproto (1.0.7-1)
+[2017-05-29 03:05] [ALPM] installed libx11 (1.6.5-1)
+[2017-05-29 03:05] [ALPM] installed libxkbfile (1.0.9-1)
+[2017-05-29 03:05] [ALPM] installed xorg-xkbcomp (1.4.0-1)
+[2017-05-29 03:05] [ALPM] installed xorg-setxkbmap (1.3.1-1)
+[2017-05-29 03:05] [ALPM] installed xorg-fonts-encodings (1.0.4-4)
+[2017-05-29 03:05] [ALPM] installed xorg-fonts-alias (1.0.3-1)
+[2017-05-29 03:05] [ALPM] installed libxfont (1.5.2-1)
+[2017-05-29 03:05] [ALPM] installed xorg-bdftopcf (1.0.5-1)
+[2017-05-29 03:05] [ALPM] installed xorg-mkfontscale (1.1.2-1)
+[2017-05-29 03:05] [ALPM] installed xorg-mkfontdir (1.0.7-8)
+[2017-05-29 03:05] [ALPM-SCRIPTLET] Creating X fontdir indices... done.
+[2017-05-29 03:05] [ALPM] installed xorg-font-util (1.3.1-1)
+[2017-05-29 03:05] [ALPM] installed xorg-font-utils (7.6-4)
+[2017-05-29 03:05] [ALPM] installed fontconfig (2.12.1-4)
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   Fontconfig configuration is done via /etc/fonts/conf.avail and conf.d.
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   Read /etc/fonts/conf.d/README for more information.
+[2017-05-29 03:05] [ALPM-SCRIPTLET] 
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   Configuration via /etc/fonts/local.conf is still possible,
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   but is no longer recommended for options available in conf.avail.
+[2017-05-29 03:05] [ALPM-SCRIPTLET] 
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   Main systemwide configuration should be done by symlinks
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   (especially for autohinting, sub-pixel and lcdfilter):
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   cd /etc/fonts/conf.d
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   ln -s ../conf.avail/XX-foo.conf
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   Check also https://wiki.archlinux.org/index.php/Font_Configuration
+[2017-05-29 03:05] [ALPM-SCRIPTLET]   and https://wiki.archlinux.org/index.php/Fonts.
+[2017-05-29 03:05] [ALPM-SCRIPTLET] 
+[2017-05-29 03:06] [ALPM-SCRIPTLET] updating font cache... done.
+[2017-05-29 03:06] [ALPM] installed xorg-fonts-misc (1.0.3-5)
+[2017-05-29 03:06] [ALPM] installed xorg-server-common (1.19.3-2)
+[2017-05-29 03:06] [ALPM] installed libunwind (1.2-1)
+[2017-05-29 03:06] [ALPM] installed xextproto (7.3.0-1)
+[2017-05-29 03:06] [ALPM] installed libxext (1.3.3-1)
+[2017-05-29 03:06] [ALPM] installed libpciaccess (0.13.5-1)
+[2017-05-29 03:06] [ALPM] installed libdrm (2.4.81-1)
+[2017-05-29 03:06] [ALPM] installed libxml2 (2.9.4+16+g07418011-2)
+[2017-05-29 03:06] [ALPM] installed wayland (1.13.0-1)
+[2017-05-29 03:06] [ALPM] installed xf86vidmodeproto (2.3.1-3)
+[2017-05-29 03:06] [ALPM] installed libxxf86vm (1.1.4-1)
+[2017-05-29 03:06] [ALPM] installed fixesproto (5.0+9+g4292ec1-1)
+[2017-05-29 03:06] [ALPM] installed libxfixes (5.0.3-1)
+[2017-05-29 03:06] [ALPM] installed damageproto (1.2.1-3)
+[2017-05-29 03:06] [ALPM] installed libxdamage (1.1.4-2)
+[2017-05-29 03:06] [ALPM] installed libxshmfence (1.2-1)
+[2017-05-29 03:06] [ALPM] installed libomxil-bellagio (0.9.3-1)
+[2017-05-29 03:06] [ALPM] installed libtxc_dxtn (1.0.1-6)
+[2017-05-29 03:06] [ALPM] installed libedit (20170329_3.1-1)
+[2017-05-29 03:06] [ALPM] installed llvm-libs (4.0.0-3)
+[2017-05-29 03:06] [ALPM] installed lm_sensors (3.4.0-2)
+[2017-05-29 03:06] [ALPM] installed mesa (17.1.0-1)
+[2017-05-29 03:06] [ALPM] installed libglvnd (0.2.999+g4ba53457-2)
+[2017-05-29 03:06] [ALPM] installed mtdev (1.1.5-1)
+[2017-05-29 03:06] [ALPM] installed libevdev (1.5.7-1)
+[2017-05-29 03:06] [ALPM] installed libgudev (231+1+g0841288-1)
+[2017-05-29 03:06] [ALPM] installed libwacom (0.24-1)
+[2017-05-29 03:06] [ALPM] installed libinput (1.7.2-1)
+[2017-05-29 03:06] [ALPM] installed xf86-input-libinput (0.25.1-1)
+[2017-05-29 03:06] [ALPM] installed xorg-server (1.19.3-2)
+[2017-05-29 03:06] [ALPM-SCRIPTLET] >>> xorg-server has now the ability to run without root rights with
+[2017-05-29 03:06] [ALPM-SCRIPTLET]     the help of systemd-logind. xserver will fail to run if not launched
+[2017-05-29 03:06] [ALPM-SCRIPTLET]     from the same virtual terminal as was used to log in.
+[2017-05-29 03:06] [ALPM-SCRIPTLET]     Without root rights, log files will be in ~/.local/share/xorg/ directory.
+[2017-05-29 03:06] [ALPM-SCRIPTLET] 
+[2017-05-29 03:06] [ALPM-SCRIPTLET]     Old behavior can be restored through Xorg.wrap config file.
+[2017-05-29 03:06] [ALPM-SCRIPTLET]     See Xorg.wrap man page (man xorg.wrap).
+[2017-05-29 03:06] [ALPM] installed inputproto (2.3.2-1)
+[2017-05-29 03:06] [ALPM] installed libxi (1.7.9-1)
+[2017-05-29 03:06] [ALPM] installed recordproto (1.14.2-2)
+[2017-05-29 03:06] [ALPM] installed libxtst (1.2.3-1)
+[2017-05-29 03:06] [ALPM] installed xf86dgaproto (2.1-3)
+[2017-05-29 03:06] [ALPM] installed libxxf86dga (1.1.4-1)
+[2017-05-29 03:06] [ALPM] installed renderproto (0.11.1-3)
+[2017-05-29 03:06] [ALPM] installed libxrender (0.9.10-1)
+[2017-05-29 03:06] [ALPM] installed compositeproto (0.4.2-3)
+[2017-05-29 03:06] [ALPM] installed libxcomposite (0.4.4-2)
+[2017-05-29 03:06] [ALPM] installed xineramaproto (1.2.1-3)
+[2017-05-29 03:06] [ALPM] installed libxinerama (1.1.3-2)
+[2017-05-29 03:06] [ALPM] installed dmxproto (2.3.1-3)
+[2017-05-29 03:06] [ALPM] installed libdmx (1.1.3-1)
+[2017-05-29 03:06] [ALPM] installed xorg-xdpyinfo (1.3.2-1)
+[2017-05-29 03:06] [ALPM] installed alsa-lib (1.1.4-1)
+[2017-05-29 03:06] [ALPM] installed libogg (1.3.2-1)
+[2017-05-29 03:06] [ALPM] installed flac (1.3.2-1)
+[2017-05-29 03:06] [ALPM] installed libvorbis (1.3.5-1)
+[2017-05-29 03:06] [ALPM] installed libsndfile (1.0.28-1)
+[2017-05-29 03:06] [ALPM] installed libsamplerate (0.1.9-1)
+[2017-05-29 03:06] [ALPM] installed fftw (3.3.6-2)
+[2017-05-29 03:06] [ALPM] installed alsa-utils (1.1.4-1)
+[2017-05-29 03:06] [ALPM] transaction completed
+[2017-05-29 03:06] [ALPM] running 'fontconfig.hook'...
+[2017-05-29 03:06] [ALPM] running 'systemd-hwdb.hook'...
+[2017-05-29 03:06] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 03:06] [ALPM] running 'texinfo-install.hook'...
+[2017-05-29 03:06] [ALPM] running 'xorg-mkfontdir.hook'...
+[2017-05-29 03:06] [PACMAN] Running 'pacman -S lightdm lightdm-gtk-greeter'
+[2017-05-29 03:08] [ALPM] transaction started
+[2017-05-29 03:08] [ALPM] installed iso-codes (3.74-1)
+[2017-05-29 03:08] [ALPM] installed libxklavier (5.4-1)
+[2017-05-29 03:08] [ALPM] installed nspr (4.14-1)
+[2017-05-29 03:08] [ALPM] installed js (24.2.0-4)
+[2017-05-29 03:08] [ALPM] installed polkit (0.113+29+g3272a98-1)
+[2017-05-29 03:08] [ALPM] installed lightdm (1:1.22.0-1)
+[2017-05-29 03:08] [ALPM] installed atk (2.24.0-2)
+[2017-05-29 03:08] [ALPM] installed lzo (2.10-1)
+[2017-05-29 03:08] [ALPM] installed cairo (1.14.8-1)
+[2017-05-29 03:08] [ALPM] installed libxcursor (1.1.14-2)
+[2017-05-29 03:08] [ALPM] installed randrproto (1.5.0-1)
+[2017-05-29 03:08] [ALPM] installed libxrandr (1.5.1-1)
+[2017-05-29 03:08] [ALPM] installed libjpeg-turbo (1.5.1-1)
+[2017-05-29 03:08] [ALPM] installed libtiff (4.0.8-1)
+[2017-05-29 03:08] [ALPM] installed jasper (2.0.13-1)
+[2017-05-29 03:08] [ALPM] installed shared-mime-info (1.8-1)
+[2017-05-29 03:08] [ALPM] installed gdk-pixbuf2 (2.36.6-2)
+[2017-05-29 03:08] [ALPM] installed dconf (0.26.0+1+g701d19d-1)
+[2017-05-29 03:08] [ALPM] installed libdatrie (0.2.10-2)
+[2017-05-29 03:08] [ALPM] installed libthai (0.1.26-1)
+[2017-05-29 03:08] [ALPM] installed libxft (2.3.2-1)
+[2017-05-29 03:08] [ALPM] installed pango (1.40.6+9+g92cc73c8-1)
+[2017-05-29 03:08] [ALPM] installed at-spi2-core (2.24.1-1)
+[2017-05-29 03:08] [ALPM] installed at-spi2-atk (2.24.1-1)
+[2017-05-29 03:08] [ALPM] installed libxkbcommon (0.7.1-1)
+[2017-05-29 03:08] [ALPM] installed hicolor-icon-theme (0.15-1)
+[2017-05-29 03:08] [ALPM] installed gtk-update-icon-cache (3.22.15-1)
+[2017-05-29 03:08] [ALPM] installed libcroco (0.6.12+4+g9ad7287-1)
+[2017-05-29 03:08] [ALPM] installed librsvg (2:2.40.17-1)
+[2017-05-29 03:08] [ALPM] installed adwaita-icon-theme (3.24.0-1)
+[2017-05-29 03:08] [ALPM] installed json-glib (1.2.8-1)
+[2017-05-29 03:08] [ALPM] installed wayland-protocols (1.7-1)
+[2017-05-29 03:08] [ALPM] installed desktop-file-utils (0.23-1)
+[2017-05-29 03:08] [ALPM] installed gtk3 (3.22.15-1)
+[2017-05-29 03:08] [ALPM] installed lightdm-gtk-greeter (1:2.0.2-1)
+[2017-05-29 03:08] [ALPM] transaction completed
+[2017-05-29 03:08] [ALPM] running 'gdk-pixbuf-query-loaders.hook'...
+[2017-05-29 03:08] [ALPM] running 'gio-querymodules.hook'...
+[2017-05-29 03:08] [ALPM] running 'glib-compile-schemas.hook'...
+[2017-05-29 03:08] [ALPM] running 'gtk-query-immodules-3.0.hook'...
+[2017-05-29 03:08] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2017-05-29 03:08] [ALPM] running 'systemd-tmpfiles.hook'...
+[2017-05-29 03:08] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 03:08] [ALPM] running 'update-desktop-database.hook'...
+[2017-05-29 03:08] [ALPM] running 'update-mime-database.hook'...
+[2017-05-29 03:08] [PACMAN] Running 'pacman -S i3 dmenu gmrun termite adobe-source-code-pro-fonts'
+[2017-05-29 03:08] [ALPM] transaction started
+[2017-05-29 03:08] [ALPM] installed xcb-util-renderutil (0.3.9-1)
+[2017-05-29 03:08] [ALPM] installed xcb-util (0.4.0-1)
+[2017-05-29 03:08] [ALPM] installed xcb-util-image (0.4.0-1)
+[2017-05-29 03:08] [ALPM] installed xcb-util-cursor (0.1.3-1)
+[2017-05-29 03:08] [ALPM] installed xcb-util-keysyms (0.4.0-1)
+[2017-05-29 03:08] [ALPM] installed xcb-util-wm (0.4.1-1)
+[2017-05-29 03:08] [ALPM] installed xcb-util-xrm (1.2-2)
+[2017-05-29 03:08] [ALPM] installed libev (4.24-1)
+[2017-05-29 03:08] [ALPM] installed yajl (2.1.0-1)
+[2017-05-29 03:08] [ALPM] installed startup-notification (0.12-5)
+[2017-05-29 03:08] [ALPM] installed libxkbcommon-x11 (0.7.1-1)
+[2017-05-29 03:08] [ALPM] installed i3-wm (4.13-1)
+[2017-05-29 03:08] [ALPM] installed i3blocks (1.4-4)
+[2017-05-29 03:08] [ALPM] installed i3lock (2.8-1)
+[2017-05-29 03:08] [ALPM] installed wireless_tools (30.pre9-1)
+[2017-05-29 03:08] [ALPM] installed confuse (3.1-1)
+[2017-05-29 03:08] [ALPM] installed libasyncns (0.8+3+g68cd5af-1)
+[2017-05-29 03:08] [ALPM] installed libice (1.0.9-1)
+[2017-05-29 03:08] [ALPM] installed libsm (1.2.2-2)
+[2017-05-29 03:08] [ALPM] installed libpulse (10.0-3)
+[2017-05-29 03:08] [ALPM] installed i3status (2.11-2)
+[2017-05-29 03:08] [ALPM] installed dmenu (4.7-1)
+[2017-05-29 03:08] [ALPM] installed libdaemon (0.14-3)
+[2017-05-29 03:08] [ALPM] installed avahi (0.6.32-3)
+[2017-05-29 03:09] [ALPM] installed libcups (2.2.3-1)
+[2017-05-29 03:09] [ALPM] installed gtk2 (2.24.31-1)
+[2017-05-29 03:09] [ALPM] installed gmrun (0.9.2-6)
+[2017-05-29 03:09] [ALPM] installed vte-common (0.48.3-1)
+[2017-05-29 03:09] [ALPM] installed pcre2 (10.23-1)
+[2017-05-29 03:09] [ALPM] installed vte3-ng (0.48.3.a-1)
+[2017-05-29 03:09] [ALPM] installed termite-terminfo (12-2)
+[2017-05-29 03:09] [ALPM] installed termite (12-2)
+[2017-05-29 03:09] [ALPM] installed adobe-source-code-pro-fonts (2.030ro+1.050it-3)
+[2017-05-29 03:09] [ALPM] transaction completed
+[2017-05-29 03:09] [ALPM] running 'fontconfig.hook'...
+[2017-05-29 03:09] [ALPM] running 'gtk-query-immodules-2.0.hook'...
+[2017-05-29 03:09] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 03:09] [ALPM] running 'update-desktop-database.hook'...
+[2017-05-29 03:09] [ALPM] running 'xorg-mkfontdir.hook'...
+[2017-05-29 03:11] [PACMAN] Running 'pacman -S virtualbox virtualbox-guest-iso virtualbox-host-modules-arch'
+[2017-05-29 03:15] [ALPM] transaction started
+[2017-05-29 03:15] [ALPM] installed python2 (2.7.13-2)
+[2017-05-29 03:15] [ALPM] installed sdl (1.2.15-8)
+[2017-05-29 03:15] [ALPM] installed libvpx (1.6.1-1)
+[2017-05-29 03:15] [ALPM] installed libxt (1.1.5-1)
+[2017-05-29 03:15] [ALPM] installed libxmu (1.1.2-1)
+[2017-05-29 03:15] [ALPM] installed tslib (1.10-1)
+[2017-05-29 03:15] [ALPM] installed libproxy (0.4.15-1)
+[2017-05-29 03:15] [ALPM] installed openssl-1.0 (1.0.2.l-1)
+[2017-05-29 03:15] [ALPM] installed qt5-base (5.8.0-12)
+[2017-05-29 03:15] [ALPM] installed qt5-x11extras (5.8.0-1)
+[2017-05-29 03:15] [ALPM] installed virtualbox-host-modules-arch (5.1.22-3)
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ==> Virtualbox kernel modules will be loaded at boot time by systemd-modules-load.
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ==> In order to use them right now, you may want to load them manually.
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ==> Read modules-load.d man page to disable module boot loading.'
+[2017-05-29 03:15] [ALPM] installed virtualbox (5.1.22-2)
+[2017-05-29 03:15] [ALPM] installed virtualbox-guest-iso (5.1.22-1)
+[2017-05-29 03:15] [ALPM-SCRIPTLET] 
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> virtualbox-guest-iso post install message:
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===>
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> Redistribution of VBoxGuestAdditions.iso from the binary packages
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> on www.virtualbox.org with Arch Linux has been granted by
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> InnoTek Systemberatung GmbH.
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===>
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> By using this package you accept
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> the VirtualBox Personal Use and Evaluation License (PUEL)
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> which can be found here: http://virtualbox.org/wiki/VirtualBox_PUEL
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===>
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===> If you do not accept this license, you must remove the package immediately.
+[2017-05-29 03:15] [ALPM-SCRIPTLET] ===>
+[2017-05-29 03:15] [ALPM-SCRIPTLET] 
+[2017-05-29 03:15] [ALPM] transaction completed
+[2017-05-29 03:15] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2017-05-29 03:15] [ALPM] running 'systemd-sysusers.hook'...
+[2017-05-29 03:15] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 03:15] [ALPM] running 'update-desktop-database.hook'...
+[2017-05-29 03:15] [ALPM] running 'update-mime-database.hook'...
+[2017-05-29 05:34] [PACMAN] Running 'pacman -S xscreensaver'
+[2017-05-29 05:34] [ALPM] transaction started
+[2017-05-29 05:34] [ALPM] installed libglade (2.6.4-5)
+[2017-05-29 05:34] [ALPM] installed glu (9.0.0-4)
+[2017-05-29 05:34] [ALPM] installed xorg-appres (1.0.4-1)
+[2017-05-29 05:34] [ALPM] installed perl-encode-locale (1.05-1)
+[2017-05-29 05:34] [ALPM] installed perl-http-date (6.02-2)
+[2017-05-29 05:34] [ALPM] installed perl-file-listing (6.04-2)
+[2017-05-29 05:34] [ALPM] installed perl-html-tagset (3.20-4)
+[2017-05-29 05:34] [ALPM] installed perl-html-parser (3.72-2)
+[2017-05-29 05:34] [ALPM] installed perl-lwp-mediatypes (6.02-2)
+[2017-05-29 05:34] [ALPM] installed perl-uri (1.71-1)
+[2017-05-29 05:34] [ALPM] installed perl-io-html (1.001-1)
+[2017-05-29 05:34] [ALPM] installed perl-http-message (6.11-2)
+[2017-05-29 05:34] [ALPM] installed perl-http-cookies (6.03-1)
+[2017-05-29 05:34] [ALPM] installed perl-http-daemon (6.01-2)
+[2017-05-29 05:34] [ALPM] installed perl-http-negotiate (6.01-2)
+[2017-05-29 05:34] [ALPM] installed perl-net-http (6.15-1)
+[2017-05-29 05:34] [ALPM] installed perl-www-robotrules (6.02-2)
+[2017-05-29 05:34] [ALPM] installed perl-try-tiny (0.28-1)
+[2017-05-29 05:34] [ALPM] installed perl-libwww (6.26-1)
+[2017-05-29 05:34] [ALPM] installed xscreensaver (5.36-1)
+[2017-05-29 05:34] [ALPM] transaction completed
+[2017-05-29 05:34] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 05:34] [ALPM] running 'update-desktop-database.hook'...
+[2017-05-29 07:01] [PACMAN] Running 'pacman -S emacs'
+[2017-05-29 07:03] [ALPM] transaction started
+[2017-05-29 07:03] [ALPM] installed gpm (1.20.7-7)
+[2017-05-29 07:03] [ALPM] installed giflib (5.1.4-1)
+[2017-05-29 07:03] [ALPM] installed libxpm (3.5.12-1)
+[2017-05-29 07:03] [ALPM] installed libxaw (1.0.13-1)
+[2017-05-29 07:03] [ALPM] installed libotf (0.9.13-2)
+[2017-05-29 07:03] [ALPM] installed m17n-db (1.7.0-1)
+[2017-05-29 07:03] [ALPM] installed fribidi (0.19.7-1)
+[2017-05-29 07:03] [ALPM] installed libwebp (0.6.0-1)
+[2017-05-29 07:03] [ALPM] installed gd (2.2.4-2)
+[2017-05-29 07:03] [ALPM] installed m17n-lib (1.7.0-1)
+[2017-05-29 07:03] [ALPM] installed dbus-glib (0.108-1)
+[2017-05-29 07:03] [ALPM] installed gconf (3.2.6-5)
+[2017-05-29 07:03] [ALPM] installed lcms2 (2.8-2)
+[2017-05-29 07:03] [ALPM] installed liblqr (0.4.2-1)
+[2017-05-29 07:03] [ALPM] installed ocl-icd (2.2.11-1)
+[2017-05-29 07:03] [ALPM] installed imagemagick (6.9.8.6-1)
+[2017-05-29 07:03] [ALPM] installed emacs (25.2-1)
+[2017-05-29 07:03] [ALPM] transaction completed
+[2017-05-29 07:03] [ALPM] running 'gio-querymodules.hook'...
+[2017-05-29 07:03] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2017-05-29 07:03] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 07:03] [ALPM] running 'texinfo-install.hook'...
+[2017-05-29 07:03] [ALPM] running 'update-desktop-database.hook'...
+[2017-05-29 07:03] [PACMAN] Running 'pacman -S shadowsocks shadowsocks-libev'
+[2017-05-29 07:05] [ALPM] transaction started
+[2017-05-29 07:05] [ALPM] installed python (3.6.1-1)
+[2017-05-29 07:05] [ALPM] installed python-pyparsing (2.2.0-1)
+[2017-05-29 07:05] [ALPM] installed python-six (1.10.0-3)
+[2017-05-29 07:05] [ALPM] installed python-packaging (16.8-2)
+[2017-05-29 07:05] [ALPM] installed python-appdirs (1.4.3-1)
+[2017-05-29 07:05] [ALPM] installed python-setuptools (1:35.0.2-1)
+[2017-05-29 07:05] [ALPM] installed shadowsocks (2.9.1-1)
+[2017-05-29 07:05] [ALPM-SCRIPTLET] You can use profiled systemd units to start/stop shadowsocks: (Profiles are placed under /etc/shadowsocks/*.json)
+[2017-05-29 07:05] [ALPM-SCRIPTLET] # systemctl start/stop shadowsocks[-server]@<conf-name>
+[2017-05-29 07:05] [ALPM] installed mbedtls (2.4.2-1)
+[2017-05-29 07:05] [ALPM] installed libsodium (1.0.12-1)
+[2017-05-29 07:05] [ALPM] installed udns (0.4-2)
+[2017-05-29 07:05] [ALPM] installed libcork (0.15.0-1)
+[2017-05-29 07:05] [ALPM] installed libcorkipset (1.1.1+20150311-1)
+[2017-05-29 07:05] [ALPM] installed libbloom (1.4-1)
+[2017-05-29 07:05] [ALPM] installed shadowsocks-libev (3.0.6-1)
+[2017-05-29 07:05] [ALPM] transaction completed
+[2017-05-29 07:05] [ALPM] running 'systemd-update.hook'...
+[2017-05-29 07:05] [PACMAN] Running 'pacman -S git'
+[2017-05-29 07:06] [ALPM] transaction started
+[2017-05-29 07:06] [ALPM] installed perl-error (0.17024-1)
+[2017-05-29 07:06] [ALPM] installed git (2.13.0-1)
+[2017-05-29 07:06] [ALPM] transaction completed
+[2017-05-29 07:06] [ALPM] running 'systemd-update.hook'...
+[2017-05-31 00:55] [PACMAN] Running 'pacman -Syyu'
+[2017-05-31 00:55] [PACMAN] synchronizing package lists
+[2017-05-31 00:55] [PACMAN] starting full system upgrade
+[2017-05-31 00:57] [PACMAN] Running 'pacman -Syu'
+[2017-05-31 00:57] [PACMAN] synchronizing package lists
+[2017-05-31 00:57] [PACMAN] starting full system upgrade
+[2017-05-31 01:03] [ALPM] transaction started
+[2017-05-31 01:03] [ALPM] upgraded glibc (2.25-1 -> 2.25-2)
+[2017-05-31 01:03] [ALPM-SCRIPTLET] Generating locales...
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   en_US.UTF-8... done
+[2017-05-31 01:03] [ALPM-SCRIPTLET] Generation complete.
+[2017-05-31 01:03] [ALPM] upgraded binutils (2.28.0-2 -> 2.28.0-3)
+[2017-05-31 01:03] [ALPM] upgraded gcc-libs (6.3.1-2 -> 7.1.1-2)
+[2017-05-31 01:03] [ALPM] upgraded gcc (6.3.1-2 -> 7.1.1-2)
+[2017-05-31 01:03] [ALPM] upgraded libtool (2.4.6-7 -> 2.4.6-8)
+[2017-05-31 01:03] [ALPM] upgraded krb5 (1.15-1 -> 1.15.1-1)
+[2017-05-31 01:03] [ALPM] upgraded imagemagick (6.9.8.6-1 -> 6.9.8.8-1)
+[2017-05-31 01:03] [ALPM] upgraded linux (4.11.2-1 -> 4.11.3-1)
+[2017-05-31 01:03] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2017-05-31 01:03] [ALPM] upgraded sudo (1.8.20-1 -> 1.8.20.p1-1)
+[2017-05-31 01:03] [ALPM] transaction completed
+[2017-05-31 01:03] [ALPM] running '90-linux.hook'...
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux.img
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Starting build: 4.11.3-1-ARCH
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [systemd]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [autodetect]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [sd-encrypt]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [sd-lvm2]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Generating module dependencies
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Creating gzip-compressed initcpio image: /boot/initramfs-linux.img
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Image generation successful
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux-fallback.img -S autodetect
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Starting build: 4.11.3-1-ARCH
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [systemd]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: wd719x
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> WARNING: Possibly missing firmware for module: aic94xx
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [sd-encrypt]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [sd-lvm2]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+[2017-05-31 01:03] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Generating module dependencies
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Creating gzip-compressed initcpio image: /boot/initramfs-linux-fallback.img
+[2017-05-31 01:03] [ALPM-SCRIPTLET] ==> Image generation successful
+[2017-05-31 01:03] [ALPM] running 'systemd-tmpfiles.hook'...
+[2017-05-31 01:03] [ALPM] running 'systemd-update.hook'...
+[2017-05-31 01:03] [ALPM] running 'texinfo-install.hook'...
+[2017-05-31 01:07] [PACMAN] Running 'pacman -Sc --noconfirm'
+[2017-05-31 01:10] [PACMAN] Running 'pacman -S pkgfile'
+[2017-05-31 01:10] [ALPM] transaction started
+[2017-05-31 01:10] [ALPM] installed pkgfile (17-1)
+[2017-05-31 01:10] [ALPM-SCRIPTLET] ==> Run 'pkgfile --update' to initialize the database
+[2017-05-31 01:10] [ALPM] transaction completed
+[2017-05-31 01:10] [ALPM] running 'systemd-update.hook'...
+[2017-05-31 03:20] [PACMAN] Running 'pacman -S vlc smplayer'
+[2017-05-31 03:23] [ALPM] transaction started
+[2017-05-31 03:23] [ALPM] installed a52dec (0.7.4-9)
+[2017-05-31 03:23] [ALPM] installed libdvbpsi (1:1.3.1-1)
+[2017-05-31 03:23] [ALPM] installed libdca (0.0.5-4)
+[2017-05-31 03:23] [ALPM] installed sdl_image (1.2.12-4)
+[2017-05-31 03:23] [ALPM] installed libdvdread (5.0.4-1)
+[2017-05-31 03:23] [ALPM] installed libdvdnav (5.0.3-1)
+[2017-05-31 03:23] [ALPM] installed libkate (0.4.1-5)
+[2017-05-31 03:23] [ALPM] installed libtiger (0.3.4-4)
+[2017-05-31 03:23] [ALPM] installed lua (5.3.4-1)
+[2017-05-31 03:23] [ALPM] installed libebml (1.3.4-2)
+[2017-05-31 03:23] [ALPM] installed libmatroska (1.4.7-1)
+[2017-05-31 03:23] [ALPM] installed zvbi (0.2.35-1)
+[2017-05-31 03:23] [ALPM] installed taglib (1.11.1-1)
+[2017-05-31 03:23] [ALPM] installed libmpcdec (1:0.1+r475-1)
+[2017-05-31 03:23] [ALPM] installed gsm (1.0.16-1)
+[2017-05-31 03:23] [ALPM] installed lame (3.99.5-3)
+[2017-05-31 03:23] [ALPM] installed libass (0.13.6-1)
+[2017-05-31 03:23] [ALPM] installed libbluray (1.0.0-1)
+[2017-05-31 03:23] [ALPM] installed libmodplug (0.8.8.5-2)
+[2017-05-31 03:23] [ALPM] installed libsoxr (0.1.2-1)
+[2017-05-31 03:23] [ALPM] installed libssh (0.7.5-1)
+[2017-05-31 03:23] [ALPM] installed libtheora (1.1.1-3)
+[2017-05-31 03:23] [ALPM] installed libva (1.8.2-1)
+[2017-05-31 03:23] [ALPM] installed libvdpau (1.1.1-2)
+[2017-05-31 03:23] [ALPM] installed opencore-amr (0.1.5-1)
+[2017-05-31 03:23] [ALPM] installed openjpeg (1.5.2-1)
+[2017-05-31 03:23] [ALPM] installed opus (1.1.5-1)
+[2017-05-31 03:23] [ALPM] installed orc (0.4.26+2+g249c709-1)
+[2017-05-31 03:23] [ALPM] installed schroedinger (1.0.11-3)
+[2017-05-31 03:23] [ALPM] installed speexdsp (1.2rc3-2)
+[2017-05-31 03:23] [ALPM] installed speex (1.2.0-1)
+[2017-05-31 03:23] [ALPM] installed v4l-utils (1.12.5-1)
+[2017-05-31 03:23] [ALPM] installed xvidcore (1.3.4-1)
+[2017-05-31 03:23] [ALPM] installed dcadec (0.2.0-1)
+[2017-05-31 03:23] [ALPM] installed vid.stab (1.1-1)
+[2017-05-31 03:23] [ALPM] installed libx264-10bit (2:148.20170519-1)
+[2017-05-31 03:23] [ALPM] installed x265 (2.4-1)
+[2017-05-31 03:23] [ALPM] installed ffmpeg2.8 (2.8.11-9)
+[2017-05-31 03:23] [ALPM] installed faad2 (2.7-4)
+[2017-05-31 03:23] [ALPM] installed libupnp (1.6.21-1)
+[2017-05-31 03:23] [ALPM] installed libshout (1:2.4.1-3)
+[2017-05-31 03:23] [ALPM] installed libmad (0.15.1b-7)
+[2017-05-31 03:23] [ALPM] installed libmpeg2 (0.5.1-5)
+[2017-05-31 03:23] [ALPM] installed libtar (1.2.20-2)
+[2017-05-31 03:23] [ALPM] installed vlc (2.2.6-1)
+[2017-05-31 03:23] [ALPM] installed qt5-script (5.8.0-1)
+[2017-05-31 03:23] [ALPM] installed zita-alsa-pcmi (0.2.0-3)
+[2017-05-31 03:23] [ALPM] installed zita-resampler (1.3.0-5)
+[2017-05-31 03:23] [ALPM] installed jack (0.125.0-3)
+[2017-05-31 03:23] [ALPM] installed libraw1394 (2.1.2-1)
+[2017-05-31 03:23] [ALPM] installed libavc1394 (0.5.4-2)
+[2017-05-31 03:23] [ALPM] installed libiec61883 (1.2.0-4)
+[2017-05-31 03:23] [ALPM] installed openjpeg2 (2.1.2-2)
+[2017-05-31 03:23] [ALPM] installed sdl2 (2.0.5-3)
+[2017-05-31 03:23] [ALPM] installed ffmpeg (1:3.3.1-9)
+[2017-05-31 03:23] [ALPM] installed libcddb (1.3.2-4)
+[2017-05-31 03:23] [ALPM] installed libcdio (0.94-2)
+[2017-05-31 03:23] [ALPM] installed libcdio-paranoia (10.2+0.94+1-2)
+[2017-05-31 03:23] [ALPM] installed scrnsaverproto (1.2.2-2)
+[2017-05-31 03:23] [ALPM] installed libxss (1.2.2-2)
+[2017-05-31 03:23] [ALPM] installed videoproto (2.3.3-1)
+[2017-05-31 03:23] [ALPM] installed libxv (1.0.11-1)
+[2017-05-31 03:23] [ALPM] installed libid3tag (0.15.1b-8)
+[2017-05-31 03:23] [ALPM] installed imlib2 (1.4.10-1)
+[2017-05-31 03:23] [ALPM] installed libcaca (0.99.beta19-1)
+[2017-05-31 03:23] [ALPM] installed xorg-xset (1.2.3-1)
+[2017-05-31 03:23] [ALPM] installed xdg-utils (1.1.2-1)
+[2017-05-31 03:23] [ALPM] installed lua52 (5.2.4-2)
+[2017-05-31 03:23] [ALPM] installed libcap-ng (0.7.8-1)
+[2017-05-31 03:23] [ALPM] installed talloc (2.1.9-1)
+[2017-05-31 03:23] [ALPM] installed libbsd (0.8.3-2)
+[2017-05-31 03:23] [ALPM] installed libwbclient (4.5.10-1)
+[2017-05-31 03:23] [ALPM] installed cifs-utils (6.7-2)
+[2017-05-31 03:23] [ALPM] installed tdb (1.3.12-1)
+[2017-05-31 03:23] [ALPM] installed tevent (1:0.9.31-1)
+[2017-05-31 03:23] [ALPM] installed ldb (1.1.29-1)
+[2017-05-31 03:23] [ALPM] installed smbclient (4.5.10-1)
+[2017-05-31 03:23] [ALPM] installed vamp-plugin-sdk (2.6-1)
+[2017-05-31 03:23] [ALPM] installed rubberband (1.8.1-3)
+[2017-05-31 03:23] [ALPM] installed uchardet (0.0.6-1)
+[2017-05-31 03:23] [ALPM] installed mpv (1:0.25.0-3)
+[2017-05-31 03:23] [ALPM] installed smplayer (17.5.0-1)
+[2017-05-31 03:23] [ALPM] transaction completed
+[2017-05-31 03:23] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2017-05-31 03:23] [ALPM] running 'systemd-update.hook'...
+[2017-05-31 03:23] [ALPM] running 'texinfo-install.hook'...
+[2017-05-31 03:23] [ALPM] running 'update-desktop-database.hook'...
+[2017-05-31 03:23] [ALPM] running 'update-vlc-plugin-cache.hook'...
+[2017-06-01 01:00] [PACMAN] Running 'pacman -Syyu'
+[2017-06-01 01:00] [PACMAN] synchronizing package lists
+[2017-06-01 01:00] [PACMAN] starting full system upgrade
+[2017-06-01 01:00] [ALPM] transaction started
+[2017-06-01 01:00] [ALPM] upgraded fontconfig (2.12.1-4 -> 2.12.3-1)
+[2017-06-01 01:00] [ALPM-SCRIPTLET] Rebuilding fontconfig cache... done.
+[2017-06-01 01:00] [ALPM] transaction completed
+[2017-06-01 01:00] [ALPM] running 'systemd-update.hook'...
+[2017-06-01 02:16] [PACMAN] Running 'pacman -S python-pylint python2-pylint'
+[2017-06-01 02:16] [ALPM] transaction started
+[2017-06-01 02:16] [ALPM] installed python-lazy-object-proxy (1.3.1-1)
+[2017-06-01 02:16] [ALPM] installed python-wrapt (1.10.10-1)
+[2017-06-01 02:16] [ALPM] installed python-astroid (1.5.2-1)
+[2017-06-01 02:16] [ALPM] installed python-mccabe (0.6.1-1)
+[2017-06-01 02:16] [ALPM] installed python-isort (4.2.5-2)
+[2017-06-01 02:16] [ALPM] installed python-pylint (1.7.1-1)
+[2017-06-01 02:16] [ALPM] installed python2-six (1.10.0-3)
+[2017-06-01 02:16] [ALPM] installed python2-lazy-object-proxy (1.3.1-1)
+[2017-06-01 02:16] [ALPM] installed python2-wrapt (1.10.10-1)
+[2017-06-01 02:16] [ALPM] installed python2-singledispatch (3.4.0.3-2)
+[2017-06-01 02:16] [ALPM] installed python2-enum34 (1.1.6-1)
+[2017-06-01 02:16] [ALPM] installed python2-backports (1.0-1)
+[2017-06-01 02:16] [ALPM] installed python2-backports.functools_lru_cache (1.4-2)
+[2017-06-01 02:16] [ALPM] installed python2-astroid (1.5.2-1)
+[2017-06-01 02:16] [ALPM] installed python2-pyparsing (2.2.0-1)
+[2017-06-01 02:16] [ALPM] installed python2-packaging (16.8-2)
+[2017-06-01 02:16] [ALPM] installed python2-appdirs (1.4.3-1)
+[2017-06-01 02:16] [ALPM] installed python2-setuptools (1:35.0.2-1)
+[2017-06-01 02:16] [ALPM] installed python2-mccabe (0.6.1-1)
+[2017-06-01 02:16] [ALPM] installed python2-isort (4.2.5-2)
+[2017-06-01 02:16] [ALPM] installed python2-configparser (3.5.0-1)
+[2017-06-01 02:16] [ALPM] installed python2-pylint (1.7.1-1)
+[2017-06-01 02:16] [ALPM] transaction completed
+[2017-06-01 02:16] [ALPM] running 'systemd-update.hook'...
+[2017-06-01 02:22] [PACMAN] Running 'pacman -S python-requests python2-requests'
+[2017-06-01 02:22] [ALPM] transaction started
+[2017-06-01 02:22] [ALPM] installed python-urllib3 (1.21.1-1)
+[2017-06-01 02:22] [ALPM] installed python-chardet (3.0.3-1)
+[2017-06-01 02:22] [ALPM] installed python-requests (2.14.2-1)
+[2017-06-01 02:22] [ALPM] installed python2-urllib3 (1.21.1-1)
+[2017-06-01 02:22] [ALPM] installed python2-chardet (3.0.3-1)
+[2017-06-01 02:22] [ALPM] installed python2-requests (2.14.2-1)
+[2017-06-01 02:22] [ALPM] transaction completed
+[2017-06-01 02:22] [ALPM] running 'systemd-update.hook'...
+[2017-06-01 02:23] [PACMAN] Running 'pacman -S python-beautifulsoup4 python2-beautifulsoup4'
+[2017-06-01 02:23] [ALPM] transaction started
+[2017-06-01 02:23] [ALPM] installed python-beautifulsoup4 (4.6.0-1)
+[2017-06-01 02:23] [ALPM] installed python2-beautifulsoup4 (4.6.0-1)
+[2017-06-01 02:23] [ALPM] transaction completed
+[2017-06-01 02:23] [ALPM] running 'systemd-update.hook'...
+[2017-06-01 02:23] [PACMAN] Running 'pacman -S python-selenium python2-selenium'
+[2017-06-01 02:23] [ALPM] transaction started
+[2017-06-01 02:23] [ALPM] installed python-selenium (3.4.3-1)
+[2017-06-01 02:23] [ALPM] installed python2-selenium (3.4.3-1)
+[2017-06-01 02:23] [ALPM] transaction completed
+[2017-06-01 02:23] [ALPM] running 'systemd-update.hook'...
+[2017-06-01 09:34] [PACMAN] Running 'pacman -Syyu'
+[2017-06-01 09:34] [PACMAN] synchronizing package lists
+[2017-06-01 09:34] [PACMAN] starting full system upgrade
+[2017-06-01 09:35] [ALPM] transaction started
+[2017-06-01 09:35] [ALPM] upgraded python-setuptools (1:35.0.2-1 -> 1:36.0.0-1)
+[2017-06-01 09:35] [ALPM] upgraded python2-setuptools (1:35.0.2-1 -> 1:36.0.0-1)
+[2017-06-01 09:35] [ALPM] transaction completed
+[2017-06-01 09:35] [ALPM] running 'systemd-update.hook'...
+[2017-06-01 09:35] [PACMAN] Running 'pacman -Sc --noconfirm'
+[2017-06-02 01:23] [PACMAN] Running 'pacman -S unzip'
+[2017-06-02 01:23] [ALPM] transaction started
+[2017-06-02 01:23] [ALPM] installed unzip (6.0-12)
+[2017-06-02 01:23] [ALPM] transaction completed
+[2017-06-02 01:23] [ALPM] running 'systemd-update.hook'...
+[2017-06-02 06:41] [PACMAN] Running 'pacman -Syyu'
+[2017-06-02 06:41] [PACMAN] synchronizing package lists
+[2017-06-02 06:41] [PACMAN] starting full system upgrade
+[2017-06-02 06:42] [ALPM] transaction started
+[2017-06-02 06:42] [ALPM] upgraded diffutils (3.5-1 -> 3.6-1)
+[2017-06-02 06:42] [ALPM] upgraded file (5.30-1 -> 5.31-1)
+[2017-06-02 06:42] [ALPM] upgraded libtasn1 (4.10-1 -> 4.12-1)
+[2017-06-02 06:42] [ALPM] upgraded nano (2.8.2-1 -> 2.8.4-1)
+[2017-06-02 06:42] [ALPM] upgraded python-setuptools (1:36.0.0-1 -> 1:36.0.1-1)
+[2017-06-02 06:42] [ALPM] upgraded sqlite (3.18.0-1 -> 3.19.2-2)
+[2017-06-02 06:42] [ALPM] upgraded python2-setuptools (1:36.0.0-1 -> 1:36.0.1-1)
+[2017-06-02 06:42] [ALPM] upgraded smplayer (17.5.0-1 -> 17.6.0-1)
+[2017-06-02 06:42] [ALPM] transaction completed
+[2017-06-02 06:42] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2017-06-02 06:42] [ALPM] running 'systemd-update.hook'...
+[2017-06-02 06:42] [ALPM] running 'texinfo-install.hook'...
+[2017-06-02 06:42] [ALPM] running 'update-desktop-database.hook'...
+[2017-06-03 01:16] [PACMAN] Running 'pacman -Syyu'
+[2017-06-03 01:16] [PACMAN] synchronizing package lists
+[2017-06-03 01:16] [PACMAN] starting full system upgrade
+[2017-06-03 01:17] [ALPM] transaction started
+[2017-06-03 01:17] [ALPM] upgraded ncurses (6.0+20170429-1 -> 6.0+20170527-1)
+[2017-06-03 01:17] [ALPM] upgraded sudo (1.8.20.p1-1 -> 1.8.20.p2-1)
+[2017-06-03 01:17] [ALPM] transaction completed
+[2017-06-03 01:17] [ALPM] running 'systemd-tmpfiles.hook'...
+[2017-06-03 01:17] [ALPM] running 'systemd-update.hook'...
+[2017-06-03 01:17] [PACMAN] Running 'pacman -Sc --noconfirm'
+[2017-06-04 03:01] [PACMAN] Running 'pacman -Syyu'
+[2017-06-04 03:01] [PACMAN] synchronizing package lists
+[2017-06-04 03:02] [PACMAN] starting full system upgrade
+[2017-06-04 03:02] [ALPM] transaction started
+[2017-06-04 03:02] [ALPM] upgraded alsa-lib (1.1.4-1 -> 1.1.4.1-1)
+[2017-06-04 03:02] [ALPM] transaction completed
+[2017-06-04 03:02] [ALPM] running 'systemd-update.hook'...
+[2017-06-04 03:02] [PACMAN] Running 'pacman -Sc --noconfirm'
+[2017-06-04 21:42] [PACMAN] Running 'pacman -Syyu'
+[2017-06-04 21:42] [PACMAN] synchronizing package lists
+[2017-06-04 21:42] [PACMAN] starting full system upgrade
+[2017-06-04 21:43] [ALPM] transaction started
+[2017-06-04 21:43] [ALPM] upgraded libelf (0.168-1 -> 0.169-1)
+[2017-06-04 21:43] [ALPM] upgraded mesa (17.1.0-1 -> 17.1.1-1)
+[2017-06-04 21:43] [ALPM] transaction completed
+[2017-06-04 21:43] [ALPM] running 'systemd-update.hook'...
+[2017-06-04 21:43] [PACMAN] Running 'pacman -Sc --noconfirm'
+[2017-06-05 02:48] [PACMAN] Running 'pacman -S qt4'
+[2017-06-05 02:49] [ALPM] transaction started
+[2017-06-05 02:49] [ALPM] installed libmng (2.0.3-1)
+[2017-06-05 02:49] [ALPM] installed qt4 (4.8.7-20)
+[2017-06-05 02:49] [ALPM] transaction completed
+[2017-06-05 02:49] [ALPM] running 'gtk-update-icon-cache.hook'...
+[2017-06-05 02:49] [ALPM] running 'systemd-update.hook'...
+[2017-06-05 02:49] [ALPM] running 'update-desktop-database.hook'...
+[2017-06-05 02:49] [ALPM] running 'update-vlc-plugin-cache.hook'...
+[2017-06-06 03:21] [PACMAN] Running 'pacman -Syyu'
+[2017-06-06 03:21] [PACMAN] synchronizing package lists
+[2017-06-06 03:22] [PACMAN] starting full system upgrade
+[2017-06-06 03:22] [ALPM] transaction started
+[2017-06-06 03:22] [ALPM] upgraded libass (0.13.6-1 -> 0.13.7-1)
+[2017-06-06 03:22] [ALPM] upgraded libgcrypt (1.7.6-1 -> 1.7.7-1)
+[2017-06-06 03:22] [ALPM] upgraded xkeyboard-config (2.20-1 -> 2.21-1)
+[2017-06-06 03:22] [ALPM] transaction completed
+[2017-06-06 03:22] [ALPM] running 'systemd-update.hook'...
+[2017-06-06 03:22] [ALPM] running 'texinfo-install.hook'...
+[2017-06-06 03:22] [PACMAN] Running 'pacman -Sc --noconfirm'
