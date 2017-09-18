@@ -70,8 +70,8 @@ Securely Erase Disks
 
 - Wipe disks.
 
-  Suppose that we are going to install Arch on ``/dev/sdX``,
-  and the boot partition on ``/dev/sdY``.
+  Suppose that we are going to install Arch on ``/dev/XXX``,
+  and the boot partition on ``/dev/YYY``.
   We'll want to wipe them to prevent unintended data recovery,
   as suggested by `dm-crypt/Drive preparation`_.
 
@@ -80,8 +80,8 @@ Securely Erase Disks
 
   ::
 
-     time shred /dev/sdX &
-     time shred /dev/sdY
+     time shred /dev/XXX &
+     time shred /dev/YYY
 
 - A preferred alternative: randomize your disks.
 
@@ -92,8 +92,8 @@ Securely Erase Disks
 
     ::
 
-       dd if=/dev/urandom of=/dev/sdX
-       dd if=/dev/urandom of=/dev/sdY
+       dd if=/dev/urandom of=/dev/XXX
+       dd if=/dev/urandom of=/dev/YYY
 
   - Using ``cryptsetup`` and ``dd``
 
@@ -102,11 +102,11 @@ Securely Erase Disks
 
     ::
 
-       cryptsetup --key-file /dev/random open --type plain /dev/sdX one
+       cryptsetup --key-file /dev/random open --type plain /dev/XXX one
        dd if=/dev/zero of=/dev/mapper/one
        cryptsetup close one
 
-       cryptsetup --key-file /dev/random open --type plain /dev/sdY two
+       cryptsetup --key-file /dev/random open --type plain /dev/YYY two
        dd if=/dev/zero of=/dev/mapper/two
        cryptsetup close two
 
@@ -218,9 +218,9 @@ Tips
      cryptsetup --header root.header \
      --cipher serpent-xts-plain64 --key-size 512 \
      --hash whirlpool --iter-time 5000 --use-random \
-     luksFormat /dev/sdX
+     luksFormat /dev/XXX
 
-     cryptsetup --header root.header open /dev/sdX root
+     cryptsetup --header root.header open /dev/XXX root
 
 - Setup LVM in the encrypted container.
 
@@ -256,7 +256,7 @@ and ``/boot`` 200 MiB.
 ::
 
    lsblk
-   parted /dev/sdY
+   parted /dev/YYY
    (parted) p
    (parted) mktable gpt
    (parted) p
@@ -270,9 +270,9 @@ and ``/boot`` 200 MiB.
 
    cryptsetup --cipher serpent-xts-plain64 --key-size 512 \
    --hash whirlpool --iter-time 5000 --use-random \
-   luksFormat /dev/sdY2
-   cryptsetup open /dev/sdY2 boot
-   mkfs.fat -F32 /dev/sdY1
+   luksFormat /dev/YYY2
+   cryptsetup open /dev/YYY2 boot
+   mkfs.fat -F32 /dev/YYY1
    mkfs.ext4 /dev/mapper/boot
 
 Activate The Swap And Mount File Systems
@@ -292,7 +292,7 @@ remember to move them to our new boot partition also.
    mount /dev/vga/home /mnt/home
    mount /dev/mapper/boot /mnt/boot
    mkdir /mnt/boo/efi
-   mount /dev/sdY1 /mnt/boot/efi
+   mount /dev/YYY1 /mnt/boot/efi
 
    mv root.header /mnt/boot
 
@@ -404,7 +404,7 @@ Configure The Kernel
 
   ::
 
-     vga /dev/sdX none header=/boot/root.header
+     vga /dev/XXX none header=/boot/root.header
 
   - **Tips**
 
@@ -487,7 +487,7 @@ Configure The Bootloader
 
   ::
 
-     GRUB_CMDLINE_LINUX_DEFAULT="cryptdevice=/dev/sdX:root:header"
+     GRUB_CMDLINE_LINUX_DEFAULT="cryptdevice=/dev/XXX:root:header"
 
   Note that ``root`` is the mapped name of our encrypted container.
   (**FIXME: No, this seems to be false.**)
