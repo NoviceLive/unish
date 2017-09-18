@@ -550,6 +550,20 @@ Exit chroot, do some cleanup and reboot.
    reboot
 
 
+Package Check List
+******************
+
+Here is my typical i3 installation.
+
+- base base-devel zsh grml-zsh-config
+- grub efibootmgr intel-ucode
+- xorg-server alsa-utils
+- lightdm lightdm-gtk-greeter
+- i3 gmrun dmenu termite adobe-source-code-pro-fonts xscreensaver
+- virtualbox virtualbox-guest-iso
+- pkgfile redshift
+
+
 Troubleshooting
 ---------------
 
