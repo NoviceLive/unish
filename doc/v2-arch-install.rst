@@ -584,6 +584,12 @@ See `FS#36265`_,
 Caveats
 -------
 
+LUKS & SSD TRIM
++++++++++++++++
+
+- Do you recommend LUKS encryption on a SSD (TRIM support)?, https://askubuntu.com/questions/59519/do-you-recommend-luks-encryption-on-a-ssd-trim-support
+
+
 Don't be fooled by the eventual success of mkinitcpio
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
