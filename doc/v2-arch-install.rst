@@ -177,24 +177,25 @@ An example output.
 
 ::
 
-   PBKDF2-sha1       439838 iterations per second for 256-bit key
-   PBKDF2-sha256     571742 iterations per second for 256-bit key
-   PBKDF2-sha512     385505 iterations per second for 256-bit key
-   PBKDF2-ripemd160  263726 iterations per second for 256-bit key
-   PBKDF2-whirlpool  177845 iterations per second for 256-bit key
-   #  Algorithm | Key |  Encryption |  Decryption
-        aes-cbc   128b   342.3 MiB/s  1650.5 MiB/s
-    serpent-cbc   128b    56.6 MiB/s   225.1 MiB/s
-    twofish-cbc   128b   139.1 MiB/s   266.4 MiB/s
-        aes-cbc   256b   336.1 MiB/s  1237.0 MiB/s
-    serpent-cbc   256b    65.1 MiB/s   225.8 MiB/s
-    twofish-cbc   256b   140.7 MiB/s   266.3 MiB/s
-        aes-xts   256b  1356.6 MiB/s  1360.4 MiB/s
-    serpent-xts   256b   225.0 MiB/s   221.4 MiB/s
-    twofish-xts   256b   258.8 MiB/s   261.8 MiB/s
-        aes-xts   512b  1056.4 MiB/s  1066.3 MiB/s
-    serpent-xts   512b   232.8 MiB/s   221.4 MiB/s
-    twofish-xts   512b   260.0 MiB/s   261.6 MiB/s
+   # Tests are approximate using memory only (no storage IO).
+   PBKDF2-sha1      1468593 iterations per second for 256-bit key
+   PBKDF2-sha256    1648704 iterations per second for 256-bit key
+   PBKDF2-sha512    1307451 iterations per second for 256-bit key
+   PBKDF2-ripemd160 1036142 iterations per second for 256-bit key
+   PBKDF2-whirlpool  758738 iterations per second for 256-bit key
+   #     Algorithm | Key |  Encryption |  Decryption
+           aes-cbc   128b  1041.6 MiB/s  3381.4 MiB/s
+       serpent-cbc   128b    83.8 MiB/s   676.5 MiB/s
+       twofish-cbc   128b   200.2 MiB/s   365.4 MiB/s
+           aes-cbc   256b   792.3 MiB/s  2635.0 MiB/s
+       serpent-cbc   256b    84.5 MiB/s   666.9 MiB/s
+       twofish-cbc   256b   199.2 MiB/s   362.8 MiB/s
+           aes-xts   256b  3306.3 MiB/s  3310.2 MiB/s
+       serpent-xts   256b   639.2 MiB/s   647.5 MiB/s
+       twofish-xts   256b   353.8 MiB/s   358.5 MiB/s
+           aes-xts   512b  2643.5 MiB/s  2639.9 MiB/s
+       serpent-xts   512b   636.0 MiB/s   645.7 MiB/s
+       twofish-xts   512b   351.8 MiB/s   358.4 MiB/s
 
 
 Prepare Root
