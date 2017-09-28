@@ -5,9 +5,9 @@ Full-Disk Encrypted Arch Installation Version 2
 Metadata
 --------
 
-Created: March 10, 2016
+Created: 2016-03-10
 
-Updated: May 19, 2017
+Updated: 2017-09-28
 
 Maintainer: Gu Zhengxiong <rectigu@gmail.com>
 
@@ -357,7 +357,7 @@ Configure Some Boring Stuff For The Freshly Installed System
   ::
 
      tzselect
-     ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 - Set or update the hardware clock.
 
