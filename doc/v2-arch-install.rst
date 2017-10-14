@@ -664,38 +664,51 @@ E.g., ``device-mapper``.
 
 Still e.g., ``mkinitcpio-busybox`` and ``systemd``, among many others.
 
+
 Appendices
 ----------
+
 
 Example session of encrypting a loop device
 +++++++++++++++++++++++++++++++++++++++++++
 
-::
+- Create a file.
 
-   # Create a file.
-   dd if=/dev/urandom of=secret.tomb bs=1M count=10
+  ::
 
-   # Load the ``loop`` module if necessary.
-   sudo modprobe loop
+     $ dd if=/dev/urandom of=secret.tomb bs=1M count=10
 
-   # Setup the loop device.
-   sudo losetup /dev/loop0 secret.tomb
+- Find an idle loop device and setup it with the file.
 
-   # Setup encryption.
-   sudo cryptsetup luksFormat /dev/loop0
-   sudo cryptsetup open /dev/loop0 tomb
+  ::
 
-   # Create a file system and mount it.
-   sudo mkfs.ext4 /dev/mapper/tomb
-   sudo mkdir /mnt/tomb
-   sudo mount /mnt/mapper/tomb /mnt/tomb
+     # losetup /dev/loop0 secret.tomb
 
-   # Add some files.
+- Setup encryption.
 
-   # Unmount and cleanup.
-   sudo umount /mnt/tomb
-   sudo cryptsetup close tomb
-   sudo losetup -d /dev/loop0
+  ::
+
+     # cryptsetup luksFormat /dev/loop0
+     # cryptsetup open /dev/loop0 tomb
+
+- Create a file system and mount it.
+
+  ::
+
+     # mkfs.ext4 /dev/mapper/tomb
+     # mkdir /mnt/tomb
+     # mount /mnt/mapper/tomb /mnt/tomb
+
+- Add some files.
+
+- Unmount and cleanup.
+
+  ::
+
+     # umount /mnt/tomb
+     # cryptsetup close tomb
+     # losetup -d /dev/loop0
+
 
 Readings / Projects Of Interests
 ++++++++++++++++++++++++++++++++
