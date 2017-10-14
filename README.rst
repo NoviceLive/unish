@@ -13,6 +13,8 @@ Some One-Liners That May Fade From Memory
 
 - ``tilsuc``: Unattended download of videos over unstable connection.
 
+  Note: There is a shell script now, at `commands/tilsuc.sh <commands/tilsuc.sh>`_.
+
   It seems more appropriate to add a ``sleep`` in the ``while`` loop,
   when the main command doesn't support immediate re-entrance.
 
