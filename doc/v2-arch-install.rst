@@ -53,7 +53,9 @@ Comparison Between `Version 2`_ & `Version 1`_
 Let's Get Started
 -----------------
 
-Again_, now that the installation medium have been booted,
+Before booting, you might want to consider adding some kernel parameters, e.g., ``copytoram=y`` or ``consoleblank=0``.
+
+Again_, now that the installation medium has been booted,
 a root shell appears.
 
 .. _Again: `Version 1`_
@@ -240,8 +242,8 @@ Tips
   ::
 
      mkswap /dev/vga/swap
-     mkfs.ext4 /dev/vga/root
-     mkfs.ext4 /dev/vga/home
+     mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0 /dev/vga/root
+     mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0 /dev/vga/home
 
 
 Prepare Boot
@@ -274,7 +276,7 @@ and ``/boot`` 200 MiB.
    luksFormat /dev/YYY2
    cryptsetup open /dev/YYY2 boot
    mkfs.fat -F32 /dev/YYY1
-   mkfs.ext4 /dev/mapper/boot
+   mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0 /dev/mapper/boot
 
 Activate The Swap And Mount File Systems
 ****************************************
@@ -695,7 +697,7 @@ Example session of encrypting a loop device
 
   ::
 
-     # mkfs.ext4 /dev/mapper/tomb
+     # mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0,root_owner=1000:1000 /dev/mapper/tomb
      # mkdir /mnt/tomb
      # mount /mnt/mapper/tomb /mnt/tomb
 
