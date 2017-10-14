@@ -524,11 +524,11 @@ Configure users
 
 - Add a user and grant it administrator privilege.
 
-::
+  ::
 
-   useradd -m -G wheel -s /bin/zsh toor
-   passwd toor
-   nano /etc/sudoers
+     useradd -m -G wheel -s /bin/zsh your_username
+     passwd your_username
+     nano /etc/sudoers
 
 
 Cleanup And Reboot
@@ -558,11 +558,12 @@ Here is my typical i3 installation.
 
 - base base-devel zsh grml-zsh-config
 - grub efibootmgr intel-ucode
+- dialog wpa_supplicant
 - xorg-server alsa-utils
 - lightdm lightdm-gtk-greeter
-- i3 gmrun dmenu termite adobe-source-code-pro-fonts xscreensaver
+- i3 dmenu termite adobe-source-code-pro-fonts
 - virtualbox virtualbox-guest-iso
-- pkgfile redshift
+- macchanger pkgfile redshift create_ap
 
 
 Troubleshooting
