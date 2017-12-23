@@ -7,7 +7,7 @@ Metadata
 
 Created: 2016-03-10
 
-Updated: 2017-09-28
+Updated: 2017-12-22
 
 Maintainer: Gu Zhengxiong <rectigu@gmail.com>
 
@@ -422,13 +422,19 @@ Configure The Kernel
 
 - Edit ``/etc/mkinitcpio.conf``
 
+  Add ``nvme`` to ``MODULES`` if necessary.
+
+  ::
+
+     MODULES=(nvme)
+
   Add the header to ``FILES``.
 
   **Note:** Remember to include key files also if they are used.
 
   ::
 
-     FILES="/boot/root.header"
+     FILES=(/boot/root.header)
 
   As a result, the header will be copied into the initramfs.
 
@@ -440,7 +446,7 @@ Configure The Kernel
 
   ::
 
-     HOOKS="base systemd autodetect modconf block sd-encrypt sd-lvm2 filesystems keyboard fsck"
+     HOOKS=(base systemd autodetect modconf block sd-encrypt sd-lvm2 filesystems keyboard fsck)
 
 - Regenerate initramfs.
 
@@ -564,8 +570,14 @@ Here is my typical i3 installation.
 - xorg-server alsa-utils
 - lightdm lightdm-gtk-greeter
 - i3 dmenu termite adobe-source-code-pro-fonts
+
 - virtualbox virtualbox-guest-iso
-- macchanger pkgfile redshift create_ap
+- pkgfile macchanger redshift create_ap haveged
+- bluez bluez-utils
+- htop nethogs
+- unzip unrar p7zip
+- python-pip python2-pip
+- wireshark-qt nmap
 
 
 Troubleshooting
