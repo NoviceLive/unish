@@ -7,7 +7,7 @@ Metadata
 
 Created: 2016-03-10
 
-Updated: 2017-12-22
+Updated: 2018-01-30
 
 Maintainer: Gu Zhengxiong <rectigu@gmail.com>
 
@@ -161,6 +161,8 @@ Also, see `Encryption options for LUKS mode`_
 and `Ciphers and modes of operation`_ for more information.
 
 I will take ``serpent-xts-plain64`` and ``whirlpool`` for example.
+Nevertheless, ``serpent`` is very likely to be a bad choice for NVMe SSDs,
+which are capable of reading and writing at several GB/s.
 
 Tips
 @@@@
@@ -464,7 +466,7 @@ Configure The Bootloader
 
      pacman -S grub efibootmgr
 
-  For Intel CPU, it's advised to install ``intel-ucode``.
+  For Intel CPUs, it's advised to install ``intel-ucode``.
 
   ::
 
@@ -481,7 +483,7 @@ Configure The Bootloader
 
 - Edit ``/etc/default/grub``.
 
-  Add the line,
+  Add or uncomment the line,
   ``GRUB_ENABLE_CRYPTODISK=y``,
   and add necessary kernel parameters.
 
@@ -502,6 +504,16 @@ Configure The Bootloader
   (**FIXME: No, this seems to be false.**)
 
   Also, I removed the ``quiet`` parameter.
+
+  - **Tips**
+
+    It might be preferred or necessary to blacklist ``nouveau``, when there is a recent Nvidia chip.
+
+    Adding the following parameter to the kernel command line will do this for you.
+
+    ::
+
+       modprobe.blacklist=nouveau
 
 - Generate ``grub.cfg``.
 
@@ -559,8 +571,8 @@ Exit chroot, do some cleanup and reboot.
    reboot
 
 
-Package Check List
-******************
+Essential Package Check List
+****************************
 
 Here is my typical i3 installation.
 
@@ -569,7 +581,7 @@ Here is my typical i3 installation.
 - dialog wpa_supplicant
 - xorg-server alsa-utils
 - lightdm lightdm-gtk-greeter
-- i3 dmenu termite adobe-source-code-pro-fonts
+- i3 dmenu termite tmux adobe-source-code-pro-fonts
 
 - virtualbox virtualbox-guest-iso
 - pkgfile macchanger redshift create_ap haveged
