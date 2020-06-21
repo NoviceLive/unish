@@ -7,7 +7,7 @@ Metadata
 
 Created: 2016-03-10
 
-Updated: 2018-01-30
+Updated: 2020-06-21
 
 Maintainer: Gu Zhengxiong <rectigu@gmail.com>
 
@@ -134,6 +134,9 @@ for more details.
 
 - Check or configure the network.
 
+  **Tips:** ``wpa_supplicant`` could be used directly to connect to WiFi when ``wifi-menu`` fails for unknown reason.
+  E.g., ``wpa_supplicant -B -i wlan0 -c <(wpa_passphrase YOUR_SSID YOUR_PASS) && dhcpcd wlan0`` .
+
   ::
 
      # network configuration skipped
@@ -155,14 +158,16 @@ Prepare Partitions a.k.a Interesting Part I
 Choose algorithms
 *****************
 
-Running benchmarks may help you choose the algorithms.
+Running benchmarks might help to choose the algorithms.
 
 Also, see `Encryption options for LUKS mode`_
 and `Ciphers and modes of operation`_ for more information.
 
-I will take ``serpent-xts-plain64`` and ``whirlpool`` for example.
-Nevertheless, ``serpent`` is very likely to be a bad choice for NVMe SSDs,
+We will take ``serpent-xts-plain64`` and ``whirlpool`` for example.
+
+**Note:** ``serpent`` is very likely to be a bad choice for NVMe SSDs,
 which are capable of reading and writing at several GB/s.
+
 
 Tips
 @@@@
@@ -171,7 +176,7 @@ Tips
 the encryption algorithm is `serpent`_,
 other candidates being `twofish`_ and `aes`_,
 the `chain mode`_ is `xts`_,
-and the `initialization vector`_ generator is plain64.
+and the `initialization vector`_ generator is ``plain64``.
 
 ::
 
@@ -212,7 +217,7 @@ Tips
 
 - Setup LUKS using a remote header.
 
-  **Recommendation:** Use or add a key file for the root drive
+  **Recommendation:** Use a key file for the root drive
   so as to unlock automatically during the normal boot process.
   See corresponding notes below and around for more information.
 
@@ -229,7 +234,9 @@ Tips
 
 - Setup LVM in the encrypted container.
 
-  Note that you will want to make necessary adaptation.
+  **Note:** Apply your own customization here.
+  E.g., a swap partition might not be wanted these days when 32G or more RAM are available,
+  and 16G root might be just enough for people like me.
 
   ::
 
@@ -253,6 +260,9 @@ Prepare Boot
 
 Prepare partition and setup LUKS.
 
+**Note:** Use ``--type luks1`` since the current release version of Grub2 doesn't support luks2,
+which now seems to be the default of cryptsetup. See https://savannah.gnu.org/bugs/?55093 .
+
 Feel free to use your own preferences.
 
 In the following example, ``/boot/efi`` will get 56 MiB,
@@ -275,10 +285,11 @@ and ``/boot`` 200 MiB.
 
    cryptsetup --cipher serpent-xts-plain64 --key-size 512 \
    --hash whirlpool --iter-time 5000 --use-random \
-   luksFormat /dev/YYY2
+   --type luks1 luksFormat /dev/YYY2
    cryptsetup open /dev/YYY2 boot
    mkfs.fat -F32 /dev/YYY1
    mkfs.ext4 -E lazy_itable_init=0,lazy_journal_init=0 /dev/mapper/boot
+
 
 Activate The Swap And Mount File Systems
 ****************************************
@@ -296,7 +307,7 @@ remember to move them to our new boot partition also.
    mkdir /mnt/{home,boot}
    mount /dev/vga/home /mnt/home
    mount /dev/mapper/boot /mnt/boot
-   mkdir /mnt/boo/efi
+   mkdir /mnt/boot/efi
    mount /dev/YYY1 /mnt/boot/efi
 
    mv root.header /mnt/boot
@@ -320,7 +331,7 @@ Perform System Installation
 
   ::
 
-     pacstrap -i /mnt base base-devel zsh grml-zsh-config
+     pacstrap -i /mnt base linux linux-firmware base-devel zsh grml-zsh-config nano lvm2
 
 - Generate ``fstab`` and check it.
 
@@ -379,12 +390,11 @@ Configure Some Boring Stuff For The Freshly Installed System
      ping -c4 archlinux.org
 
 
-- Set the hostname and add it to ``/etc/hosts``.
+- Set the hostname, ``localhost`` being the most commonly used dummy name.
 
   ::
 
      nano /etc/hostname
-     nano /etc/hosts
 
 
 Configure For Disk-Encryption a.k.a Interesting Part II
@@ -478,7 +488,7 @@ Configure The Bootloader
 
   ::
 
-     pacman -S dialog wpa_supplicant
+     pacman -S wpa_supplicant dialog netctl
 
 
 - Edit ``/etc/default/grub``.
@@ -515,12 +525,6 @@ Configure The Bootloader
 
        modprobe.blacklist=nouveau
 
-- Generate ``grub.cfg``.
-
-  ::
-
-     grub-mkconfig -o /boot/grub/grub.cfg
-
 - Install GRUB to the pendrive.
 
   **Notice:** Don't forget ``--removable``.
@@ -528,6 +532,12 @@ Configure The Bootloader
   ::
 
      grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
+
+- Generate ``grub.cfg``.
+
+  ::
+
+     grub-mkconfig -o /boot/grub/grub.cfg
 
 
 Perform Some Most Boring Post Installation Tasks
@@ -576,20 +586,14 @@ Essential Package Check List
 
 Here is my typical i3 installation.
 
-- base base-devel zsh grml-zsh-config
+- base linux linux-firmware base-devel zsh grml-zsh-config nano lvm2 macchanger
 - grub efibootmgr intel-ucode
-- dialog wpa_supplicant
+- wpa_supplicant dialog netctl
 - xorg-server alsa-utils
 - lightdm lightdm-gtk-greeter
 - i3 dmenu termite tmux adobe-source-code-pro-fonts
 
 - virtualbox virtualbox-guest-iso
-- pkgfile macchanger redshift create_ap haveged
-- bluez bluez-utils
-- htop nethogs
-- unzip unrar p7zip
-- python-pip python2-pip
-- wireshark-qt nmap
 
 
 Troubleshooting

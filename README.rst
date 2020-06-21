@@ -8,6 +8,36 @@ Hopefully it will eventually come true in ten years. :)
 Current State: Primitive.
 
 
+Documentation
+=============
+
+Some might not be related with Unish,
+but with Linux or in general with POSIX or UNIX.
+
+
+- How to
+
+  - install Arch Linux with full-disk encryption `Version 1`_  `Version 2`_
+
+    +-------------------+------------------------+-------------------------------------------+
+    |      Item         |     `Version 1`_       |   `Version 2`_                            |
+    +===================+========================+===========================================+
+    | Encryption Scheme | `LVM on LUKS`_         | `LVM on LUKS`_ (`using a remote header`_) |
+    +-------------------+------------------------+-------------------------------------------+
+    | Boot Partition    | `Simple Partition Layout with LUKS`_ (`on a pendrive`_)            |
+    +-------------------+------------------------+-------------------------------------------+
+    | Unencrypted       | EFI System Partition (/boot/efi)                                   |
+    +-------------------+------------------------+-------------------------------------------+
+    | Partition Editor  | Parted (Not Required)                                              |
+    +-------------------+------------------------+-------------------------------------------+
+    | Partition Scheme  | UEFI/GPT                                                           |
+    +-------------------+------------------------+-------------------------------------------+
+    | Boot Manager      | GRUB (Required)                                                    |
+    +-------------------+------------------------+-------------------------------------------+
+    | Init Manager      | Systemd (Not Required) | Systemd (Required)                        |
+    +-------------------+------------------------+-------------------------------------------+
+
+
 Some One-Liners That May Fade From Memory
 =========================================
 
@@ -52,36 +82,6 @@ Some One-Liners That May Fade From Memory
   ::
 
      pylint --reports n --output-format colorized --disable=missing-docstring,too-few-public-methods,too-many-ancestors,broad-except,invalid-name,too-many-locals,too-many-arguments,too-many-instance-attributes,too-many-public-methods,too-many-lines,too-many-branches,too-many-statements,duplicate-code
-
-
-Documentation
-=============
-
-Some might not be related with Unish,
-but with Linux or in general with POSIX or UNIX.
-
-
-- How to
-
-  - install Arch Linux with full-disk encryption `Version 1`_  `Version 2`_
-
-    +-------------------+------------------------+-------------------------------------------+
-    |      Item         |     `Version 1`_       |   `Version 2`_                            |
-    +===================+========================+===========================================+
-    | Encryption Scheme | `LVM on LUKS`_         | `LVM on LUKS`_ (`using a remote header`_) |
-    +-------------------+------------------------+-------------------------------------------+
-    | Boot Partition    | `Simple Partition Layout with LUKS`_ (`on a pendrive`_)            |
-    +-------------------+------------------------+-------------------------------------------+
-    | Unencrypted       | EFI System Partition (/boot/efi)                                   |
-    +-------------------+------------------------+-------------------------------------------+
-    | Partition Editor  | Parted (Not Required)                                              |
-    +-------------------+------------------------+-------------------------------------------+
-    | Partition Scheme  | UEFI/GPT                                                           |
-    +-------------------+------------------------+-------------------------------------------+
-    | Boot Manager      | GRUB (Required)                                                    |
-    +-------------------+------------------------+-------------------------------------------+
-    | Init Manager      | Systemd (Not Required) | Systemd (Required)                        |
-    +-------------------+------------------------+-------------------------------------------+
 
 
 Warning
